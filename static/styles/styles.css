@@ -1,3 +1,30 @@
 @charset "UTF-8";
 /* CSS Document */
+/*Nav*/
+h1 {
+	text-align: center;
+}
 
+.nav-items {
+	list-style-type: none;
+}
+
+.nav-li {
+	text-decoration: none;
+	color: white;
+	text-align: center;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-right: 10px;
+	}
+
+/*Body*/
+main {
+	background-image: url("../images/Doodle-Tile-opacity.jpg");
+	padding: 50px;
+}
+
+/*Game Board*/
+#game-board {
+	background-color: white;
+}
