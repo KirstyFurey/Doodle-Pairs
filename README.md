@@ -35,6 +35,7 @@ Used as a remote repository to store website commited changes, and deploy websit
 ### Icons ###
 
 ### Fonts ###
+Doodle Font on all text from *https://www.cdnfonts.com/happy-doodle.font*
 
 ### Programs ###
 
