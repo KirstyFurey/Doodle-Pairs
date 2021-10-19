@@ -7,9 +7,7 @@
 <!--Doodle font from https://www.cdnfonts.com/happy-doodle.font-->
 <link href="http://fonts.cdnfonts.com/css/happy-doodle" rel="stylesheet">
 <!--External stylesheet-->	
-<link rel="stylesheet" href="static/styles/styles.css">	
-<!--External JavaScript-->	
-<script type="text/javascript" src="static/scripts/script.js"></script>	
+<link rel="stylesheet" href="static/styles/styles.css">		
 </head>
 
 <body>
@@ -18,13 +16,20 @@
         <div id="nav-div">
 		<h1 class="nav-title">Doodle Pairs</h1>	
           <ul class="nav-items">
-            <li class="nav-li" id="htp"><a href="#">HOW TO PLAY</a></li>
+            <li class="nav-li" id="htp"><button id="myBtn">HOW TO PLAY</button></li>
             <li class="nav-li" id="play-mode"><a href="#">PLAY MODE</a></li>
             <li class="nav-li" id="start"><a href="#">START</a></li>
             <li class="nav-li" id="reset"><a href="#">RESET</a></li>
           </ul>
         </div>
       </nav>
+      <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p>Some text in the Modal..</p>
+        </div>
+      </div>      
 	</header>	
 	<main>
 		<div id="game-board">
@@ -35,5 +40,7 @@
 			</ul>
 		</div>
 	</main>
+<!--External JavaScript-->	
+<script type="text/javascript" src="static/scripts/script.js"></script>	
 </body>
 </html>

@@ -102,5 +102,7 @@ Her GitHub Repository can be found here:
 ### Support ###
 
 ### Syntax ###
+#### w3schools ####
+Code for Modals amended from *https://www.w3schools.com/howto/howto_css_modals.asp*
 
 
