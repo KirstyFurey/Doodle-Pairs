@@ -10,6 +10,13 @@ The site will utilise HTML and CSS for the content and appearance, while the log
 </br>
 
 ## UX ##
+My aim is to keep this site clean looking. I created these wireframes as a guide to how the site will look.
+</br>
+The site will be built primarily for mobile devices. The look and functionality will be retained on desktop, with the tiles being slightly larger.
+</br>
+![MobileWireframe](/wireframes/Mobile-Wireframes.jpg)
+</br>
+![DesktopWireframe](/wireframes/Desktop-Wireframe.png)
 
 ## Features ##
 
