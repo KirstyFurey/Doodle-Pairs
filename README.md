@@ -33,6 +33,7 @@ Used as a remote repository to store website commited changes, and deploy websit
 ### Frameworks ###
 
 ### Icons ###
+Doodle icons via Rawpixel.com *https://www.freepik.com/vectors/icons*
 
 ### Fonts ###
 Doodle Font on all text from *https://www.cdnfonts.com/happy-doodle.font*

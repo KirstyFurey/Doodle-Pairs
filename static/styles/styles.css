@@ -93,11 +93,38 @@ a:visited {
 main {
 	background-image: url("../images/Doodle-Tile-opacity.jpg");
 	padding: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 /*Game Board*/
 #game-board {
 	background-color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 700px;
+}
+
+.deck {
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+
+.card{
+	list-style-type: none;
+	display: inline-table;
+}
+
+.card-item {
+	height: 142px;
+	width: 110px;
+	border: 1px solid #000000;
+	box-shadow: 6px 4px 5px 1px #d6d6d6;
+	margin: 20px;
 }
 
 /*Mobile Device CSS*/
