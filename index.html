@@ -16,20 +16,52 @@
         <div id="nav-div">
 		<h1 class="nav-title">Doodle Pairs</h1>	
           <ul class="nav-items">
-            <li class="nav-li" id="htp"><button id="myBtn">HOW TO PLAY</button></li>
-            <li class="nav-li" id="play-mode"><a href="#">PLAY MODE</a></li>
+            <li class="nav-li" id="htp"><button id="htp-btn">HOW TO PLAY</button></li>
+            <li class="nav-li" id="play-mode"><button id="pm-btn">PLAY MODE</button></li>
             <li class="nav-li" id="start"><a href="#">START</a></li>
-            <li class="nav-li" id="reset"><a href="#">RESET</a></li>
+            <li class="nav-li" id="reset"><button id="reset-btn">RESET</button></li>
           </ul>
         </div>
       </nav>
-      <div id="myModal" class="modal">
-        <!-- Modal content -->
+      <div id="htp-modal" class="modal">
+        <!-- how to play content -->
         <div class="modal-content">
-          <span class="close">&times;</span>
-          <p>Some text in the Modal..</p>
+          <span id="htp-close">&times;</span>
+          <p>How to play</p>
         </div>
-      </div>      
+      </div>
+      <div id="pm-modal" class="modal">
+        <!-- play mode content -->
+        <div class="modal-content">
+          <span id="pm-close">&times;</span>
+          <p id="pm-title">Play mode</p>
+          <p id="pm-content">Select your play mode:</p>
+          <button class="play-mode-button">16 Cards</button>
+          <br>
+          <button class="play-mode-button">24 Cards</button>
+          <br>
+          <button class="play-mode-button">32 Cards</button>
+          <br>
+          <br>
+          <div id="ridiculous-mode">
+          	<label for="ridic-cb" id="ridiculous-p">Play in ridiculous mode?</label>
+            <input type="checkbox" id="ridic-cb" name="ridic-cb">
+            <br>
+            <p id="ridic-expl">&lpar;ridiculous mode shuffles the entire deck each time you flip a pair that does not match - see how to play for instructions&rpar;</p>
+          </div>
+        </div>
+      </div>		
+      <div id="reset-modal" class="modal">
+        <!-- reset content -->
+        <div class="modal-content">
+          <span id="reset-close">&times;</span>
+          <p id="reset-title">Are you sure you want to reset?</p>
+          <p id="reset-content">All progress will be lost and the board will be re-set</p>
+          <button id="hard-reset">Reset</button>
+          <br>
+          <button id="cancel">Cancel</button>
+        </div>
+      </div>
 	</header>	
 	<main>
 		<div id="game-board">

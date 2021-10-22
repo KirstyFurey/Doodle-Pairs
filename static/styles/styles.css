@@ -5,6 +5,7 @@
 body {
 	/*Font from https://www.cdnfonts.com/happy-doodle.font*/
 	font-family: 'HAPPY DOODLE', sans-serif;
+	letter-spacing: 0.2em;
 }
                                                 
 /*Nav*/
@@ -21,7 +22,6 @@ body {
 .nav-items {
 	list-style-type: none;
 	display: inline-table;
-	letter-spacing: 0.2em;
 	padding-right: 50px;
 }
 
@@ -37,56 +37,96 @@ nav a {
 	color: #000000;
 }
 
-nav a:hover {
+button {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 5px;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+	letter-spacing: 0.2em;
+}
+
+button:hover {
 	color: #30BB34;
 }
 
-a:visited {
+button:visited {
 	color: #000000;
-}
-
-.active {
-	color: #30BB34;
 }
 
 /*Modals - code amended from https://www.w3schools.com/howto/howto_css_modals.asp*/
 
 /* The Modal (background) */
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
 /* Modal Content/Box */
 .modal-content {
-  background-color: #fefefe;
-  margin: 15% auto; /* 15% from the top and centered */
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 40px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+	text-align: center;
 }
 
 /* The Close Button */
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
+#htp-close, #pm-close, #reset-close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
 }
 
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
+#htp-close, #pm-close, #reset-close:hover,
+#htp-close, #pm-close, #reset-close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/*Modal content*/
+#reset-title, #pm-title {
+	font-size: 2em;
+	font-weight: 900;
+	text-align: center;
+	padding: 0px;
+	margin: 0px;
+}
+
+#reset-content, #hard-reset, #cancel, #pm-content {
+	text-align: center;
+	align-items: center;
+}
+
+.play-mode-button {
+	text-align: center;
+	align-items: center;
+	padding: 10px 30px;
+	margin: 5px;
+	font-size: 1.2em;
+}
+
+#ridiculous-p {
+	font-size: 1.2em;
+	margin: 5px;
+}
+
+.play-mode-button:focus {
+	border: 1px solid #30BB34;
+	border-radius: 40px;
 }
 
 /*Main content*/
@@ -132,7 +172,6 @@ footer a {
 	text-decoration: none;
 	color: black;
 	font-size: 0.7em;
-	letter-spacing: 0.2em;
 }
 
 /*Mobile Device CSS*/
