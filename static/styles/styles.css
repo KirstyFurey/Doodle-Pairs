@@ -76,9 +76,9 @@ button:visited {
 .modal-content {
     background-color: #fefefe;
     margin: 15% auto; /* 15% from the top and centered */
-    padding: 40px;
+    padding: 0px;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 60%; /* Could be more or less, depending on screen size */
 	text-align: center;
 }
 
@@ -88,6 +88,7 @@ button:visited {
     float: right;
     font-size: 28px;
     font-weight: bold;
+	margin: 0px 10px 0px 0px;
 }
 
 #htp-close, #pm-close, #reset-close:hover,
@@ -98,17 +99,21 @@ button:visited {
 }
 
 /*Modal content*/
-#reset-title, #pm-title {
+#reset-title, #pm-title, #htp-title {
 	font-size: 2em;
 	font-weight: 900;
 	text-align: center;
 	padding: 0px;
-	margin: 0px;
+	margin: 40px 0px 0px 0px;
 }
 
 #reset-content, #hard-reset, #cancel, #pm-content {
 	text-align: center;
 	align-items: center;
+}
+
+#htp-list, #reset-content, #pm-content {
+	margin-bottom: 40px;
 }
 
 .play-mode-button {
