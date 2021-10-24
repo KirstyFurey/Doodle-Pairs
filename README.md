@@ -44,6 +44,7 @@ Doodle Font on all text from *https://www.cdnfonts.com/happy-doodle.font*
 Used for writing HTML for content, and CSS3 for styling of my website.
 
 #### Adobe Photoshop ####
+Used to create background and card deck
 
 ## Testing ##
 
@@ -105,5 +106,8 @@ Her GitHub Repository can be found here:
 ### Syntax ###
 #### w3schools ####
 Code for Modals amended from *https://www.w3schools.com/howto/howto_css_modals.asp*
+
+#### Stack Overflow ####
+Code for styling the `<ol>` numbers *https://stackoverflow.com/questions/23610151/can-you-style-ordered-list-numbers*
 
 
