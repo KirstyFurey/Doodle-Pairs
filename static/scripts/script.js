@@ -17,6 +17,9 @@ var htpSpan = document.getElementById("htp-close");
 var pmSpan = document.getElementById("pm-close");
 var resetSpan = document.getElementById("reset-close");
 
+// Get the button to cancel reset and return to game
+var cancel = document.getElementById("cancel");
+
 // When the user clicks on the button, open the modal
 htpBtn.onclick = function() {
 	htpModal.style.display = "block";
@@ -41,6 +44,10 @@ pmSpan.onclick = function() {
 
 resetSpan.onclick = function () {
 	resetModal.style.display = "none";
+}
+
+cancel.onclick = function() {
+	resetModal.style.display = "none"
 }
 
 // When the user clicks anywhere outside of the modal, close it

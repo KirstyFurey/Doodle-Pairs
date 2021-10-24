@@ -111,7 +111,11 @@ button:hover {
 }
 
 #cancel {
-	margin-bottom: 20px;
+	margin: 20px 0px;
+}
+
+#hard-reset {
+	margin-top: 10px;
 }
 
 .play-mode-button {
