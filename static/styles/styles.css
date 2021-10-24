@@ -6,6 +6,7 @@ body {
 	/*Font from https://www.cdnfonts.com/happy-doodle.font*/
 	font-family: 'HAPPY DOODLE', sans-serif;
 	letter-spacing: 0.2em;
+	margin: 0;
 }
                                                 
 /*Nav*/
@@ -181,13 +182,54 @@ ol li:before {
 	margin-top: 10px;
 }
 
-/*Game board*/
+/*Site background*/
+main {
+	background-image: url("../images/Doodle-Tile-opacity.jpg");
+	padding: 50px;
+	/*Sets the #game-board div to the centre of the page*/
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/*Game board div*/
+#game-board {
+	background-color: white;
+	display: flex;
+	justify-content: center;
+	/*flex-wrap: wrap;
+	align-items: center;*/
+	width: 50vw;
+}
+
+/*unordered list for all cards*/
+.deck {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	padding-inline-start: 0px;
+	padding: 10px;
+}
+
+/*list item element for each card*/
+.card {
+	list-style-type: none;
+	margin: 2px;
+}
+
+/*image for each card*/
+.card-item {
+	width: 10vw;
+	border: 1px solid black;
+	box-shadow: 6px 4px 5px 1px #d6d6d6;
+}
 
 /*Footer*/
 footer a {
 	text-decoration: none;
 	color: black;
 	font-size: 0.7em;
+	padding: 10px;
 }
 
 /*Mobile Device CSS*/
@@ -198,5 +240,29 @@ footer a {
 	
 	.nav-li {
 		display:block;
+	}
+}
+
+@media only screen and (max-width: 500px) {
+	#game-board {
+		width: 90vw;
+	}
+	
+	.card-item {
+		width: 15vw;
+	}
+}
+
+@media only screen and (max-width: 360px) {
+	main {
+		padding: 30px;
+	}
+	
+	#game-board {
+		width: 90vw;
+	}
+	
+	.card-item {
+		width: 14vw;
 	}
 }
