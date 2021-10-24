@@ -107,3 +107,12 @@ window.onclick = function(event) {
      }
     }
 }
+
+// Get the button to cancel reset and return to game
+var resetModal = document.getElementById("myModal3");
+var cancel = document.getElementById("cancel");
+
+//Cancel button to close modal
+cancel.onclick = function() {
+	resetModal.style.display = "none"
+}
