@@ -78,7 +78,7 @@ button:hover {
 }
 
 /* The Close Button */
-#htp-close, #pm-close, #reset-close {
+.close {
     color: #aaa;
     float: right;
     font-size: 18px;
@@ -86,14 +86,14 @@ button:hover {
 	margin: 3px 5px 0px 0px;
 }
 
-#htp-close:hover, #pm-close:hover, #reset-close:hover {
+.close:hover {
     color: #000;
     text-decoration: none;
     cursor: pointer;
 }
 
 /*Modal content*/
-#reset-title, #pm-title, #htp-title {
+#reset-title, #start-title, #htp-title {
 	font-size: 2em;
 	font-weight: 900;
 	text-align: center;
@@ -101,39 +101,14 @@ button:hover {
 	margin: 30px 0px 0px 0px;
 }
 
-#reset-content, #hard-reset, #cancel, #pm-content {
+#reset-content, #hard-reset, #cancel, #start-content {
 	text-align: center;
 	align-items: center;
 }
 
-#htp-list, #ridic-expl {
+/*How to play modal*/
+#htp-list {
 	margin: 10px 40px 30px 40px;
-}
-
-#cancel {
-	margin: 20px 0px;
-}
-
-#hard-reset {
-	margin-top: 10px;
-}
-
-.play-mode-button {
-	text-align: center;
-	align-items: center;
-	padding: 10px 30px;
-	margin: 5px;
-	font-size: 1.2em;
-}
-
-#ridiculous-p {
-	font-size: 1.2em;
-	margin: 5px;
-}
-
-.play-mode-button:focus {
-	border: 1px solid #30BB34;
-	border-radius: 40px;
 }
 
 #htp-list {
@@ -162,44 +137,51 @@ ol li:before {
 	display: inline-block;
 }
 
-/*Main content*/
-main {
-	background-image: url("../images/Doodle-Tile-opacity.jpg");
-	padding: 50px;
-	/*display: flex;*/
-	justify-content: center;
-	align-items: center;
+/*Start modal*/
+.play-mode-button {
+	border: 2px solid black;
+	border-radius: 40px;
+	padding: 10px 40px;
+	margin-bottom: 10px;
 }
 
-/*Game Board*/
-#game-board {
-	background-color: white;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	align-items: center;
-	width: 50%;
+.play-mode-button:hover, .play-mode-button:focus {
+	border: 2px solid #30bb34;
+	color: #30bb34;
 }
 
-.deck {
-	flex: 2 0 21%;
-	justify-content: center;
-	align-items: center;
+#ridiculous-p {
+	font-size: 1.2em;
+	margin: 5px;
 }
 
-.card{
-	list-style-type: none;
-	display: inline-table;
-	margin: 2%;
+#ridic-expl {
+	margin: 15px 40px;
 }
 
-.card-item {
-	/*height: 142px;
-	width: 110px;*/
-	width: 7vw;
-	border: 1px solid #000000;
-	box-shadow: 6px 4px 5px 1px #d6d6d6;
+#start-button {
+	font-size: 1.5em;
+	font-weight: 900;
+	border: 2px solid black;
+	border-radius: 40px;
+	padding: 10px 20px;
+	margin-bottom: 30px;
 }
+
+#start-button:hover {
+	border: 2px solid #30bb34;
+}
+
+/*reset modal*/
+#cancel {
+	margin: 20px 0px;
+}
+
+#hard-reset {
+	margin-top: 10px;
+}
+
+/*Game board*/
 
 /*Footer*/
 footer a {
@@ -217,33 +199,4 @@ footer a {
 	.nav-li {
 		display:block;
 	}
-	/*
-	.card-item {
-        height: 110px;
-        width: 85px;
-        border: 1px solid #000000;
-        box-shadow: 6px 4px 5px 1px #d6d6d6;
-        margin: 15px;
-    }*/
 }
-/*
-@media only screen and (max-width: 700px) {
-	#game-board {
-		width: 95vw;
-	}
-	
-	main {
-		padding: 5%;
-	}
-}*/
-/*
-@media only screen and (max-width: 399px) {
-	#game-board {
-		width: 95vw;
-	}
-	
-	.deck {
-		padding: 0;
-		margin: 0;
-	}
-}*/

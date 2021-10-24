@@ -19,6 +19,21 @@ The site will be built primarily for mobile devices. The look and functionality 
 ![DesktopWireframe](/wireframes/Desktop-Wireframe.png)
 
 ## Features ##
+#### Site layout and basic functionality. ####
+- Game board with 16 face down cards on page load.
+- Basic nav set to trigger modals on click, with hover colour set for distinction.
+- How to Play uses JavaScript to open a modal with play instructions in an ordered list format, a close button, and to close the modal when the user clicks outside of the modal. Css is utilised to style the numbers in the ordered list.
+- Start uses JavaScript to open a modal with play modes, a start button which will start the game timer and simultaneously close the modal, a close button, and to close the modal when the user clicks outside of the modal. Css will be utilised to mark the selected game mode.
+- Reset uses JavaScript to open a modal with reset warning, a close button, a reset button which will reset the board and simultaneously close the modal, a cancel button which will close the modal and return the player tothe board and to close the modal when the user clicks outside of the modal.
+- A congratulations modal is triggered when a game is comleted which shows a congratulations message, a play again button which opens the start modal, a close button, and to close the modal when the user clicks outside of the modal.
+
+#### The game. ####
+- Clicking or tapping a card will flip it face up. The player will also have the opportunity to flip the card face down again if it is the only card face up.
+- Clicking or tapping a second card will trigger JavaScript to check if it is a match to the first. 
+	- If it is, it will be highlighted green for 1 second, and both cards removed (hidden) on the board. 
+	- If not it will be highlighted red for 2 seconds and both cards will be returned face down.
+	- If the player has chosen to play in ridiculous mode  and they select a pair that does not match, any remaining cards on the board will be shuffled. Hidden (matched) cards will remain locked. 
+- Once all cards are matched a congratulations modal is triggered and the time taken to complete is shown.
 
 ## Technologies ##
 
@@ -105,9 +120,11 @@ Her GitHub Repository can be found here:
 
 ### Syntax ###
 #### w3schools ####
-Code for Modals amended from *https://www.w3schools.com/howto/howto_css_modals.asp*
+Base code for Modals amended from *https://www.w3schools.com/howto/howto_css_modals.asp*
 
 #### Stack Overflow ####
+Code for making Javascript work on multiple modals from *https://stackoverflow.com/questions/40645032/creating-multiple-modals-on-a-single-page*
+</br>
 Code for styling the `<ol>` numbers *https://stackoverflow.com/questions/23610151/can-you-style-ordered-list-numbers*
 
 

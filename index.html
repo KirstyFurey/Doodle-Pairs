@@ -16,18 +16,19 @@
         <div id="nav-div">
 		<h1 class="nav-title">Doodle Pairs</h1>	
           <ul class="nav-items">
-            <li class="nav-li" id="htp"><button id="htp-btn">HOW TO PLAY</button></li>
-            <li class="nav-li" id="play-mode"><button id="pm-btn">PLAY MODE</button></li>
-            <li class="nav-li" id="start"><a href="#">START</a></li>
-            <li class="nav-li" id="reset"><button id="reset-btn">RESET</button></li>
+            <li class="nav-li" id="htp"><button class="modal-button" href="#myModal1">HOW TO PLAY</button></li>
+            <!--<li class="nav-li" id="play-mode"><button id="pm-btn">PLAY MODE</button></li>-->
+            <li class="nav-li" id="start"><button class="modal-button" href="#myModal2">START</button></li>
+            <li class="nav-li" id="reset"><button class="modal-button" href="#myModal3">RESET</button></li>
           </ul>
         </div>
       </nav>
-      <div id="htp-modal" class="modal">
+     <!--The modals-->
+      <div id="myModal1" class="modal">
         <!-- how to play content -->
         <div class="modal-content">
-          <span id="htp-close">&times;</span>
-          <p id="htp-title">How to play</p>
+          <span class="close">&times;</span>
+          <h3 id="htp-title">How to play</h3>
           <ol id="htp-list">
 			  <li>Select the number of cards to match in 'Play Mode' and decide if you want to play in 'ridiculous' mode.</li>
 			  <li>Hit start to begin and start timer.</li>
@@ -38,12 +39,12 @@
           </ol>
         </div>
       </div>
-      <div id="pm-modal" class="modal">
-        <!-- play mode content -->
+      <div id="myModal2" class="modal">
+        <!-- start content -->
         <div class="modal-content">
-          <span id="pm-close">&times;</span>
-          <p id="pm-title">Play mode</p>
-          <p id="pm-content">Select your play mode:</p>
+          <span class="close">&times;</span>
+          <h3 id="start-title">Play mode</h3>
+          <p id="start-content">Select your play mode:</p>
           <button class="play-mode-button">16 Cards</button>
           <br>
           <button class="play-mode-button">24 Cards</button>
@@ -57,13 +58,14 @@
             <br>
             <p id="ridic-expl">&lpar;ridiculous mode shuffles the entire deck each time you flip a pair that does not match - see how to play for instructions&rpar;</p>
           </div>
+          <button id="start-button">START GAME</button>
         </div>
       </div>		
-      <div id="reset-modal" class="modal">
+      <div id="myModal3" class="modal">
         <!-- reset content -->
         <div class="modal-content">
-          <span id="reset-close">&times;</span>
-          <p id="reset-title">Are you sure you want to reset?</p>
+          <span class="close">&times;</span>
+          <h3 id="reset-title">Are you sure you want to reset?</h3>
           <p id="reset-content">All progress will be lost and the board will be re-set</p>
           <button id="hard-reset">Reset</button>
           <br>
@@ -71,6 +73,7 @@
         </div>
       </div>
 	</header>	
+	<!--The game board-->
 	<main>
 		<div id="game-board">
 			<ul class="deck" id="card-deck">
