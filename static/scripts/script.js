@@ -69,6 +69,8 @@ window.onclick = function(event) {
   }
 }
 */
+
+
 //Modal writing code amended from https://www.w3schools.com/howto/howto_css_modals.asp
 // Making Javascript work on multiple modals - code amended from : https://stackoverflow.com/questions/40645032/creating-multiple-modals-on-a-single-page 
 
@@ -116,3 +118,98 @@ var cancel = document.getElementById("cancel");
 cancel.onclick = function() {
 	resetModal.style.display = "none"
 }
+
+
+//Play again button clicked
+let playAgain = document.getElementById("play-again");
+let startNewGame = document.getElementById("myModal2");
+let closeCongrats = document.getElementById("myModal4");
+
+playAgain.onclick = function() {
+	startNewGame.style.display = "block";
+	closeCongrats.style.display = "none";
+}
+
+
+//show deck relevant to play mode selection
+//document.getElementsByClassName("deck-1").style.display = "none";
+//document.getElementsByClassName("deck-2").style.display = "none";
+//document.getElementsByClassName("deck-3").style.display = "none";
+//document.getElementsByClassName("deck-4").style.display = "none";
+/*
+document.getElementById("card-deck").style.display = "none";
+
+let startGame = document.getElementById("start-button");
+let deck16 = document.getElementById("16-deck");
+let deck24 = document.getElementById("24-deck");
+let deck32 = document.getElementById("32-deck");
+let deck64 = document.getElementById("64-deck");
+
+let deck1 = document.getElementsByClassName("deck-1");
+let deck2 = document.getElementsByClassName("deck-2");
+let deck3 = document.getElementsByClassName("deck-3");
+let deck4 = document.getElementsByClassName("deck-4");
+
+let closeStartMod = document.getElementById("myModal2");
+
+startGame.onclick = function() {
+	if (deck16.checked) {
+		closeStartMod.style.display = "none";
+		deck1.style.display = "block"
+	}
+	else if (deck24.checked) {
+		closeStartMod.style.display = "none";
+		deck2.style.display = "block"
+	}
+	else if (deck32.checked) {
+		closeStartMod.style.display = "none";
+		deck3.style.display = "block"
+	}
+	else if (deck64.checked) {
+		closeStartMod.style.display = "none";
+		deck4.style.display = "block"
+	}
+	else alert ('Please select how many cards to play');
+}
+
+*/
+document.getElementById("card-deck-16").style.display = "none";
+document.getElementById("card-deck-24").style.display = "none";
+document.getElementById("card-deck-32").style.display = "none";
+document.getElementById("card-deck-64").style.display = "none";
+
+let startGame = document.getElementById("start-button");
+
+let deck16 = document.getElementById("16-deck");
+let deck24 = document.getElementById("24-deck");
+let deck32 = document.getElementById("32-deck");
+let deck64 = document.getElementById("64-deck");
+
+let deck1 = document.getElementById("card-deck-16");
+let deck2 = document.getElementById("card-deck-24");
+let deck3 = document.getElementById("card-deck-32");
+let deck4 = document.getElementById("card-deck-64");
+
+let closeStartMod = document.getElementById("myModal2");
+
+
+startGame.onclick = function() {
+	if (deck16.checked) {
+		closeStartMod.style.display = "none";
+		deck1.style.display = "block"
+	}
+	else if (deck24.checked) {
+		closeStartMod.style.display = "none";
+		deck2.style.display = "block"
+	}
+	else if (deck32.checked) {
+		closeStartMod.style.display = "none";
+		deck3.style.display = "block"
+	}
+	else if (deck64.checked) {
+		closeStartMod.style.display = "none";
+		deck4.style.display = "block"
+	}
+	else alert ('Please select how many cards to play');
+}
+

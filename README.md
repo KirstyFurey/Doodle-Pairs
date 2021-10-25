@@ -1,7 +1,7 @@
 # Doodle Pairs
 ## _JavaScript Matching Pairs Game_
 
-Welcome to Doodle Pairs, a JavaScript dependant matching pairs game.
+Welcome to Doodle Pairs, a matching pairs game.
 </br>
 The premise of the game is simple, turn over cards to match them and clear the board.
 </br>
@@ -22,10 +22,10 @@ The site will be built primarily for mobile devices. The look and functionality 
 #### Site layout and basic functionality. ####
 - Game board with 16 face down cards on page load.
 - Basic nav set to trigger modals on click, with hover colour set for distinction.
-- How to Play uses JavaScript to open a modal with play instructions in an ordered list format, a close button, and to close the modal when the user clicks outside of the modal. Css is utilised to style the numbers in the ordered list.
-- Start uses JavaScript to open a modal with play modes, a start button which will start the game timer and simultaneously close the modal, a close button, and to close the modal when the user clicks outside of the modal. Css will be utilised to mark the selected game mode.
+- How to Play uses JavaScript to open a modal with play instructions in an ordered list format, a close button, and to close the modal when the user clicks outside of the modal.
+- Start uses JavaScript to open a modal with play modes, a start button which will start the game timer and simultaneously close the modal, a close button, and to close the modal when the user clicks outside of the modal. 
 - Reset uses JavaScript to open a modal with reset warning, a close button, a reset button which will reset the board and simultaneously close the modal, a cancel button which will close the modal and return the player tothe board and to close the modal when the user clicks outside of the modal.
-- A congratulations modal is triggered when a game is comleted which shows a congratulations message, a play again button which opens the start modal, a close button, and to close the modal when the user clicks outside of the modal.
+- A congratulations modal is triggered when a game is completed which shows a congratulations message, a play again button which opens the start modal, a close button, and to close the modal when the user clicks outside of the modal.
 
 #### The game. ####
 - Clicking or tapping a card will flip it face up. The player will also have the opportunity to flip the card face down again if it is the only card face up.
@@ -56,7 +56,7 @@ Doodle Font on all text from *https://www.cdnfonts.com/happy-doodle.font*
 ### Programs ###
 
 #### Adobe Dreamweaver ####
-Used for writing HTML for content, and CSS3 for styling of my website.
+Used for writing HTML, CSS and JavaScript.
 
 #### Adobe Photoshop ####
 Used to create background and card deck
@@ -92,6 +92,8 @@ I used *https://validator.w3.org/#validate_by_input* to validate the HTML code
 
 ### CSS Validation ###
 I used *https://jigsaw.w3.org/css-validator/#validate_by_input* to validate my CSS.
+
+### JavaScript Validation ###
 
 ### Accessibility Validation ###
 I used *https://webaim.org/resources/contrastchecker/* to check the contrast of text on my site.

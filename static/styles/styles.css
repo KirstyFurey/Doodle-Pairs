@@ -94,7 +94,7 @@ button:hover {
 }
 
 /*Modal content*/
-#reset-title, #start-title, #htp-title {
+h3 {
 	font-size: 2em;
 	font-weight: 900;
 	text-align: center;
@@ -140,6 +140,7 @@ ol li:before {
 }
 
 /*Start modal*/
+/* REMOVED FOR PLAY TEST, RE ADD IF IGNORING
 .play-mode-button {
 	border: 2px solid black;
 	border-radius: 40px;
@@ -150,7 +151,7 @@ ol li:before {
 .play-mode-button:hover, .play-mode-button:focus {
 	border: 2px solid #30bb34;
 	color: #30bb34;
-}
+}*/
 
 #ridiculous-p {
 	font-size: 1.2em;
@@ -183,6 +184,20 @@ ol li:before {
 	margin-top: 10px;
 }
 
+/*Congrats modal*/
+#play-again {
+	font-size: 1.5em;
+	font-weight: 900;
+	border: 2px solid black;
+	border-radius: 40px;
+	padding: 10px 20px;
+	margin-bottom: 30px;
+}
+
+#play-again:hover {
+	border: 2px solid #30bb34;
+}
+
 /*Site background*/
 main {
 	background-image: url("../images/Doodle-Tile-opacity.jpg");
@@ -194,7 +209,7 @@ main {
 }
 
 /*Game board div*/
-#game-board {
+#game-board-64, #game-board-32, #game-board-24, #game-board-16 {
 	background-color: white;
 	display: flex;
 	justify-content: center;
@@ -240,6 +255,7 @@ footer a {
 	text-decoration: none;
 	color: black;
 }
+
 
 /*Mobile Device CSS*/
 @media only screen and (max-width: 991px) {
