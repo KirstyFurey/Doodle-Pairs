@@ -199,24 +199,21 @@ let deck4 = document.getElementById("card-deck-64");
 
 let closeStartMod = document.getElementById("myModal2");
 
-//let gameBoardStyle = document.querySelector(".deck");
-
-//let myElement = document.querySelector("#game-board-16");
-
 startGame.onclick = function() {
 	if (deck16.checked) {
 		closeStartMod.style.display = "none";
 		deck1.style.display = "block"
-       /* gameBoardStyle.style.backgroundColor = "white";
+		let gameBoardStyle = document.querySelector(".deck-16");
+        gameBoardStyle.style.backgroundColor = "white";
         gameBoardStyle.style.display = "flex";
         gameBoardStyle.style.justifyContent = "center";
         gameBoardStyle.style.width = "50vw";
-
+		let myElement = document.querySelector("#game-board-16");
         myElement.style.display = "flex";
         myElement.style.flexWrap = "wrap";
         myElement.style.justifyContent = "center";
         myElement.style.paddingInlineStart = "0px";
-        myElement.style.padding = "10px";*/
+        myElement.style.padding = "10px";
 	}
 	else if (deck24.checked) {
 		closeStartMod.style.display = "none";

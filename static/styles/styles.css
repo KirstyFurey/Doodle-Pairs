@@ -215,7 +215,7 @@ main {
 	justify-content: center;
 	flex-wrap: wrap;
 	align-items: center;
-	width: 50vw;
+	/*width: 50vw;*/
 }
 
 /*unordered list for all cards*/
@@ -291,7 +291,7 @@ footer a {
 		padding: 30px;
 	}
 	
-	#game-board {
+	#game-board, #game-board-16 {
 		width: 90vw;
 	}
 	
