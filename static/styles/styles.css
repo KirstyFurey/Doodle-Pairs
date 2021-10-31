@@ -209,17 +209,17 @@ main {
 }
 
 /*Game board div*/
-#game-board-64, #game-board-32, #game-board-24, #game-board-16 {
+#game-board-64, #game-board-32, #game-board-24, #game-board-16, #board-face-down-16 {
 	background-color: white;
 	display: flex;
 	justify-content: center;
-	/*flex-wrap: wrap;
-	align-items: center;*/
+	flex-wrap: wrap;
+	align-items: center;
 	width: 50vw;
 }
 
 /*unordered list for all cards*/
-.deck {
+.deck, .fd-deck {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
@@ -228,13 +228,13 @@ main {
 }
 
 /*list item element for each card*/
-.card {
+.card, .face-down-deck {
 	list-style-type: none;
 	margin: 2px;
 }
 
 /*image for each card*/
-.card-item {
+.card-item, .face-down-card {
 	width: 10vw;
 	border: 1px solid black;
 	box-shadow: 6px 4px 5px 1px #d6d6d6;

@@ -113,12 +113,17 @@ window.onclick = function(event) {
 // Get the button to cancel reset and return to game
 var resetModal = document.getElementById("myModal3");
 var cancel = document.getElementById("cancel");
+var reset = document.getElementById("hard-reset");
 
 //Cancel button to close modal
 cancel.onclick = function() {
-	resetModal.style.display = "none"
+	resetModal.style.display = "none";
 }
 
+//Reset board
+reset.onclick  = function() {
+	window.location.reload();
+}
 
 //Play again button clicked
 let playAgain = document.getElementById("play-again");
@@ -173,10 +178,12 @@ startGame.onclick = function() {
 }
 
 */
+
 document.getElementById("card-deck-16").style.display = "none";
 document.getElementById("card-deck-24").style.display = "none";
 document.getElementById("card-deck-32").style.display = "none";
 document.getElementById("card-deck-64").style.display = "none";
+
 
 let startGame = document.getElementById("start-button");
 
@@ -192,11 +199,24 @@ let deck4 = document.getElementById("card-deck-64");
 
 let closeStartMod = document.getElementById("myModal2");
 
+//let gameBoardStyle = document.querySelector(".deck");
+
+//let myElement = document.querySelector("#game-board-16");
 
 startGame.onclick = function() {
 	if (deck16.checked) {
 		closeStartMod.style.display = "none";
 		deck1.style.display = "block"
+       /* gameBoardStyle.style.backgroundColor = "white";
+        gameBoardStyle.style.display = "flex";
+        gameBoardStyle.style.justifyContent = "center";
+        gameBoardStyle.style.width = "50vw";
+
+        myElement.style.display = "flex";
+        myElement.style.flexWrap = "wrap";
+        myElement.style.justifyContent = "center";
+        myElement.style.paddingInlineStart = "0px";
+        myElement.style.padding = "10px";*/
 	}
 	else if (deck24.checked) {
 		closeStartMod.style.display = "none";
@@ -212,4 +232,6 @@ startGame.onclick = function() {
 	}
 	else alert ('Please select how many cards to play');
 }
+
+
 
