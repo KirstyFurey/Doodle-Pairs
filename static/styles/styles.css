@@ -209,13 +209,13 @@ main {
 }
 
 .grid {
-    max-width: 960px;
+    max-width: 700px;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: center;
     padding-inline-start: 0px;
-    padding: 10px;
+    padding: 30px;
 	background-color: white;
 }
 
@@ -292,17 +292,51 @@ footer a {
 	.modal-content {
 		padding: 0px 10px;
 	}
+	/*
+	.card {
+		width: 100px;
+		height: 138px;
+	}*/
+}
+
+@media only screen and (max-width: 740px) {
+	.grid {
+		max-width: 550px;
+	}
 	
+	.card {
+		width: 100px;
+		height: 138px;
+	}
+}
+@media only screen and (max-width: 620px) {
+	.grid {
+		max-width: 400px;
+	}
+	
+	.card {
+		width: 80px;
+		height: 112px;
+	}
+}
+
+@media only screen and (max-width: 550px) {
+	main {
+		padding: 25px;
+	}
+	
+	.grid {
+		max-width: 290px;
+		padding: 15px;
+	}
+	
+	.card {
+		width: 50px;
+		height: 70px;
+	}
 }
 
 @media only screen and (max-width: 500px) {
-	#game-board {
-		width: 90vw;
-	}
-	
-	.card-item {
-		width: 15vw;
-	}
 	.social-logos {
         width: 4vw;
     }
@@ -310,14 +344,15 @@ footer a {
 
 @media only screen and (max-width: 360px) {
 	main {
-		padding: 30px;
+		padding: 15px;
+	}
+	.grid {
+		max-width: 250px;
+		padding: 5px;
 	}
 	
-	#game-board, #game-board-16 {
-		width: 90vw;
-	}
-	
-	.card-item {
-		width: 14vw;
+	.card {
+		width: 40px;
+		height: 56px;
 	}
 }
