@@ -117,6 +117,14 @@ Her GitHub Repository can be found here:
 </br>
 *https://github.com/sandraisrael*
 </br>
+</br>
+And this tutorial by Tania Rascia with step-by-step of plain JavaScript and really useful explanations.
+</br>
+*https://www.taniarascia.com/how-to-create-a-memory-game-super-mario-with-plain-javascript/*
+</br>
+The GitHub Repository is here:
+</br>
+*https://github.com/taniarascia/memory*
 
 ### Support ###
 

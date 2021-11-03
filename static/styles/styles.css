@@ -208,6 +208,28 @@ main {
 	align-items: center;
 }
 
+.grid {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding-inline-start: 0px;
+    padding: 10px;
+	background-color: white;
+}
+
+.card {
+    margin: 5px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 184px;
+    width: 133px;
+	border: 1px solid black;
+	box-shadow: 6px 4px 5px 1px #d6d6d6;
+}
+
 /*Game board div*/
 /*#game-board-64, #game-board-32, #game-board-24, #game-board-16, #board-face-down-16 {
 	background-color: white;

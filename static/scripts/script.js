@@ -67,132 +67,163 @@ playAgain.onclick = function() {
 const cardsArray = [
 	{
 		name: 'alien',
-		img: 'images/alien.jpg',
+		img: 'static/images/alien.jpg',
 	},
 	{
 		name: 'antlers',
-		img: 'images/antlers.jpg',
+		img: 'static/images/antlers.jpg',
 	},
 	{
 		name: 'apple',
-		img: 'images/apple.jpg',
+		img: 'static/images/apple.jpg',
 	},
 	{
 		name: 'avocado',
-		img: 'images/avocado.jpg',
+		img: 'static/images/avocado.jpg',
 	},
 	{
 		name: 'broken-heart',
-		img: 'images/broken-heart.jpg',
+		img: 'static/images/broken-heart.jpg',
 	},
 	{
 		name: 'cactus',
-		img: 'images/cactus.jpg',
+		img: 'static/images/cactus.jpg',
 	},
 	{
 		name: 'cat',
-		img: 'images/cat.jpg',
+		img: 'static/images/cat.jpg',
 	},
 	{
 		name: 'cloud',
-		img: 'images/cloud.jpg',
+		img: 'static/images/cloud.jpg',
 	},
 	{
 		name: 'diamond',
-		img: 'images/diamond.jpg',
+		img: 'static/images/diamond.jpg',
 	},
 	{
 		name: 'donut',
-		img: 'images/donut.jpg',
+		img: 'static/images/donut.jpg',
 	},
 	{
 		name: 'drink',
-		img: 'images/drink.jpg',
+		img: 'static/images/drink.jpg',
 	},
 	{
 		name: 'egg',
-		img: 'images/egg.jpg',
+		img: 'static/images/egg.jpg',
 	},
 	{
 		name: 'eye',
-		img: 'images/eye.jpg',
+		img: 'static/images/eye.jpg',
 	},
 	{
 		name: 'glasses',
-		img: 'images/glasses.jpg',
+		img: 'static/images/glasses.jpg',
 	},
 	{
 		name: 'ice-cream',
-		img: 'images/ice-cream.jpg',
+		img: 'static/images/ice-cream.jpg',
 	},
 	{
 		name: 'ice-lolly',
-		img: 'images/ice-lolly.jpg',
+		img: 'static/images/ice-lolly.jpg',
 	},
 	{
 		name: 'lightning',
-		img: 'images/lightning.jpg',
+		img: 'static/images/lightning.jpg',
 	},
 	{
 		name: 'lollypop',
-		img: 'images/lollypop.jpg',
+		img: 'static/images/lollypop.jpg',
 	},
 	{
 		name: 'milk-carton',
-		img: 'images/milk-carton.jpg',
+		img: 'static/images/milk-carton.jpg',
 	},
 	{
 		name: 'mountains',
-		img: 'images/mountains.jpg',
+		img: 'static/images/mountains.jpg',
 	},
 	{
 		name: 'moustache',
-		img: 'images/moustache.jpg',
+		img: 'static/images/moustache.jpg',
 	},
 	{
 		name: 'music',
-		img: 'images/music.jpg',
+		img: 'static/images/music.jpg',
 	},
 	{
 		name: 'nope',
-		img: 'images/nope.jpg',
+		img: 'static/images/nope.jpg',
 	},
 	{
 		name: 'paper-plane',
-		img: 'images/paper-plane.jpg',
+		img: 'static/images/paper-plane.jpg',
 	},
 	{
 		name: 'pizza',
-		img: 'images/pizza.jpg',
+		img: 'static/images/pizza.jpg',
 	},
 	{
 		name: 'sunrise',
-		img: 'images/sunrise.jpg',
+		img: 'static/images/sunrise.jpg',
 	},
 	{
 		name: 'tea',
-		img: 'images/tea.jpg',
+		img: 'static/images/tea.jpg',
 	},
 	{
 		name: 'umbrella',
-		img: 'images/umbrella.jpg',
+		img: 'static/images/umbrella.jpg',
 	},
 	{
 		name: 'unicorn',
-		img: 'images/unicorn.jpg',
+		img: 'static/images/unicorn.jpg',
 	},
 	{
 		name: 'whale',
-		img: 'images/whale.jpg',
+		img: 'static/images/whale.jpg',
 	},
 	{
 		name: 'yes',
-		img: 'images/yes.jpg',
+		img: 'static/images/yes.jpg',
 	},
 	{
 		name: 'yin-yang',
-		img: 'images/antlers.jpg',
+		img: 'static/images/yin-yang.jpg',
 	},
 ]
 console.log(cardsArray);
+
+//code amended from https://www.taniarascia.com/how-to-create-a-memory-game-super-mario-with-plain-javascript/
+// Grab the div with an id of root
+const game = document.getElementById('game-board')
+
+// Create a section with a class of grid
+const grid = document.createElement('section')
+grid.setAttribute('class', 'grid')
+
+// Append the grid section to the game div
+game.appendChild(grid)
+
+console.log(game);
+
+// For each item in the cardsArray array...
+cardsArray.forEach((item) => {
+  // Create a div
+  const card = document.createElement('div')
+
+  // Apply a card class to that div
+  card.classList.add('card')
+
+  // Set the data-name attribute of the div to the cardsArray name
+  card.dataset.name = item.name
+
+  // Apply the background image of the div to the cardsArray image
+  card.style.backgroundImage = `url(${item.img})`
+
+  // Append the div to the grid section
+  grid.appendChild(card)
+})
 
