@@ -194,10 +194,9 @@ const cardsArray = [
 		img: 'static/images/yin-yang.jpg',
 	},
 ]
-console.log(cardsArray);
 
 //code amended from https://www.taniarascia.com/how-to-create-a-memory-game-super-mario-with-plain-javascript/
-// Grab the div with an id of root
+// Grab the game board div
 const game = document.getElementById('game-board')
 
 // Create a section with a class of grid
@@ -207,11 +206,13 @@ grid.setAttribute('class', 'grid')
 // Append the grid section to the game div
 game.appendChild(grid)
 
-console.log(game);
 
-// For each item in the cardsArray array...
-cardsArray.forEach((item) => {
-  // Create a div
+// Duplicate array to create a match for each card
+let gameGrid = cardsArray.concat(cardsArray)
+
+// For each item in the gameGrid array...
+gameGrid.forEach(item => {
+   // Create a div
   const card = document.createElement('div')
 
   // Apply a card class to that div
