@@ -232,6 +232,12 @@ gameGrid.forEach(item => {
   grid.appendChild(card);
 })
 
+grid.addEventListener('click', function (event) {
+  let clicked = event.target;
+  clicked.classList.toggle('selected');
+});
+
+/*
 // Add event listener to grid & allow max 2 cards to be selected
 let count = 0;
 
@@ -245,10 +251,20 @@ grid.addEventListener('click', function (event) {
 });
 
 grid.addEventListener('click', function (event) {
+  let deselect = event.target;
+  if (deselect.nodeName === 'SECTION') { return; }
+  if ((count == 1) || (deselect.classList == 'selected')) {
+    deselect.classList.toggle('selected');
+  }
+});
+*/
+
+/*
+grid.addEventListener('click', function (event) {
   let click2 = event.target;
   if ((count == 1) || (click2.classList == 'selected')) {
     click2.classList.toggle('selected');
   }
 })
-
+*/
 
