@@ -195,7 +195,8 @@ const cardsArray = [
 	},
 ]
 
-//code amended from https://www.taniarascia.com/how-to-create-a-memory-game-super-mario-with-plain-javascript/
+//code for deck creation and card shuffle from https://www.taniarascia.com/how-to-create-a-memory-game-super-mario-with-plain-javascript/
+
 // Grab the game board div
 const game = document.getElementById('game-board')
 
@@ -208,23 +209,46 @@ game.appendChild(grid)
 
 
 // Duplicate array to create a match for each card
-let gameGrid = cardsArray.concat(cardsArray)
+let gameGrid = cardsArray.concat(cardsArray);
+
+// Randomize game grid on each load
+gameGrid.sort(() => 0.5 - Math.random());
 
 // For each item in the gameGrid array...
 gameGrid.forEach(item => {
    // Create a div
-  const card = document.createElement('div')
+  const card = document.createElement('div');
 
   // Apply a card class to that div
-  card.classList.add('card')
+  card.classList.add('card');
 
   // Set the data-name attribute of the div to the cardsArray name
-  card.dataset.name = item.name
+  card.dataset.name = item.name;
 
   // Apply the background image of the div to the cardsArray image
-  card.style.backgroundImage = `url(${item.img})`
+  card.style.backgroundImage = `url(${item.img})`;
 
   // Append the div to the grid section
-  grid.appendChild(card)
+  grid.appendChild(card);
 })
+
+// Add event listener to grid & allow max 2 cards to be selected
+let count = 0;
+
+grid.addEventListener('click', function (event) {
+  let clicked = event.target;
+  if (clicked.nodeName === 'SECTION') { return; }
+  if (count < 2) {
+    count++;
+    clicked.classList.add('selected');
+  }
+});
+
+grid.addEventListener('click', function (event) {
+  let click2 = event.target;
+  if ((count == 1) || (click2.classList == 'selected')) {
+    click2.classList.toggle('selected');
+  }
+})
+
 
