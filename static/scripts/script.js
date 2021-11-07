@@ -232,9 +232,45 @@ gameGrid.forEach(item => {
   grid.appendChild(card);
 })
 
+//Matches function
+// Add match CSS
+const match = () => {
+  var selected = document.querySelectorAll('.selected')
+  selected.forEach((card) => {
+    card.classList.add('match')
+  })
+}
+
+let count = 0;
+let firstGuess = ''
+let secondGuess = ''
+
+//add 'selected' class on click & toggle
 grid.addEventListener('click', function (event) {
   let clicked = event.target;
+  if (clicked.nodeName === 'SECTION') { return; } //do not allow the game board to be selected
   clicked.classList.toggle('selected');
+//call match function
+  if (count < 2) {
+    count++
+    if (count === 1) {
+      // Assign first guess
+      firstGuess = clicked.dataset.name
+      clicked.classList.add('selected')
+    } else {
+      // Assign second guess
+      secondGuess = clicked.dataset.name
+      clicked.classList.add('selected')
+    }
+    // If both guesses are not empty...
+    if (firstGuess !== '' && secondGuess !== '') {
+      // and the first guess matches the second match...
+      if (firstGuess === secondGuess) {
+        // run the match function
+        match()
+      }
+    }
+  }
 });
 
 /*
@@ -267,4 +303,5 @@ grid.addEventListener('click', function (event) {
   }
 })
 */
+
 

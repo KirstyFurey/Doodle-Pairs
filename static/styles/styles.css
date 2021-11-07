@@ -235,8 +235,10 @@ main {
 	border: 3px solid black;
 }
 
-.deselected {
-	border: 1px solid black;
+.match {
+	border: none;
+	box-shadow: none;
+    background-image: none !important;
 }
 
 /*Game board div*/
