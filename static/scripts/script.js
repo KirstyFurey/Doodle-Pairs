@@ -216,20 +216,28 @@ gameGrid.sort(() => 0.5 - Math.random());
 
 // For each item in the gameGrid array...
 gameGrid.forEach(item => {
-   // Create a div
+   // Create a parent div to hold front and back of cards
   const card = document.createElement('div');
-
   // Apply a card class to that div
   card.classList.add('card');
-
   // Set the data-name attribute of the div to the cardsArray name
   card.dataset.name = item.name;
-
+	
+  //front of the card
+  const front = document.createElement('div');
+  front.classList.add('front');
+  //back.style.backgroundImage = 'static/images/Deck.jpg';
+	
+  //back of the card with the individual image
+  const back = document.createElement('div');
+  back.classList.add('back');
   // Apply the background image of the div to the cardsArray image
-  card.style.backgroundImage = `url(${item.img})`;
+  back.style.backgroundImage = `url(${item.img})`;
 
   // Append the div to the grid section
   grid.appendChild(card);
+  card.appendChild(front);
+  card.appendChild(back);
 })
 
 //Matches function
@@ -245,6 +253,7 @@ let count = 0;
 let firstGuess = ''
 let secondGuess = ''
 let previousTarget = 'null'
+let delay = 1200
 
 //add 'selected' class on click & toggle
 grid.addEventListener('click', function (event) {
@@ -256,23 +265,25 @@ grid.addEventListener('click', function (event) {
     count++
     if (count === 1) {
       // Assign first guess
-      firstGuess = clicked.dataset.name
-      clicked.classList.add('selected')
+      firstGuess = clicked.parentNode.dataset.name
+      console.log(firstGuess)
+      clicked.parentNode.classList.add('selected')
     } else {
       // Assign second guess
-      secondGuess = clicked.dataset.name
-      clicked.classList.add('selected')
+      secondGuess = clicked.parentNode.dataset.name
+      console.log(secondGuess)
+      clicked.parentNode.classList.add('selected')
     }
     // If both guesses are not empty...
     if (firstGuess !== '' && secondGuess !== '') {
       // and the first guess matches the second match...
       if (firstGuess === secondGuess) {
-        // run the match function
-        match()
-        resetGuesses();
+        // run the match function, with 1200ms delay
+        setTimeout(match, delay)
+        setTimeout(resetGuesses, delay)
       }
       else {
-        resetGuesses();
+        setTimeout(resetGuesses, delay)
       }
     }
     previousTarget = clicked;
