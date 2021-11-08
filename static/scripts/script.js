@@ -244,12 +244,13 @@ const match = () => {
 let count = 0;
 let firstGuess = ''
 let secondGuess = ''
+let previousTarget = 'null'
 
 //add 'selected' class on click & toggle
 grid.addEventListener('click', function (event) {
   let clicked = event.target;
-  if (clicked.nodeName === 'SECTION') { return; } //do not allow the game board to be selected
-  clicked.classList.toggle('selected');
+  if (clicked.nodeName === 'SECTION' || clicked === previousTarget) { return; } //do not allow the game board to be selected
+  //clicked.classList.toggle('selected'); for ridiculous mode, off for now
 //call match function
   if (count < 2) {
     count++
@@ -268,10 +269,28 @@ grid.addEventListener('click', function (event) {
       if (firstGuess === secondGuess) {
         // run the match function
         match()
+        resetGuesses();
+      }
+      else {
+        resetGuesses();
       }
     }
+    previousTarget = clicked;
   }
 });
+
+
+// reset guesses to allow continued matches
+const resetGuesses = () => {
+  firstGuess = ''
+  secondGuess = ''
+  count = 0
+
+  var selected = document.querySelectorAll('.selected')
+  selected.forEach((card) => {
+    card.classList.remove('selected')
+  })
+}
 
 /*
 // Add event listener to grid & allow max 2 cards to be selected
