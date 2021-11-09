@@ -61,6 +61,13 @@ playAgain.onclick = function() {
 	closeCongrats.style.display = "none";
 }
 
+//load the deck and close start modal on hitting start button
+let startGame = document.getElementById('start-button');
+
+startGame.onclick = function() {
+	startNewGame.style.display = "none";
+}
+
 //The deck
 //array to hold all 32 cards
 const cardsArray = [
@@ -236,6 +243,8 @@ gameGrid.forEach(item => {
   grid.appendChild(card);
   card.appendChild(front);
   card.appendChild(back);
+	
+  gameGrid.object.style.display = 'none';
 })
 
 //Matches function
