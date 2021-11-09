@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en-gb">
+<head>
+<meta charset="UTF-8">	
+<meta name="viewport" content="width=device-width, initial-scale=1.0">		
+<title>Doodle Pairs</title>	
+<!--Doodle font from https://www.cdnfonts.com/happy-doodle.font-->
+<link href="http://fonts.cdnfonts.com/css/happy-doodle" rel="stylesheet">
+<!--External stylesheet-->	
+<link rel="stylesheet" href="static/styles/styles.css">		
+</head>
+
+<body>
+	<header>
+      <nav>  
+        <div id="nav-div">
+		<h1 class="nav-title">Doodle Pairs</h1>	
+          <ul class="nav-items">
+            <li class="nav-li" id="htp"><button class="modal-button" href="#myModal1">HOW TO PLAY</button></li>
+            <!--<li class="nav-li" id="play-mode"><button id="pm-btn">PLAY MODE</button></li>-->
+            <li class="nav-li" id="start"><button class="modal-button" href="#myModal2">START</button></li>
+            <li class="nav-li" id="reset"><button class="modal-button" href="#myModal3">RESET</button></li>
+            <li class="nav-li" id="congrats"><button class="modal-button" href="#myModal4">CONGRATS</button></li>
+          </ul>
+        </div>
+      </nav>
+     <!--The modals-->
+      <!--How to play-->
+      <div id="myModal1" class="modal">
+        <!-- how to play content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h3 id="htp-title">How to play</h3>
+          <ol id="htp-list">
+			  <li>Select the number of cards to match in 'Play Mode' and decide if you want to play in 'ridiculous' mode.</li>
+			  <li>Hit start to begin and start timer.</li>
+			  <li>Click/tap on a card to flip it face up. Click/tap the card again to return it face down - <strong><em>this is pretty important in 'ridiculous' mode!</em></strong></li>
+			  <li>Match a pair of cards to remove them from the board.</li>
+			  <li>If you're playing in 'ridiculous' mode and you flip a pair that does not match the entire board will re-shuffle - <strong><em>so be careful!</em></strong></li>
+			  <li>Once all the cards are matched, <strong><em>YOU WIN!</em></strong> and your time is shown. Why not try to beat it, or take on the challenge of 'ridiculous' mode!</li>
+          </ol>
+        </div>
+      </div>
+      <!--Start-->
+      <div id="myModal2" class="modal">
+        <!-- start content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h3 id="start-title">Play mode</h3>
+          <p id="start-content">Select your play mode:</p>
+          <button class="play-mode-button 16-deck">16 Cards</button>
+          <br>
+          <button class="play-mode-button 24-deck">24 Cards</button>
+          <br>
+          <button class="play-mode-button 32-deck">32 Cards</button>
+          <br>
+          <button class="play-mode-button 64-deck">64 Cards</button>
+          <br>
+          <br>
+          <div id="ridiculous-mode">
+          	<label for="ridic-cb" id="ridiculous-p">Play in ridiculous mode?</label>
+            <input type="checkbox" id="ridic-cb" name="ridic-cb">
+            <br>
+            <p id="ridic-expl">&lpar;ridiculous mode shuffles the entire deck each time you flip a pair that does not match - see how to play for instructions&rpar;</p>
+          </div>
+          <button id="start-button">START GAME</button>
+        </div>
+      </div>
+      <!--Reset-->
+      <div id="myModal3" class="modal">
+        <!-- reset content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h3 id="reset-title">Are you sure you want to reset?</h3>
+          <p id="reset-content">All progress will be lost and the board will be re-set</p>
+          <button id="hard-reset">Reset</button>
+          <br>
+          <button id="cancel">Cancel</button>
+        </div>
+      </div>
+      <!--Congratulations modal-->
+      <div id="myModal4" class="modal">
+        <!-- congratulations content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h3 id="congrats-title">CONGRATULATIONS!</h3>
+          <p id="congrats-content">you completed the game in:</p>
+          <div id="game-time"></div>
+          <button id="play-again">PLAY AGAIN?</button>
+        </div>
+      </div>
+	</header>	
+	<!--The game board-->
+	<main>
+		<div id="game-board">
+			<ul class="deck" id="card-deck">
+				<li class="card deck-4" type="alien"><img class="card-item" src="static/images/alien.jpg" alt="alien"/></li>
+				<li class="card deck-4" type="antlers"><img class="card-item" src="static/images/antlers.jpg" alt="antlers"/></li>
+				<li class="card deck-4" type="apple"><img class="card-item" src="static/images/apple.jpg" alt="apple"/></li>
+				<li class="card deck-4" type="avocado"><img class="card-item" src="static/images/avocado.jpg" alt="avocado"/></li>
+				<li class="card deck-4" type="broken-heart"><img class="card-item" src="static/images/broken-heart.jpg" alt="broken-heart"/></li>
+				<li class="card deck-4" type="cactus"><img class="card-item" src="static/images/cactus.jpg" alt="cactus"/></li>
+				<li class="card deck-4" type="cat"><img class="card-item" src="static/images/cat.jpg" alt="cat"/></li>
+				<li class="card deck-4" type="cloud"><img class="card-item" src="static/images/cloud.jpg" alt="cloud"/></li>
+				<li class="card deck-4" type="diamond"><img class="card-item" src="static/images/diamond.jpg" alt="diamond"/></li>
+				<li class="card deck-4" type="donut"><img class="card-item" src="static/images/donut.jpg" alt="donut"/></li>
+				<li class="card deck-4" type="drink"><img class="card-item" src="static/images/drink.jpg" alt="drink"/></li>
+				<li class="card deck-4" type="egg"><img class="card-item" src="static/images/egg.jpg" alt="egg"/></li>
+				<li class="card deck-4" type="eye"><img class="card-item" src="static/images/eye.jpg" alt="eye"/></li>
+				<li class="card deck-4" type="glasses"><img class="card-item" src="static/images/glasses.jpg" alt="glasses"/></li>
+				<li class="card deck-4" type="ice-cream"><img class="card-item" src="static/images/ice-cream.jpg" alt="ice-cream"/></li>
+				<li class="card deck-4" type="ice-lolly"><img class="card-item" src="static/images/ice-lolly.jpg" alt="ice-lolly"/></li>
+				<li class="card deck-3 deck-4" type="lightning"><img class="card-item" src="static/images/lightning.jpg" alt="lightning"/></li>
+				<li class="card deck-3 deck-4" type="lollypop"><img class="card-item" src="static/images/lollypop.jpg" alt="lollypop"/></li>
+				<li class="card deck-3 deck-4" type="milk-carton"><img class="card-item" src="static/images/milk-carton.jpg" alt="milk-carton"/></li>
+				<li class="card deck-3 deck-4" type="mountains"><img class="card-item" src="static/images/mountains.jpg" alt="mountains"/></li>
+				<li class="card deck-2 deck-3 deck-4" type="moustache"><img class="card-item" src="static/images/moustache.jpg" alt="moustache"/></li>
+				<li class="card deck-2 deck-3 deck-4" type="music"><img class="card-item" src="static/images/music.jpg" alt="music"/></li>
+				<li class="card deck-2 deck-3 deck-4" type="nope"><img class="card-item" src="static/images/nope.jpg" alt="nope"/></li>
+				<li class="card deck-2 deck-3 deck-4" type="paper-plane"><img class="card-item" src="static/images/paper-plane.jpg" alt="paper-plane"/></li>
+				<li class="card deck-1 deck-2 deck-3 deck-4" type="pizza"><img class="card-item" src="static/images/pizza.jpg" alt="pizza"/></li>
+				<li class="card deck-1 deck-2 deck-3 deck-4" type="sunrise"><img class="card-item" src="static/images/sunrise.jpg" alt="sunrise"/></li>
+				<li class="card deck-1 deck-2 deck-3 deck-4" type="tea"><img class="card-item" src="static/images/tea.jpg" alt="tea"/></li>
+				<li class="card deck-1 deck-2 deck-3 deck-4" type="umbrella"><img class="card-item" src="static/images/umbrella.jpg" alt="umbrella"/></li>
+				<li class="card deck-1 deck-2 deck-3 deck-4" type="unicorn"><img class="card-item" src="static/images/unicorn.jpg" alt="unicorn"/></li>
+				<li class="card deck-1 deck-2 deck-3 deck-4" type="whale"><img class="card-item" src="static/images/whale.jpg" alt="whale"/></li>
+				<li class="card deck-1 deck-2 deck-3 deck-4" type="yes"><img class="card-item" src="static/images/yes.jpg" alt="yes"/></li>
+				<li class="card deck-1 deck-2 deck-3 deck-4" type="yin-yang"><img class="card-item" src="static/images/yin-yang.jpg" alt="yin-yang"/></li>
+            <!--Duplicate cards for matching-->
+				<li class="card deck-4" type="alien"><img class="card-item" src="static/images/alien.jpg" alt="alien"/></li>
+				<li class="card deck-4" type="antlers"><img class="card-item" src="static/images/antlers.jpg" alt="antlers"/></li>
+				<li class="card deck-4" type="apple"><img class="card-item" src="static/images/apple.jpg" alt="apple"/></li>
+				<li class="card deck-4" type="avocado"><img class="card-item" src="static/images/avocado.jpg" alt="avocado"/></li>
+				<li class="card deck-4" type="broken-heart"><img class="card-item" src="static/images/broken-heart.jpg" alt="broken-heart"/></li>
+				<li class="card deck-4" type="cactus"><img class="card-item" src="static/images/cactus.jpg" alt="cactus"/></li>
+				<li class="card deck-4" type="cat"><img class="card-item" src="static/images/cat.jpg" alt="cat"/></li>
+				<li class="card deck-4" type="cloud"><img class="card-item" src="static/images/cloud.jpg" alt="cloud"/></li>
+				<li class="card deck-4" type="diamond"><img class="card-item" src="static/images/diamond.jpg" alt="diamond"/></li>
+				<li class="card deck-4" type="donut"><img class="card-item" src="static/images/donut.jpg" alt="donut"/></li>
+				<li class="card deck-4" type="drink"><img class="card-item" src="static/images/drink.jpg" alt="drink"/></li>
+				<li class="card deck-4" type="egg"><img class="card-item" src="static/images/egg.jpg" alt="egg"/></li>
+				<li class="card deck-4" type="eye"><img class="card-item" src="static/images/eye.jpg" alt="eye"/></li>
+				<li class="card deck-4" type="glasses"><img class="card-item" src="static/images/glasses.jpg" alt="glasses"/></li>
+				<li class="card deck-4" type="ice-cream"><img class="card-item" src="static/images/ice-cream.jpg" alt="ice-cream"/></li>
+				<li class="card deck-4" type="ice-lolly"><img class="card-item" src="static/images/ice-lolly.jpg" alt="ice-lolly"/></li>
+				<li class="card deck-3 deck-4" type="lightning"><img class="card-item" src="static/images/lightning.jpg" alt="lightning"/></li>
+				<li class="card deck-3 deck-4" type="lollypop"><img class="card-item" src="static/images/lollypop.jpg" alt="lollypop"/></li>
+				<li class="card deck-3 deck-4" type="milk-carton"><img class="card-item" src="static/images/milk-carton.jpg" alt="milk-carton"/></li>
+				<li class="card deck-3 deck-4" type="mountains"><img class="card-item" src="static/images/mountains.jpg" alt="mountains"/></li>
+				<li class="card deck-2 deck-3 deck-4" type="moustache"><img class="card-item" src="static/images/moustache.jpg" alt="moustache"/></li>
+				<li class="card deck-2 deck-3 deck-4" type="music"><img class="card-item" src="static/images/music.jpg" alt="music"/></li>
+				<li class="card deck-2 deck-3 deck-4" type="nope"><img class="card-item" src="static/images/nope.jpg" alt="nope"/></li>
+				<li class="card deck-2 deck-3 deck-4" type="paper-plane"><img class="card-item" src="static/images/paper-plane.jpg" alt="paper-plane"/></li>
+				<li class="card deck-1 deck-2 deck-3 deck-4" type="pizza"><img class="card-item" src="static/images/pizza.jpg" alt="pizza"/></li>
+				<li class="card deck-1 deck-2 deck-3 deck-4" type="sunrise"><img class="card-item" src="static/images/sunrise.jpg" alt="sunrise"/></li>
+				<li class="card deck-1 deck-2 deck-3 deck-4" type="tea"><img class="card-item" src="static/images/tea.jpg" alt="tea"/></li>
+				<li class="card deck-1 deck-2 deck-3 deck-4" type="umbrella"><img class="card-item" src="static/images/umbrella.jpg" alt="umbrella"/></li>
+				<li class="card deck-1 deck-2 deck-3 deck-4" type="unicorn"><img class="card-item" src="static/images/unicorn.jpg" alt="unicorn"/></li>
+				<li class="card deck-1 deck-2 deck-3 deck-4" type="whale"><img class="card-item" src="static/images/whale.jpg" alt="whale"/></li>
+				<li class="card deck-1 deck-2 deck-3 deck-4" type="yes"><img class="card-item" src="static/images/yes.jpg" alt="yes"/></li>
+				<li class="card deck-1 deck-2 deck-3 deck-4" type="yin-yang"><img class="card-item" src="static/images/yin-yang.jpg" alt="yin-yang"/></li>
+			</ul>
+		</div>
+	</main>
+	<footer>
+        <div id="footer-socials">
+          <p>&copy; KIRSTY FUREY 2021. ALL RIGHTS RESERVED</p>
+          <a href="https://www.linkedin.com/in/kirsty-furey-071991105" target="_blank">
+              <img class="social-logos" id="linkedin" src="static/images/linked-in-logo.png" alt="Linkedin"></a>
+          <a href="https://github.com/KirstyFurey" target="_blank">
+              <img class="social-logos" id="github" src="static/images/github-logo.png" alt="Github"></a>
+          <a href="https://www.instagram.com/kirstyfureyphotographer" target="_blank">
+              <img class="social-logos" id="instagram" src="static/images/instagram-logo.png" alt="Instagram" ></a>
+          <a href="https://www.facebook.com/kirstyfureyphotographer" target="_blank">	
+              <img class="social-logos" id="facebook" src="static/images/facebook-logo.png" alt="Facebook"></a>	
+        </div>
+        <p id="doodle-attr"><a href="https://www.freepik.com/vectors/icons" target="_blank">Icons vector created by rawpixel.com - www.freepik.com</a></p>
+	</footer>
+<!--External JavaScript-->	
+<script type="text/javascript" src="static/scripts/script.js"></script>	
+</body>
+</html>

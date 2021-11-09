@@ -1,6 +1,5 @@
 //Modal writing code amended from https://www.w3schools.com/howto/howto_css_modals.asp
 // Making Javascript work on multiple modals - code amended from : https://stackoverflow.com/questions/40645032/creating-multiple-modals-on-a-single-page 
-
 // Get the button that opens the modal
 var btn = document.querySelectorAll("button.modal-button");
 
@@ -258,7 +257,12 @@ let delay = 1200
 //add 'selected' class on click & toggle
 grid.addEventListener('click', function (event) {
   let clicked = event.target;
-  if (clicked.nodeName === 'SECTION' || clicked === previousTarget) { return; } //do not allow the game board to be selected
+  //do not allow the game board to be selected
+  if (clicked.nodeName === 'SECTION' || 
+  //do not allow the same card to be clicked twice in a row
+  clicked === previousTarget || 
+  //do not allow a matched pair to be clicked again  
+  clicked.parentNode.classList.contains('selected')) { return; } 
   //clicked.classList.toggle('selected'); for ridiculous mode, off for now
 //call match function
   if (count < 2) {
@@ -289,7 +293,6 @@ grid.addEventListener('click', function (event) {
     previousTarget = clicked;
   }
 });
-
 
 // reset guesses to allow continued matches
 const resetGuesses = () => {

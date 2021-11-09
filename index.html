@@ -48,13 +48,17 @@
           <span class="close">&times;</span>
           <h3 id="start-title">Play mode</h3>
           <p id="start-content">Select your play mode:</p>
-          <button class="play-mode-button 16-deck">16 Cards</button>
+          <input type="radio" id="16-deck" name="deck-choice" value="16-deck">
+          <label for="16-deck">16 Cards</label>
           <br>
-          <button class="play-mode-button 24-deck">24 Cards</button>
+         <!-- <input type="radio" id="24-deck" name="deck-choice" value="24-deck">
+          <label for="24-deck">24 Cards</label>
+          <br>-->
+          <input type="radio" id="32-deck" name="deck-choice" value="32-deck">
+          <label for="32-deck">32 Cards</label>
           <br>
-          <button class="play-mode-button 32-deck">32 Cards</button>
-          <br>
-          <button class="play-mode-button 64-deck">64 Cards</button>
+          <input type="radio" id="64-deck" name="deck-choice" value="64-deck">
+          <label for="64-deck">64 Cards</label>
           <br>
           <br>
           <div id="ridiculous-mode">
@@ -93,73 +97,6 @@
 	<!--The game board-->
 	<main>
 		<div id="game-board">
-			<ul class="deck" id="card-deck">
-				<li class="card deck-4" type="alien"><img class="card-item" src="static/images/alien.jpg" alt="alien"/></li>
-				<li class="card deck-4" type="antlers"><img class="card-item" src="static/images/antlers.jpg" alt="antlers"/></li>
-				<li class="card deck-4" type="apple"><img class="card-item" src="static/images/apple.jpg" alt="apple"/></li>
-				<li class="card deck-4" type="avocado"><img class="card-item" src="static/images/avocado.jpg" alt="avocado"/></li>
-				<li class="card deck-4" type="broken-heart"><img class="card-item" src="static/images/broken-heart.jpg" alt="broken-heart"/></li>
-				<li class="card deck-4" type="cactus"><img class="card-item" src="static/images/cactus.jpg" alt="cactus"/></li>
-				<li class="card deck-4" type="cat"><img class="card-item" src="static/images/cat.jpg" alt="cat"/></li>
-				<li class="card deck-4" type="cloud"><img class="card-item" src="static/images/cloud.jpg" alt="cloud"/></li>
-				<li class="card deck-4" type="diamond"><img class="card-item" src="static/images/diamond.jpg" alt="diamond"/></li>
-				<li class="card deck-4" type="donut"><img class="card-item" src="static/images/donut.jpg" alt="donut"/></li>
-				<li class="card deck-4" type="drink"><img class="card-item" src="static/images/drink.jpg" alt="drink"/></li>
-				<li class="card deck-4" type="egg"><img class="card-item" src="static/images/egg.jpg" alt="egg"/></li>
-				<li class="card deck-4" type="eye"><img class="card-item" src="static/images/eye.jpg" alt="eye"/></li>
-				<li class="card deck-4" type="glasses"><img class="card-item" src="static/images/glasses.jpg" alt="glasses"/></li>
-				<li class="card deck-4" type="ice-cream"><img class="card-item" src="static/images/ice-cream.jpg" alt="ice-cream"/></li>
-				<li class="card deck-4" type="ice-lolly"><img class="card-item" src="static/images/ice-lolly.jpg" alt="ice-lolly"/></li>
-				<li class="card deck-3 deck-4" type="lightning"><img class="card-item" src="static/images/lightning.jpg" alt="lightning"/></li>
-				<li class="card deck-3 deck-4" type="lollypop"><img class="card-item" src="static/images/lollypop.jpg" alt="lollypop"/></li>
-				<li class="card deck-3 deck-4" type="milk-carton"><img class="card-item" src="static/images/milk-carton.jpg" alt="milk-carton"/></li>
-				<li class="card deck-3 deck-4" type="mountains"><img class="card-item" src="static/images/mountains.jpg" alt="mountains"/></li>
-				<li class="card deck-2 deck-3 deck-4" type="moustache"><img class="card-item" src="static/images/moustache.jpg" alt="moustache"/></li>
-				<li class="card deck-2 deck-3 deck-4" type="music"><img class="card-item" src="static/images/music.jpg" alt="music"/></li>
-				<li class="card deck-2 deck-3 deck-4" type="nope"><img class="card-item" src="static/images/nope.jpg" alt="nope"/></li>
-				<li class="card deck-2 deck-3 deck-4" type="paper-plane"><img class="card-item" src="static/images/paper-plane.jpg" alt="paper-plane"/></li>
-				<li class="card deck-1 deck-2 deck-3 deck-4" type="pizza"><img class="card-item" src="static/images/pizza.jpg" alt="pizza"/></li>
-				<li class="card deck-1 deck-2 deck-3 deck-4" type="sunrise"><img class="card-item" src="static/images/sunrise.jpg" alt="sunrise"/></li>
-				<li class="card deck-1 deck-2 deck-3 deck-4" type="tea"><img class="card-item" src="static/images/tea.jpg" alt="tea"/></li>
-				<li class="card deck-1 deck-2 deck-3 deck-4" type="umbrella"><img class="card-item" src="static/images/umbrella.jpg" alt="umbrella"/></li>
-				<li class="card deck-1 deck-2 deck-3 deck-4" type="unicorn"><img class="card-item" src="static/images/unicorn.jpg" alt="unicorn"/></li>
-				<li class="card deck-1 deck-2 deck-3 deck-4" type="whale"><img class="card-item" src="static/images/whale.jpg" alt="whale"/></li>
-				<li class="card deck-1 deck-2 deck-3 deck-4" type="yes"><img class="card-item" src="static/images/yes.jpg" alt="yes"/></li>
-				<li class="card deck-1 deck-2 deck-3 deck-4" type="yin-yang"><img class="card-item" src="static/images/yin-yang.jpg" alt="yin-yang"/></li>
-            <!--Duplicate cards for matching-->
-				<li class="card deck-4" type="alien"><img class="card-item" src="static/images/alien.jpg" alt="alien"/></li>
-				<li class="card deck-4" type="antlers"><img class="card-item" src="static/images/antlers.jpg" alt="antlers"/></li>
-				<li class="card deck-4" type="apple"><img class="card-item" src="static/images/apple.jpg" alt="apple"/></li>
-				<li class="card deck-4" type="avocado"><img class="card-item" src="static/images/avocado.jpg" alt="avocado"/></li>
-				<li class="card deck-4" type="broken-heart"><img class="card-item" src="static/images/broken-heart.jpg" alt="broken-heart"/></li>
-				<li class="card deck-4" type="cactus"><img class="card-item" src="static/images/cactus.jpg" alt="cactus"/></li>
-				<li class="card deck-4" type="cat"><img class="card-item" src="static/images/cat.jpg" alt="cat"/></li>
-				<li class="card deck-4" type="cloud"><img class="card-item" src="static/images/cloud.jpg" alt="cloud"/></li>
-				<li class="card deck-4" type="diamond"><img class="card-item" src="static/images/diamond.jpg" alt="diamond"/></li>
-				<li class="card deck-4" type="donut"><img class="card-item" src="static/images/donut.jpg" alt="donut"/></li>
-				<li class="card deck-4" type="drink"><img class="card-item" src="static/images/drink.jpg" alt="drink"/></li>
-				<li class="card deck-4" type="egg"><img class="card-item" src="static/images/egg.jpg" alt="egg"/></li>
-				<li class="card deck-4" type="eye"><img class="card-item" src="static/images/eye.jpg" alt="eye"/></li>
-				<li class="card deck-4" type="glasses"><img class="card-item" src="static/images/glasses.jpg" alt="glasses"/></li>
-				<li class="card deck-4" type="ice-cream"><img class="card-item" src="static/images/ice-cream.jpg" alt="ice-cream"/></li>
-				<li class="card deck-4" type="ice-lolly"><img class="card-item" src="static/images/ice-lolly.jpg" alt="ice-lolly"/></li>
-				<li class="card deck-3 deck-4" type="lightning"><img class="card-item" src="static/images/lightning.jpg" alt="lightning"/></li>
-				<li class="card deck-3 deck-4" type="lollypop"><img class="card-item" src="static/images/lollypop.jpg" alt="lollypop"/></li>
-				<li class="card deck-3 deck-4" type="milk-carton"><img class="card-item" src="static/images/milk-carton.jpg" alt="milk-carton"/></li>
-				<li class="card deck-3 deck-4" type="mountains"><img class="card-item" src="static/images/mountains.jpg" alt="mountains"/></li>
-				<li class="card deck-2 deck-3 deck-4" type="moustache"><img class="card-item" src="static/images/moustache.jpg" alt="moustache"/></li>
-				<li class="card deck-2 deck-3 deck-4" type="music"><img class="card-item" src="static/images/music.jpg" alt="music"/></li>
-				<li class="card deck-2 deck-3 deck-4" type="nope"><img class="card-item" src="static/images/nope.jpg" alt="nope"/></li>
-				<li class="card deck-2 deck-3 deck-4" type="paper-plane"><img class="card-item" src="static/images/paper-plane.jpg" alt="paper-plane"/></li>
-				<li class="card deck-1 deck-2 deck-3 deck-4" type="pizza"><img class="card-item" src="static/images/pizza.jpg" alt="pizza"/></li>
-				<li class="card deck-1 deck-2 deck-3 deck-4" type="sunrise"><img class="card-item" src="static/images/sunrise.jpg" alt="sunrise"/></li>
-				<li class="card deck-1 deck-2 deck-3 deck-4" type="tea"><img class="card-item" src="static/images/tea.jpg" alt="tea"/></li>
-				<li class="card deck-1 deck-2 deck-3 deck-4" type="umbrella"><img class="card-item" src="static/images/umbrella.jpg" alt="umbrella"/></li>
-				<li class="card deck-1 deck-2 deck-3 deck-4" type="unicorn"><img class="card-item" src="static/images/unicorn.jpg" alt="unicorn"/></li>
-				<li class="card deck-1 deck-2 deck-3 deck-4" type="whale"><img class="card-item" src="static/images/whale.jpg" alt="whale"/></li>
-				<li class="card deck-1 deck-2 deck-3 deck-4" type="yes"><img class="card-item" src="static/images/yes.jpg" alt="yes"/></li>
-				<li class="card deck-1 deck-2 deck-3 deck-4" type="yin-yang"><img class="card-item" src="static/images/yin-yang.jpg" alt="yin-yang"/></li>
-			</ul>
 		</div>
 	</main>
 	<footer>
