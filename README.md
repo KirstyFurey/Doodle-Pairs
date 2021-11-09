@@ -51,7 +51,7 @@ Used as a remote repository to store website commited changes, and deploy websit
 Doodle icons via Rawpixel.com *https://www.freepik.com/vectors/icons*
 
 ### Fonts ###
-Doodle Font on all text from *https://www.cdnfonts.com/happy-doodle.font*
+Amatic SC font from Google Fonts: *https://fonts.google.com/specimen/Amatic+SC?category=Handwriting*
 
 ### Programs ###
 
@@ -66,6 +66,7 @@ Used to create background and card deck
 ### User Tests ###
 
 ### Bugs and Fixes ###
+- The first test via GitHub Pages showed the font I initially linked to was not being displayed, so I found one very similar on Google Fonts to switch it out. 
 
 ### Repository Link ###
 The site remote repository can be located here:
