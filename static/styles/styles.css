@@ -5,6 +5,7 @@
 body {
 	/*Font Amatic SC: https://fonts.google.com/specimen/Amatic+SC?category=Handwriting*/
 	font-family: 'Amatic SC', cursive;
+	font-weight: 900;
 	letter-spacing: 0.2em;
 	margin: 0;
 }
@@ -82,9 +83,8 @@ button:hover {
 .close {
     color: #aaa;
     float: right;
-    font-size: 18px;
-    font-weight: bold;
-	margin: 3px 5px 0px 0px;
+    font-size: 3em;
+	margin: -10px 5px 0px 0px;
 }
 
 .close:hover {

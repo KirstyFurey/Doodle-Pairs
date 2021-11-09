@@ -11,20 +11,20 @@ var spans = document.getElementsByClassName("close");
 
 // When the user clicks the button, open the modal
 for (var i = 0; i < btn.length; i++) {
- 	btn[i].onclick = function(e) {
+    btn[i].onclick = function(e) {
       e.preventDefault();
-      modal = document.querySelector(e.target.getAttribute("href"));
+      let modal = document.querySelector(e.target.getAttribute("href"));
       modal.style.display = "block";
-   }
+    }
 }
 
 // When the user clicks on <span> (x), close the modal
-for (var i = 0; i < spans.length; i++) {
- 	spans[i].onclick = function() {
+for (var j = 0; j < spans.length; j++) {
+    spans[j].onclick = function() {
       for (var index in modals) {
-        if (typeof modals[index].style !== 'undefined') modals[index].style.display = "none";    
-        }
-      }
+      if (typeof modals[index].style !== 'undefined') modals[index].style.display = "none";    
+    }
+    }
 }
 
 // When the user clicks anywhere outside of the modal, close it
@@ -205,7 +205,6 @@ grid.setAttribute('class', 'grid')
 
 // Append the grid section to the game div
 game.appendChild(grid)
-
 
 // Duplicate array to create a match for each card
 let gameGrid = cardsArray.concat(cardsArray);
