@@ -61,16 +61,112 @@ playAgain.onclick = function() {
 	closeCongrats.style.display = "none";
 }
 
-//load the deck and close start modal on hitting start button
-const startGame = document.getElementById('start-button');
+//The decks
+//array to hold 8 cards for 16 card game
+const cardsArray16 = [
+	{
+		name: 'alien',
+		img: 'static/images/alien.jpg',
+	},
+	{
+		name: 'antlers',
+		img: 'static/images/antlers.jpg',
+	},
+	{
+		name: 'apple',
+		img: 'static/images/apple.jpg',
+	},
+	{
+		name: 'avocado',
+		img: 'static/images/avocado.jpg',
+	},
+	{
+		name: 'broken-heart',
+		img: 'static/images/broken-heart.jpg',
+	},
+	{
+		name: 'cactus',
+		img: 'static/images/cactus.jpg',
+	},
+	{
+		name: 'cat',
+		img: 'static/images/cat.jpg',
+	},
+	{
+		name: 'cloud',
+		img: 'static/images/cloud.jpg',
+	},
+]
 
-startGame.onclick = function() {
-	startNewGame.style.display = "none";
-}
-
-//The deck
-//array to hold all 32 cards
-const cardsArray = [
+//array to hold 16 cards for 32 card game
+const cardsArray32 = [
+	{
+		name: 'alien',
+		img: 'static/images/alien.jpg',
+	},
+	{
+		name: 'antlers',
+		img: 'static/images/antlers.jpg',
+	},
+	{
+		name: 'apple',
+		img: 'static/images/apple.jpg',
+	},
+	{
+		name: 'avocado',
+		img: 'static/images/avocado.jpg',
+	},
+	{
+		name: 'broken-heart',
+		img: 'static/images/broken-heart.jpg',
+	},
+	{
+		name: 'cactus',
+		img: 'static/images/cactus.jpg',
+	},
+	{
+		name: 'cat',
+		img: 'static/images/cat.jpg',
+	},
+	{
+		name: 'cloud',
+		img: 'static/images/cloud.jpg',
+	},
+	{
+		name: 'diamond',
+		img: 'static/images/diamond.jpg',
+	},
+	{
+		name: 'donut',
+		img: 'static/images/donut.jpg',
+	},
+	{
+		name: 'drink',
+		img: 'static/images/drink.jpg',
+	},
+	{
+		name: 'egg',
+		img: 'static/images/egg.jpg',
+	},
+	{
+		name: 'eye',
+		img: 'static/images/eye.jpg',
+	},
+	{
+		name: 'glasses',
+		img: 'static/images/glasses.jpg',
+	},
+	{
+		name: 'ice-cream',
+		img: 'static/images/ice-cream.jpg',
+	},
+	{
+		name: 'ice-lolly',
+		img: 'static/images/ice-lolly.jpg',
+	},
+]
+//array to hold all 32 cards for 64 card game
+const cardsArray64 = [
 	{
 		name: 'alien',
 		img: 'static/images/alien.jpg',
@@ -200,3 +296,28 @@ const cardsArray = [
 		img: 'static/images/yin-yang.jpg',
 	},
 ]
+
+//load the deck and close start modal on hitting start button
+const startGame = document.getElementById('start-button');
+
+startGame.onclick = function () {
+
+    //code for deck creation and card shuffle from https://www.taniarascia.com/how-to-create-a-memory-game-super-mario-with-plain-javascript/
+
+    // Grab the game board div
+    const game = document.getElementById('game-board');
+
+    // Create a section with a class of grid
+    const grid = document.createElement('section');
+    grid.setAttribute('class', 'grid');
+
+    // Append the grid section to the game div
+    game.appendChild(grid);
+
+    // Duplicate each array to create a match for each card
+    let gameGrid16 = cardsArray16.concat(cardsArray16);
+    let gameGrid32 = cardsArray32.concat(cardsArray32);
+    let gameGrid64 = cardsArray64.concat(cardsArray64);
+	
+	startNewGame.style.display = "none";
+}
