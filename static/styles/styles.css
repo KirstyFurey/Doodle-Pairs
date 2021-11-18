@@ -200,12 +200,14 @@ ol li:before {
 
 /*Site background*/
 main {
-	background-image: url("../images/Doodle-Tile-opacity.jpg");
+	
 	padding: 50px;
 	/*Sets the #game-board div to the centre of the page*/
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	background-image: url("../images/Doodle-Tile-opacity.jpg");
+	height: 100vh;
 }
 
 /*The cards*/
