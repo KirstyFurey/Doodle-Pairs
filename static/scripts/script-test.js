@@ -457,15 +457,15 @@ startGame.onclick = function () {
 	startNewGame.style.display = "none";
 }
 
-//disable the start button once a game has started
+//make the start button open the reset modal instead of the start modal once a game has started
 let gameOngoing = document.getElementById("start");
 let gameWarning = document.getElementsByClassName("grid")
 
 //syntax for the if statement from: https://stackoverflow.com/questions/26254957/if-class-exists-do-something-with-javascript
 gameOngoing.onclick = function () {
 	if (gameWarning.length > 0) {
-		alert ('cannot');
 		startNewGame.style.display = "none";
+		resetModal.style.display = "block";
 		
 	}
 }
