@@ -255,7 +255,7 @@ main {
 }
 
 .back {
-    transform: rotateY(180deg);
+    /*transform: rotateY(180deg); TURN ON ONCE ANIMATING*/
     background-color: white;
     background-size: contain;
     background-repeat: no-repeat;
