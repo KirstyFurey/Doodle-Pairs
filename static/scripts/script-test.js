@@ -305,7 +305,53 @@ let start16 = document.getElementById('16-deck');
 let start32 = document.getElementById('32-deck');
 let start64 = document.getElementById('64-deck');
 
+//the timer
+//timer code from: https://yogeshchauhan.com/how-to-calculate-elapsed-time-in-javascript/
+let sec = 0,
+min = 1,
+hour = 1;
+var secVar, minVar, hourVar;
+
+function setSec() {
+    if (sec >= 60) {
+    setMin();
+    sec = 0;
+    }
+    if (sec < 10) {
+    document.getElementById("seconds").innerHTML = "0" + sec;
+    } else {
+    document.getElementById("seconds").innerHTML = sec;
+    }
+    sec = sec + 1;
+    secVar = setTimeout(setSec, 1000);
+}
+
+function setMin() {
+    if (min >= 60) {
+    setHour();
+    min = 0;
+    }
+    if (min < 10) {
+    document.getElementById("minutes").innerHTML = "0" + min;
+    } else {
+    document.getElementById("minutes").innerHTML = min;
+    }
+    min = min + 1;
+}
+
+function setHour() {
+    if (hour < 10) {
+    document.getElementById("hour").innerHTML = "0" + hour;
+    } else {
+    document.getElementById("hour").innerHTML = hour;
+    }
+    hour = hour + 1;
+}
+
 startGame.onclick = function () {
+	//call start stopwatch function
+    setSec();
+
 	//if statement to create 16 card game
 	if (start16.checked === true) {
 		console.log(start16);
@@ -466,80 +512,8 @@ gameOngoing.onclick = function () {
 	if (gameWarning.length > 0) {
 		startNewGame.style.display = "none";
 		resetModal.style.display = "block";
-		
 	}
 }
 
 
-	
 
-/*
-startGame.onclick = function () {
-
-    //code for deck creation and card shuffle from https://www.taniarascia.com/how-to-create-a-memory-game-super-mario-with-plain-javascript/
-
-    // Grab the game board div
-    const game = document.getElementById('game-board');
-
-    // Create a section with a class of grid
-    const grid = document.createElement('section');
-    grid.setAttribute('class', 'grid');
-
-    // Append the grid section to the game div
-    game.appendChild(grid);
-
-    // Duplicate each array to create a match for each card
-    let gameGrid16 = cardsArray16.concat(cardsArray16);
-    let gameGrid32 = cardsArray32.concat(cardsArray32);
-    let gameGrid64 = cardsArray64.concat(cardsArray64);
-	
-	// Randomize game grid on each load
-    gameGrid16.sort(() => 0.5 - Math.random());
-	gameGrid32.sort(() => 0.5 - Math.random());
-	gameGrid64.sort(() => 0.5 - Math.random());
-	
-	
-	//store all 3 decks in a variable
-	let gameSelection = document.getElementsByName("deck-choice");
-	console.log(gameSelection);
-	
-	//store all 3 arrays in one variable
-	let gameArrays = [gameGrid16, gameGrid32, gameGrid64];
-	console.log(gameArrays);
-
-	if (gameSelection.input === 0) {
-	
-    // For each item in the gameGrid array...
-    gameGrid16.forEach(item => {
-      // Create a parent div to hold front and back of cards
-      const card = document.createElement('div');
-      // Apply a card class to that div
-      card.classList.add('card');
-      // Set the data-name attribute of the div to the cardsArray name
-      card.dataset.name = item.name;
-
-      //front of the card
-      const front = document.createElement('div');
-      front.classList.add('front');
-      //back.style.backgroundImage = 'static/images/Deck.jpg';
-
-      //back of the card with the individual image
-      const back = document.createElement('div');
-      back.classList.add('back');
-      // Apply the background image of the div to the cardsArray image
-      back.style.backgroundImage = `url(${item.img})`;
-		
-      // Append the div to the grid section
-      grid.appendChild(card);
-      card.appendChild(front);
-      card.appendChild(back);
-		
-      console.log(gameGrid16);
-	})
-	}
-	//append correct deck to the grid based on radio button selected
-	
-	
-	startNewGame.style.display = "none";
-}
-*/

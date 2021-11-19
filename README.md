@@ -136,7 +136,19 @@ Base code for Modals amended from *https://www.w3schools.com/howto/howto_css_mod
 #### Stack Overflow ####
 Code for making Javascript work on multiple modals from *https://stackoverflow.com/questions/40645032/creating-multiple-modals-on-a-single-page*
 </br>
-Code for styling the `<ol>` numbers *https://stackoverflow.com/questions/23610151/can-you-style-ordered-list-numbers*
+Code for styling the `<ol>` numbers 
 </br>
-Code for disabling start button once a game has started *https://stackoverflow.com/questions/26254957/if-class-exists-do-something-with-javascript*
+*https://stackoverflow.com/questions/23610151/can-you-style-ordered-list-numbers*
+</br>
+</br>
+Code for disabling start button once a game has started 
+</br>
+*https://stackoverflow.com/questions/26254957/if-class-exists-do-something-with-javascript*
+</br>
+</br>
+Code for stopwatch 
+</br>
+*https://yogeshchauhan.com/how-to-calculate-elapsed-time-in-javascript*
+</br>
+</br>
 
