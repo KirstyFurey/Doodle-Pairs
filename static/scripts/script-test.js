@@ -449,6 +449,7 @@ startGame.onclick = function () {
         //card.appendChild(front);
         card.appendChild(back);
 	})	
+		
     //else statement to ensure start button cannot be clicked without making a selection
 	} else {
 		return;
@@ -456,7 +457,18 @@ startGame.onclick = function () {
 	startNewGame.style.display = "none";
 }
 
-let gameOngoing = document.getElementsByClassName("grid");
+//disable the start button once a game has started
+let gameOngoing = document.getElementById("start");
+let gameWarning = document.getElementsByClassName("grid")
+
+//syntax for the if statement from: https://stackoverflow.com/questions/26254957/if-class-exists-do-something-with-javascript
+gameOngoing.onclick = function () {
+	if (gameWarning.length > 0) {
+		alert ('cannot');
+		startNewGame.style.display = "none";
+		
+	}
+}
 
 
 	
