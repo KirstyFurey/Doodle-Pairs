@@ -57,6 +57,7 @@ button:hover {
 /*The timer*/
 #timer {
 	text-align: center;
+	display: none;
 }
 
 /*Modals - code amended from https://www.w3schools.com/howto/howto_css_modals.asp*/

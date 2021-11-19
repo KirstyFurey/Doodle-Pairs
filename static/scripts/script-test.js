@@ -349,6 +349,8 @@ function setHour() {
 }
 
 startGame.onclick = function () {
+	let timer = document.getElementById('timer');
+	timer.style.display = "block";
 	//call start stopwatch function
     setSec();
 
