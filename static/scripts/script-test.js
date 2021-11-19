@@ -1,3 +1,5 @@
+"use strict";
+
 //Modal writing code amended from https://www.w3schools.com/howto/howto_css_modals.asp
 // Making Javascript work on multiple modals - code amended from : https://stackoverflow.com/questions/40645032/creating-multiple-modals-on-a-single-page 
 // Get the button that opens the modal
@@ -318,6 +320,45 @@ startGame.onclick = function () {
     let gameGrid16 = cardsArray16.concat(cardsArray16);
     let gameGrid32 = cardsArray32.concat(cardsArray32);
     let gameGrid64 = cardsArray64.concat(cardsArray64);
+	
+	// Randomize game grid on each load
+    gameGrid16.sort(() => 0.5 - Math.random());
+	gameGrid32.sort(() => 0.5 - Math.random());
+	gameGrid64.sort(() => 0.5 - Math.random());
+	
+	//store all 3 decks in a variable
+	let gameSelection = document.getElementsByName("deck-choice");
+	console.log(gameSelection);
+	
+	//store all 3 arrays in one variable
+	let gameArrays = [gameGrid16, gameGrid32, gameGrid64];
+	console.log(gameArrays);
+	/*
+    // For each item in the gameGrid array...
+    gameArrays.forEach(item => {
+    // Create a parent div to hold front and back of cards
+    const card = document.createElement('div');
+    // Apply a card class to that div
+    card.classList.add('card');
+    // Set the data-name attribute of the div to the cardsArray name
+    card.dataset.name = item.name;
+
+    //front of the card
+    const front = document.createElement('div');
+    front.classList.add('front');
+    //back.style.backgroundImage = 'static/images/Deck.jpg';
+
+    //back of the card with the individual image
+    const back = document.createElement('div');
+    back.classList.add('back');
+    // Apply the background image of the div to the cardsArray image
+    back.style.backgroundImage = `url(${item.img})`;
+	*/
+	//append correct deck to the grid based on radio button selected
+	//let x = gameSelection;
+	//if (gameSelection === 0) {
+		
+	//}
 	
 	startNewGame.style.display = "none";
 }
