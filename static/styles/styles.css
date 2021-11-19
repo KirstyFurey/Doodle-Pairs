@@ -207,8 +207,13 @@ main {
 	justify-content: center;
 	align-items: center;
 	background-image: url("../images/Doodle-Tile-opacity.jpg");
-	height: 100vh;
+	/*height: 100vh;*/
+	/*position: relative;*/
 }
+/*
+#game-board {
+	position: absolute;
+}*/
 
 /*The cards*/
 .grid {
@@ -241,7 +246,7 @@ main {
 
 .back, .front {
     position: absolute;
-    backface-visibility: hidden;
+   /* backface-visibility: hidden;  TURN ON TO HIDE IMAGE ON MATCH */
 }
 
 .front {

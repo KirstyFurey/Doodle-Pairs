@@ -301,7 +301,67 @@ const cardsArray64 = [
 
 //load the deck and close start modal on hitting start button
 const startGame = document.getElementById('start-button');
+let start16 = document.getElementById('16-deck');
 
+startGame.onclick = function () {
+	
+	if (start16.checked === true) {
+		console.log(start16);
+
+    //code for deck creation and card shuffle from https://www.taniarascia.com/how-to-create-a-memory-game-super-mario-with-plain-javascript/
+
+    // Grab the game board div
+    const game = document.getElementById('game-board');
+
+    // Create a section with a class of grid
+    const grid = document.createElement('section');
+    grid.setAttribute('class', 'grid');
+
+    // Append the grid section to the game div
+    game.appendChild(grid);
+
+    // Duplicate each array to create a match for each card
+    let gameGrid16 = cardsArray16.concat(cardsArray16);
+	
+	// Randomize game grid on each load
+    gameGrid16.sort(() => 0.5 - Math.random());
+
+      // For each item in the gameGrid array...
+      gameGrid16.forEach(item => {
+        // Create a parent div to hold front and back of cards
+        const card = document.createElement('div');
+        // Apply a card class to that div
+        card.classList.add('card');
+        // Set the data-name attribute of the div to the cardsArray name
+        card.dataset.name = item.name;
+
+        //front of the card
+        const front = document.createElement('div');
+        front.classList.add('front');
+        //back.style.backgroundImage = 'static/images/Deck.jpg';
+
+        //back of the card with the individual image
+        const back = document.createElement('div');
+        back.classList.add('back');
+        // Apply the background image of the div to the cardsArray image
+        back.style.backgroundImage = `url(${item.img})`;
+
+        // Append the div to the grid section
+        grid.appendChild(card);
+        //card.appendChild(front);
+        card.appendChild(back);
+		
+      console.log(gameGrid16);
+	})
+	} else {
+		return;
+	}
+	startNewGame.style.display = "none";
+	
+}
+
+
+/*
 startGame.onclick = function () {
 
     //code for deck creation and card shuffle from https://www.taniarascia.com/how-to-create-a-memory-game-super-mario-with-plain-javascript/
@@ -326,6 +386,7 @@ startGame.onclick = function () {
 	gameGrid32.sort(() => 0.5 - Math.random());
 	gameGrid64.sort(() => 0.5 - Math.random());
 	
+	
 	//store all 3 decks in a variable
 	let gameSelection = document.getElementsByName("deck-choice");
 	console.log(gameSelection);
@@ -333,32 +394,40 @@ startGame.onclick = function () {
 	//store all 3 arrays in one variable
 	let gameArrays = [gameGrid16, gameGrid32, gameGrid64];
 	console.log(gameArrays);
-	/*
+
+	if (gameSelection.input === 0) {
+	
     // For each item in the gameGrid array...
-    gameArrays.forEach(item => {
-    // Create a parent div to hold front and back of cards
-    const card = document.createElement('div');
-    // Apply a card class to that div
-    card.classList.add('card');
-    // Set the data-name attribute of the div to the cardsArray name
-    card.dataset.name = item.name;
+    gameGrid16.forEach(item => {
+      // Create a parent div to hold front and back of cards
+      const card = document.createElement('div');
+      // Apply a card class to that div
+      card.classList.add('card');
+      // Set the data-name attribute of the div to the cardsArray name
+      card.dataset.name = item.name;
 
-    //front of the card
-    const front = document.createElement('div');
-    front.classList.add('front');
-    //back.style.backgroundImage = 'static/images/Deck.jpg';
+      //front of the card
+      const front = document.createElement('div');
+      front.classList.add('front');
+      //back.style.backgroundImage = 'static/images/Deck.jpg';
 
-    //back of the card with the individual image
-    const back = document.createElement('div');
-    back.classList.add('back');
-    // Apply the background image of the div to the cardsArray image
-    back.style.backgroundImage = `url(${item.img})`;
-	*/
-	//append correct deck to the grid based on radio button selected
-	//let x = gameSelection;
-	//if (gameSelection === 0) {
+      //back of the card with the individual image
+      const back = document.createElement('div');
+      back.classList.add('back');
+      // Apply the background image of the div to the cardsArray image
+      back.style.backgroundImage = `url(${item.img})`;
 		
-	//}
+      // Append the div to the grid section
+      grid.appendChild(card);
+      card.appendChild(front);
+      card.appendChild(back);
+		
+      console.log(gameGrid16);
+	})
+	}
+	//append correct deck to the grid based on radio button selected
+	
 	
 	startNewGame.style.display = "none";
 }
+*/
