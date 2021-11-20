@@ -205,6 +205,10 @@ ol li:before {
 }
 
 /*Site background*/
+#placeholder {
+	height: 100vh;
+	background-image: url("../images/Doodle-Tile-opacity.jpg");
+}
 main {
 	
 	padding: 50px;
@@ -252,7 +256,7 @@ main {
 
 .back, .front {
     position: absolute;
-   /* backface-visibility: hidden;  TURN ON TO HIDE IMAGE ON MATCH */
+    backface-visibility: hidden;
 }
 
 .front {
@@ -261,7 +265,7 @@ main {
 }
 
 .back {
-    /*transform: rotateY(180deg); TURN ON ONCE ANIMATING*/
+    transform: rotateY(180deg);
     background-color: white;
     background-size: contain;
     background-repeat: no-repeat;
