@@ -471,6 +471,7 @@ startGame.onclick = function () {
           card.classList.remove('selected')
         })
 	}
+	
 	}
 	//
 	//
@@ -723,4 +724,24 @@ gameOngoing.onclick = function () {
 		startNewGame.style.display = "none";
 		resetModal.style.display = "block";
 	}
+}
+
+//check for game completion and open congrats modal
+let win16 = document.getElementsByClassName('match');
+let congrats16 = document.getElementById('myModal4');
+
+
+setInterval(timer16, 1000);
+
+function timer16() {
+    if (win16.length === 16) {
+      congrats16.style.display = "block";
+      let removeMatch = document.querySelectorAll('.match');
+      removeMatch.forEach((card) => {
+          card.classList.remove('match');
+      })
+      let hideGame = document.getElementById('game-board');
+      hideGame.style.display = "none";
+      hidePH.style.display = "block";
+    }
 }
