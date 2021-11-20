@@ -355,11 +355,12 @@ startGame.onclick = function () {
     setSec();
 	//hide the div holding the full height blank background
     hidePH.style.display = "none";
-	
+	//
+	//
 	//if statement to create 16 card game
 	if (start16.checked === true) {
 		console.log(start16);
-
+    
     //code for deck creation and card shuffle from https://www.taniarascia.com/how-to-create-a-memory-game-super-mario-with-plain-javascript/
 
     // Grab the game board div
@@ -403,7 +404,9 @@ startGame.onclick = function () {
         card.appendChild(front);
         card.appendChild(back);
 	})
-		
+    //
+	//16 deck animation, matches and gueses	
+
     //Matches function
     // Add match CSS
     const match = () => {
@@ -421,54 +424,56 @@ startGame.onclick = function () {
 
     //add 'selected' class on click & toggle
     grid.addEventListener('click', function (event) {
-    let clicked = event.target;
-    //do not allow the game board to be selected, do not allow the same card to be clicked twice in a row, do not allow a matched pair to be clicked again 
-    if (clicked.nodeName === 'SECTION' || clicked === previousTarget || clicked.parentNode.classList.contains('match')) { 
-      return; 
-    } 
-    //clicked.classList.toggle('selected'); for ridiculous mode, off for now
-    //call match function
-    if (count < 2) {
-      count++
-      if (count === 1) {
-        // Assign first guess
-        firstGuess = clicked.parentNode.dataset.name
-        console.log(firstGuess)
-        clicked.parentNode.classList.add('selected')
-      } else {
-        // Assign second guess
-        secondGuess = clicked.parentNode.dataset.name
-        console.log(secondGuess)
-        clicked.parentNode.classList.add('selected')
-      }
-      // If both guesses are not empty...
-      if (firstGuess !== '' && secondGuess !== '') {
-        // and the first guess matches the second match...
-        if (firstGuess === secondGuess) {
-        // run the match function, with 1200ms delay
-        setTimeout(match, delay)
-        setTimeout(resetGuesses, delay)
+        let clicked = event.target;
+        //do not allow the game board to be selected, do not allow the same card to be clicked twice in a row, do not allow a matched pair to be clicked again 
+        if (clicked.nodeName === 'SECTION' || clicked === previousTarget || clicked.parentNode.classList.contains('match')) { 
+          return; 
+        } 
+        //clicked.classList.toggle('selected'); for ridiculous mode, off for now
+        //call match function
+        if (count < 2) {
+          count++
+          if (count === 1) {
+            // Assign first guess
+            firstGuess = clicked.parentNode.dataset.name
+            console.log(firstGuess)
+            clicked.parentNode.classList.add('selected')
+          } else {
+            // Assign second guess
+            secondGuess = clicked.parentNode.dataset.name
+            console.log(secondGuess)
+            clicked.parentNode.classList.add('selected')
+          }
+          // If both guesses are not empty...
+          if (firstGuess !== '' && secondGuess !== '') {
+            // and the first guess matches the second match...
+            if (firstGuess === secondGuess) {
+              // run the match function, with 1200ms delay
+              setTimeout(match, delay)
+              setTimeout(resetGuesses, delay)
+            }
+            else {
+              setTimeout(resetGuesses, delay)
+            }
+          }
+          previousTarget = clicked;
         }
-        else {
-        setTimeout(resetGuesses, delay)
-        }
-      }
-      previousTarget = clicked;
-    }
     });
 
     // reset guesses to allow continued matches
     const resetGuesses = () => {
-      firstGuess = ''
-      secondGuess = ''
-      count = 0
+        firstGuess = ''
+        secondGuess = ''
+        count = 0
 
-      var selected = document.querySelectorAll('.selected')
-      selected.forEach((card) => {
-      card.classList.remove('selected')
-      })
-    }
+        var selected = document.querySelectorAll('.selected')
+        selected.forEach((card) => {
+          card.classList.remove('selected')
+        })
 	}
+	}
+	//
+	//
 	//if statement to create 32 card game
 	else if (start32.checked === true) {
 		console.log(start32);
@@ -513,10 +518,79 @@ startGame.onclick = function () {
 
         // Append the div to the grid section
         grid.appendChild(card);
-        //card.appendChild(front);
+        card.appendChild(front);
         card.appendChild(back);
 	})
+	
+	//32 deck animation, matches and guess
+
+    //Matches function
+    // Add match CSS
+    const match = () => {
+        var selected = document.querySelectorAll('.selected')
+        selected.forEach((card) => {
+        card.classList.add('match')
+        })
+    }
+
+    let count = 0;
+    let firstGuess = ''
+    let secondGuess = ''
+    let previousTarget = 'null'
+    let delay = 1200
+
+    //add 'selected' class on click & toggle
+    grid.addEventListener('click', function (event) {
+        let clicked = event.target;
+        //do not allow the game board to be selected, do not allow the same card to be clicked twice in a row, do not allow a matched pair to be clicked again 
+        if (clicked.nodeName === 'SECTION' || clicked === previousTarget || clicked.parentNode.classList.contains('match')) { 
+          return; 
+        } 
+        //clicked.classList.toggle('selected'); for ridiculous mode, off for now
+        //call match function
+        if (count < 2) {
+          count++
+          if (count === 1) {
+            // Assign first guess
+            firstGuess = clicked.parentNode.dataset.name
+            console.log(firstGuess)
+            clicked.parentNode.classList.add('selected')
+          } else {
+            // Assign second guess
+            secondGuess = clicked.parentNode.dataset.name
+            console.log(secondGuess)
+            clicked.parentNode.classList.add('selected')
+          }
+          // If both guesses are not empty...
+          if (firstGuess !== '' && secondGuess !== '') {
+            // and the first guess matches the second match...
+            if (firstGuess === secondGuess) {
+              // run the match function, with 1200ms delay
+              setTimeout(match, delay)
+              setTimeout(resetGuesses, delay)
+            }
+            else {
+              setTimeout(resetGuesses, delay)
+            }
+          }
+          previousTarget = clicked;
+        }
+    });
+
+    // reset guesses to allow continued matches
+    const resetGuesses = () => {
+        firstGuess = ''
+        secondGuess = ''
+        count = 0
+
+        var selected = document.querySelectorAll('.selected')
+        selected.forEach((card) => {
+          card.classList.remove('selected')
+        })
 	}
+	}
+	//
+	//
 	//if statement to create 64 card game
 	else if (start64.checked === true) {
 		console.log(start64);
@@ -561,14 +635,92 @@ startGame.onclick = function () {
 
         // Append the div to the grid section
         grid.appendChild(card);
-        //card.appendChild(front);
+        card.appendChild(front);
         card.appendChild(back);
 	})	
+    
+    //64 deck animation matches and guess
+		
+    //Matches function
+    // Add match CSS
+    const match = () => {
+        var selected = document.querySelectorAll('.selected')
+        selected.forEach((card) => {
+        card.classList.add('match')
+        })
+    }
+
+    let count = 0;
+    let firstGuess = ''
+    let secondGuess = ''
+    let previousTarget = 'null'
+    let delay = 1200
+
+    //add 'selected' class on click & toggle
+    grid.addEventListener('click', function (event) {
+        let clicked = event.target;
+        //do not allow the game board to be selected, do not allow the same card to be clicked twice in a row, do not allow a matched pair to be clicked again 
+        if (clicked.nodeName === 'SECTION' || clicked === previousTarget || clicked.parentNode.classList.contains('match')) { 
+          return; 
+        } 
+        //clicked.classList.toggle('selected'); for ridiculous mode, off for now
+        //call match function
+        if (count < 2) {
+          count++
+          if (count === 1) {
+            // Assign first guess
+            firstGuess = clicked.parentNode.dataset.name
+            console.log(firstGuess)
+            clicked.parentNode.classList.add('selected')
+          } else {
+            // Assign second guess
+            secondGuess = clicked.parentNode.dataset.name
+            console.log(secondGuess)
+            clicked.parentNode.classList.add('selected')
+          }
+          // If both guesses are not empty...
+          if (firstGuess !== '' && secondGuess !== '') {
+            // and the first guess matches the second match...
+            if (firstGuess === secondGuess) {
+              // run the match function, with 1200ms delay
+              setTimeout(match, delay)
+              setTimeout(resetGuesses, delay)
+            }
+            else {
+              setTimeout(resetGuesses, delay)
+            }
+          }
+          previousTarget = clicked;
+        }
+    });
+
+    // reset guesses to allow continued matches
+    const resetGuesses = () => {
+        firstGuess = ''
+        secondGuess = ''
+        count = 0
+
+        var selected = document.querySelectorAll('.selected')
+        selected.forEach((card) => {
+          card.classList.remove('selected')
+        })
+	}
 		
     //else statement to ensure start button cannot be clicked without making a selection
 	} else {
 		return;
 	}
 	startNewGame.style.display = "none";
+}
 
+//make the start button open the reset modal instead of the start modal once a game has started
+let gameOngoing = document.getElementById("start");
+let gameWarning = document.getElementsByClassName("grid");
+
+//syntax for the if statement from: https://stackoverflow.com/questions/26254957/if-class-exists-do-something-with-javascript
+gameOngoing.onclick = function () {
+	if (gameWarning.length > 0) {
+		startNewGame.style.display = "none";
+		resetModal.style.display = "block";
+	}
 }
