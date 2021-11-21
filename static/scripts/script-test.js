@@ -53,11 +53,10 @@ reset.onclick  = function() {
 	window.location.reload();
 }
 
-//Play again button clicked in congrats modal
-let playAgain = document.getElementById("play-again");
-let startNewGame = document.getElementById("myModal2");
+//Reset button clicked in congrats modal reloads window
+let congratsReset = document.getElementById("congrats-reset");
 
-playAgain.onclick = function() {
+congratsReset.onclick = function() {
 	window.location.reload();
 }
 
@@ -346,6 +345,7 @@ let start32 = document.getElementById('32-deck');
 let start64 = document.getElementById('64-deck');
 let hidePH = document.getElementById('placeholder');
 let timer = document.getElementById('timer');
+let startNewGame = document.getElementById("myModal2");
 
 startGame.onclick = function () {
 	timer.style.display = "block";
@@ -357,7 +357,6 @@ startGame.onclick = function () {
 	//
 	//if statement to create 16 card game
 	if (start16.checked === true) {
-		console.log(start16);
     
     //code for deck creation and card shuffle from https://www.taniarascia.com/how-to-create-a-memory-game-super-mario-with-plain-javascript/
 
@@ -475,8 +474,6 @@ startGame.onclick = function () {
 	//
 	//if statement to create 32 card game
 	else if (start32.checked === true) {
-		console.log(start32);
-
     //code for deck creation and card shuffle from https://www.taniarascia.com/how-to-create-a-memory-game-super-mario-with-plain-javascript/
 
     // Grab the game board div
@@ -592,7 +589,6 @@ startGame.onclick = function () {
 	//
 	//if statement to create 64 card game
 	else if (start64.checked === true) {
-		console.log(start64);
 
     //code for deck creation and card shuffle from https://www.taniarascia.com/how-to-create-a-memory-game-super-mario-with-plain-javascript/
 
@@ -715,7 +711,6 @@ startGame.onclick = function () {
 //make the start button open the reset modal instead of the start modal once a game has started
 let gameOngoing = document.getElementById("start");
 let gameWarning = document.getElementsByClassName("grid");
-
 //syntax for the if statement from: https://stackoverflow.com/questions/26254957/if-class-exists-do-something-with-javascript
 gameOngoing.onclick = function () {
 	if (gameWarning.length > 0) {
@@ -726,21 +721,15 @@ gameOngoing.onclick = function () {
 
 //check for game completion and open congrats modal
 let win16 = document.getElementsByClassName('match');
-let congrats16 = document.getElementById('myModal4');
-let winGame = document.getElementById('game-board');
+let congrats = document.getElementById('myModal4');
 
-
+//check every second for completion of 16 card game
 setInterval(timer16, 1000);
 
+//function checks for 16 match classes and once found displays the congrats modal, removes the match class from all cards, hides the gameboard, hides the timer and displays the doodle placeholder image.
 function timer16() {
     if (win16.length === 16) {
-      congrats16.style.display = "block";
-      let removeMatch = document.querySelectorAll('.match');
-      removeMatch.forEach((card) => {
-          card.classList.remove('match');
-      })
-    winGame.style.display = "none";
-    hidePH.style.display = "block";
-    timer.style.display = "none";
+      congrats.style.display = "block";
+      timer.style.display = "none";
 	}
 }

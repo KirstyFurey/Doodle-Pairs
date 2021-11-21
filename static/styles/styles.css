@@ -54,6 +54,11 @@ button:hover {
 	color: #30BB34;
 }
 
+/*The button for the congrats modal*/
+#congrats {
+	display: none;
+}
+
 /*The timer*/
 #timer {
 	text-align: center;
@@ -177,7 +182,7 @@ ol li:before {
 }
 
 /*Congrats modal*/
-#play-again {
+#congrats-reset {
 	font-size: 1.5em;
 	font-weight: 900;
 	border: 2px solid black;
@@ -186,7 +191,7 @@ ol li:before {
 	margin-bottom: 30px;
 }
 
-#play-again:hover {
+#congrats-reset:hover {
 	border: 2px solid #30bb34;
 }
 
