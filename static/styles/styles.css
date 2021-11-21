@@ -145,20 +145,6 @@ ol li:before {
 	display: inline-block;
 }
 
-/*Start modal*/
-/* REMOVED FOR PLAY TEST, RE ADD IF IGNORING
-.play-mode-button {
-	border: 2px solid black;
-	border-radius: 40px;
-	padding: 10px 40px;
-	margin-bottom: 10px;
-}
-
-.play-mode-button:hover, .play-mode-button:focus {
-	border: 2px solid #30bb34;
-	color: #30bb34;
-}*/
-
 #ridiculous-p {
 	font-size: 1.2em;
 	margin: 5px;
@@ -217,13 +203,7 @@ main {
 	justify-content: center;
 	align-items: center;
 	background-image: url("../images/Doodle-Tile-opacity.jpg");
-	/*height: 100vh;*/
-	/*position: relative;*/
 }
-/*
-#game-board {
-	position: absolute;
-}*/
 
 /*The cards*/
 .grid {
@@ -242,9 +222,6 @@ main {
     transition: all 0.4s linear;
     transform-style: preserve-3d;
     margin: 5px;
-    /*background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center center;*/
 }
 
 .card, .back, .front {
@@ -289,38 +266,6 @@ main {
 	box-shadow: none !important;
 }
 
-/*Game board div*/
-/*#game-board-64, #game-board-32, #game-board-24, #game-board-16, #board-face-down-16 {
-	background-color: white;
-	display: flex;
-	justify-content: center;
-	flex-wrap: wrap;
-	align-items: center;
-	/*width: 50vw;
-}
-
-/*unordered list for all cards*/
-/*.deck, .fd-deck {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	padding-inline-start: 0px;
-	padding: 10px;
-}
-
-/*list item element for each card*/
-/*.card, .face-down-deck {
-	list-style-type: none;
-	margin: 2px;
-}
-
-/*image for each card*/
-/*.card-item, .face-down-card {
-	width: 10vw;
-	border: 1px solid black;
-	box-shadow: 6px 4px 5px 1px #d6d6d6;
-}
-
 /*Footer*/
 footer {
 	font-size: 0.7em;
@@ -351,11 +296,6 @@ footer a {
 	.modal-content {
 		padding: 0px 10px;
 	}
-	/*
-	.card {
-		width: 100px;
-		height: 138px;
-	}*/
 }
 
 @media only screen and (max-width: 740px) {

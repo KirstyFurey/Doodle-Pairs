@@ -56,11 +56,9 @@ reset.onclick  = function() {
 //Play again button clicked in congrats modal
 let playAgain = document.getElementById("play-again");
 let startNewGame = document.getElementById("myModal2");
-let closeCongrats = document.getElementById("myModal4");
 
 playAgain.onclick = function() {
-	startNewGame.style.display = "block";
-	closeCongrats.style.display = "none";
+	window.location.reload();
 }
 
 //The decks
@@ -347,9 +345,9 @@ let start16 = document.getElementById('16-deck');
 let start32 = document.getElementById('32-deck');
 let start64 = document.getElementById('64-deck');
 let hidePH = document.getElementById('placeholder');
+let timer = document.getElementById('timer');
 
 startGame.onclick = function () {
-	let timer = document.getElementById('timer');
 	timer.style.display = "block";
 	//call start stopwatch function
     setSec();
@@ -729,6 +727,7 @@ gameOngoing.onclick = function () {
 //check for game completion and open congrats modal
 let win16 = document.getElementsByClassName('match');
 let congrats16 = document.getElementById('myModal4');
+let winGame = document.getElementById('game-board');
 
 
 setInterval(timer16, 1000);
@@ -740,8 +739,8 @@ function timer16() {
       removeMatch.forEach((card) => {
           card.classList.remove('match');
       })
-      let hideGame = document.getElementById('game-board');
-      hideGame.style.display = "none";
-      hidePH.style.display = "block";
-    }
+    winGame.style.display = "none";
+    hidePH.style.display = "block";
+    timer.style.display = "none";
+	}
 }
