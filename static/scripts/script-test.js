@@ -338,6 +338,8 @@ function setHour() {
     }
     hour = hour + 1;
 }
+
+
 //load the deck and close start modal on hitting start button
 const startGame = document.getElementById('start-button');
 let start16 = document.getElementById('16-deck');
@@ -347,6 +349,16 @@ let hidePH = document.getElementById('placeholder');
 let timer = document.getElementById('timer');
 let startNewGame = document.getElementById("myModal2");
 
+//check every second for completion of game
+setInterval(timer16, timer32, timer64, 1000);
+
+//check for game completion and open congrats modal
+let win16 = document.getElementsByClassName('match');
+let win32 = document.getElementsByClassName('match');
+let win64 = document.getElementsByClassName('match');
+let congrats = document.getElementById('myModal4');
+
+//game play
 startGame.onclick = function () {
 	timer.style.display = "block";
 	//call start stopwatch function
@@ -468,7 +480,6 @@ startGame.onclick = function () {
           card.classList.remove('selected')
         })
 	}
-	
 	}
 	//
 	//
@@ -719,17 +730,46 @@ gameOngoing.onclick = function () {
 	}
 }
 
-//check for game completion and open congrats modal
-let win16 = document.getElementsByClassName('match');
-let congrats = document.getElementById('myModal4');
+//game completion
+let cardCount16 = document.getElementsByClassName('card');
+let cardCount32 = document.getElementsByClassName('card');
+let cardCount64 = document.getElementsByClassName('card');
+
+//check every second for completion of game
+setInterval(timer16, 1000);
+setInterval(timer32, 1000);
+setInterval(timer64, 1000);
+
 
 //check every second for completion of 16 card game
-setInterval(timer16, 1000);
+//setInterval(timer16, 1000);
 
 //function checks for 16 match classes and once found displays the congrats modal, removes the match class from all cards, hides the gameboard, hides the timer and displays the doodle placeholder image.
 function timer16() {
-    if (win16.length === 16) {
-      congrats.style.display = "block";
-      timer.style.display = "none";
+	if (cardCount16.length === 16) {
+      if (win16.length === 16) {
+        congrats.style.display = "block";
+        timer.style.display = "none";
+      }
+	}
+}
+
+//function checks for 16 match classes and once found displays the congrats modal, removes the match class from all cards, hides the gameboard, hides the timer and displays the doodle placeholder image.
+function timer32() {
+	if (cardCount32.length === 32) {
+      if (win32.length === 32) {
+        congrats.style.display = "block";
+        timer.style.display = "none";
+      }
+	}
+}
+
+//function checks for 16 match classes and once found displays the congrats modal, removes the match class from all cards, hides the gameboard, hides the timer and displays the doodle placeholder image.
+function timer64() {
+	if (cardCount64.length === 64) {
+      if (win64.length === 64) {
+        congrats.style.display = "block";
+        timer.style.display = "none";
+      }
 	}
 }
