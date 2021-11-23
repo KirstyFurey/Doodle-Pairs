@@ -20,19 +20,19 @@ The site will be built primarily for mobile devices. The look and functionality 
 
 ## Features ##
 #### Site layout and basic functionality. ####
-- Game board with 16 face down cards on page load.
+- Page load with doodles image.
 - Basic nav set to trigger modals on click, with hover colour set for distinction.
 - How to Play uses JavaScript to open a modal with play instructions in an ordered list format, a close button, and to close the modal when the user clicks outside of the modal.
-- Start uses JavaScript to open a modal with play modes, a start button which will start the game timer and simultaneously close the modal, a close button, and to close the modal when the user clicks outside of the modal. 
-- Reset uses JavaScript to open a modal with reset warning, a close button, a reset button which will reset the board and simultaneously close the modal, a cancel button which will close the modal and return the player tothe board and to close the modal when the user clicks outside of the modal.
-- A congratulations modal is triggered when a game is completed which shows a congratulations message, a play again button which opens the start modal, a close button, and to close the modal when the user clicks outside of the modal.
+- Start uses JavaScript to open a modal with play modes, a start button which will start the game timer and simultaneously close the modal, and run the JavaScript to create the game of the chosen deck, a close button, and to close the modal when the user clicks outside of the modal. 
+- Reset uses JavaScript to open a modal with reset warning, a close button, a reset button which will reload the page, a cancel button which will close the modal and return the player to the board and to close the modal when the user clicks outside of the modal.
+- A congratulations modal is triggered when a game is completed which shows a congratulations message along with time taken to complete the game, a reset button which reloads the page, a close button, and to close the modal when the user clicks outside of the modal.
 
 #### The game. ####
 - Clicking or tapping a card will flip it face up. The player will also have the opportunity to flip the card face down again if it is the only card face up.
 - Clicking or tapping a second card will trigger JavaScript to check if it is a match to the first. 
 	- If it is, it will be highlighted green for 1 second, and both cards removed (hidden) on the board. 
 	- If not it will be highlighted red for 2 seconds and both cards will be returned face down.
-	- If the player has chosen to play in ridiculous mode  and they select a pair that does not match, any remaining cards on the board will be shuffled. Hidden (matched) cards will remain locked. 
+	- If the player has chosen to play in ridiculous mode  and they select a pair that does not match, any remaining cards on the board will be shuffled. Hidden (matched) cards will remain hidden. 
 - Once all cards are matched a congratulations modal is triggered and the time taken to complete is shown.
 
 ## Technologies ##
@@ -71,9 +71,13 @@ Used to create background and card deck
 
 ### Repository Link ###
 The site remote repository can be located here:
+</br>
+*https://github.com/KirstyFurey/Doodle-Pairs*
 
 ### Website Live View ###
 The site can be accessed live via:
+</br>
+*https://kirstyfurey.github.io/Doodle-Pairs/*
 
 ### Deployment ###
 To host the site on GitHub Pages, I followed the steps below:
@@ -96,6 +100,7 @@ I used *https://validator.w3.org/#validate_by_input* to validate the HTML code
 I used *https://jigsaw.w3.org/css-validator/#validate_by_input* to validate my CSS.
 
 ### JavaScript Validation ###
+I used *https://beautifytools.com/javascript-validator.php* to validate my JavaScript.
 
 ### Accessibility Validation ###
 I used *https://webaim.org/resources/contrastchecker/* to check the contrast of text on my site.
