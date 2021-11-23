@@ -297,6 +297,88 @@ const cardsArray64 = [
 ]
 
 //the timer
+//code from https://www.ostraining.com/blog/coding/stopwatch/
+// initialize your variables outside the function 
+var count = 0; 
+var clearTime; 
+var seconds = 0, minutes = 0, hours = 0; 
+var clearState; 
+var clear;
+var secs, mins, gethours ; 
+
+function startWatch( ) { 
+	/* check if seconds is equal to 60 and add a +1 to minutes, and set seconds to 0 */ 
+	if ( seconds === 60 ) { 
+		seconds = 0; minutes = minutes + 1; 
+	} 
+	/* you use the javascript tenary operator to format how the minutes should look and add 0 to minutes if less than 10 */ 
+	mins = ( minutes < 10 ) ? ( '0' + minutes + ': ' ) : ( minutes + ': ' ); 
+	/* check if minutes is equal to 60 and add a +1 to hours set minutes to 0 */ 
+	if ( minutes === 60 ) { 
+		minutes = 0; hours = hours + 1; 
+	} 
+	/* you use the javascript tenary operator to format how the hours should look and add 0 to hours if less than 10 */ 
+	gethours = ( hours < 10 ) ? ( '0' + hours + ': ' ) : ( hours + ': ' ); 
+	secs = ( seconds < 10 ) ? ( '0' + seconds ) : ( seconds ); 
+	// display the stopwatch 
+	var x = document .getElementById("timer"); 
+	x.innerHTML = 'Game Duration: ' + gethours + mins + secs; 
+	/* call the seconds counter after displaying the stop watch and increment seconds by +1 to keep it counting */ 
+	seconds++; 
+	/* call the setTimeout( ) to keep the stop watch alive ! */ 
+	clearTime = setTimeout( "startWatch( )", 1000 ); } 
+    // startWatch( ) //create a function to start the stop watch 
+ 
+function startTime() { 
+/* check if seconds, minutes, and hours are equal to zero and start the stop watch */ 
+    if ( seconds === 0 && minutes === 0 && hours === 0 ) { 
+		/* call the startWatch( ) function to execute the stop watch whenever the startTime( ) is triggered */ 
+		startWatch( ); 
+	} 
+}
+/*
+var stopWatch = function () { 
+    // javascript statement here 
+    clear = setTimeout( "stopWatch()", 1000 );
+}
+*/
+//create a function to stop the time 
+function stopTime( ) { 
+	/* check if seconds, minutes and hours are not equal to 0 */ 
+	if ( seconds !== 0 || minutes !== 0 || hours !== 0 ) { 
+		/* display the full time before reseting the stop watch */ 
+		var fulltime = document.getElementById( "fulltime" ); 
+		//display the full time 
+		fulltime.style.display = "block"; 
+		var time = gethours + mins + secs; 
+		fulltime.innerHTML = time; 
+		// reset the stop watch 
+		seconds = 0; minutes = 0; hours = 0; 
+		secs = '0' + seconds; 
+		mins = '0' + minutes + ': '; 
+		gethours = '0' + hours + ': '; 
+		/* display the stopwatch after it's been stopped */ 
+		var x = document.getElementById ("timer"); 
+		var stopTime = gethours + mins + secs; 
+		x.innerHTML = stopTime; 
+		///* display all stop watch control buttons */ 
+		//var showStart = document.getElementById ('start'); 
+		//showStart.style.display = "inline-block"; 
+		//var showStop = document.getElementById ("stop"); 
+		//showStop.style.display = "inline-block"; 
+		/* clear the stop watch using the setTimeout( ) return value 'clearTime' as ID */ 
+		clearTimeout( clearTime ); 
+	} 
+}
+	// if () } // stopTime() /* you need to call the stopTime( ) function to terminate the stop watch */ window.addEventListener( 'load', function ( ) { var stop = document.getElementById ("stop"); stop.addEventListener( 'click', stopTime ); }); // stopwatch.js end 
+
+/*
+var stopWatch = function () { 
+  // javascript statement here 
+  clear = setTimeout( "stopWatch( )", 1000 ); 
+} 
+*/
+/*
 //timer code from: https://yogeshchauhan.com/how-to-calculate-elapsed-time-in-javascript/
 let sec = 0,
 min = 1,
@@ -338,7 +420,7 @@ function setHour() {
     }
     hour = hour + 1;
 }
-
+*/
 
 //load the deck and close start modal on hitting start button
 const startGame = document.getElementById('start-button');
@@ -362,7 +444,8 @@ let congrats = document.getElementById('myModal4');
 startGame.onclick = function () {
 	timer.style.display = "block";
 	//call start stopwatch function
-    setSec();
+    //setSec();
+	startTime();
 	//hide the div holding the full height blank background
     hidePH.style.display = "none";
 	//
@@ -749,8 +832,9 @@ function timer16() {
 	if (cardCount16.length === 16) {
       if (win16.length === 16) {
         congrats.style.display = "block";
+        stopTime();
         timer.style.display = "none";
-      }
+      } 
 	}
 }
 
@@ -759,6 +843,7 @@ function timer32() {
 	if (cardCount32.length === 32) {
       if (win32.length === 32) {
         congrats.style.display = "block";
+        stopTime();
         timer.style.display = "none";
       }
 	}
@@ -769,6 +854,7 @@ function timer64() {
 	if (cardCount64.length === 64) {
       if (win64.length === 64) {
         congrats.style.display = "block";
+        stopTime();
         timer.style.display = "none";
       }
 	}
