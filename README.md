@@ -31,8 +31,7 @@ The site will be built primarily for mobile devices. The look and functionality 
 - Clicking or tapping a card will flip it face up. The player will also have the opportunity to flip the card face down again if it is the only card face up.
 - Clicking or tapping a second card will trigger JavaScript to check if it is a match to the first. 
 	- If it is, it will be highlighted green for 1 second, and both cards removed (hidden) on the board. 
-	- If not it will be highlighted red for 2 seconds and both cards will be returned face down.
-	- If the player has chosen to play in ridiculous mode  and they select a pair that does not match, any remaining cards on the board will be shuffled. Hidden (matched) cards will remain hidden. 
+	- If not it will be highlighted red for 2 seconds and both cards will be returned face down. 
 - Once all cards are matched a congratulations modal is triggered and the time taken to complete is shown.
 
 ## Technologies ##
@@ -68,6 +67,7 @@ Used to create background and card deck
 ### Bugs and Fixes ###
 - The first test via GitHub Pages showed the font I initially linked to was not being displayed, so I found one very similar on Google Fonts to switch it out. 
 - Initially had overly complicated instructions on game completion to load and hide elements and reload page when user clicks outside of modal. Simplified by chaning 'play again' button to a reset button that reloads the game page.
+- I initially included a game option called 'ridiculous mode, which would shuffle all cards on any unmatched pair being selected. Realised this was unnecessarily compleicated - both to code and to play, so removed. May look at again in future as my skills improve.
 - Mobile version not working correctly in live environment on a mobile device - all works as expected on developer view for mobile on desktop.
 
 ### Repository Link ###

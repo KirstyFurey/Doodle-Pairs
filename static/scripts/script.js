@@ -298,12 +298,9 @@ const cardsArray64 = [
 
 //the timer
 //code from https://www.ostraining.com/blog/coding/stopwatch/
-// initialize your variables outside the function 
-var count = 0; 
+
 var clearTime; 
-var seconds = 0, minutes = 0, hours = 0; 
-var clearState; 
-var clear;
+var seconds = 0, minutes = 0, hours = 0;
 var secs, mins, gethours ; 
 
 function startWatch( ) { 
@@ -336,12 +333,7 @@ function startTime() {
 		startWatch( ); 
 	} 
 }
-/*
-var stopWatch = function () { 
-    // javascript statement here 
-    clear = setTimeout( "stopWatch()", 1000 );
-}
-*/
+
 //create a function to stop the time 
 function stopTime( ) { 
 	/* check if seconds, minutes and hours are not equal to 0 */ 
@@ -369,58 +361,8 @@ function stopTime( ) {
 		/* clear the stop watch using the setTimeout( ) return value 'clearTime' as ID */ 
 		clearTimeout( clearTime ); 
 	} 
-}
-	// if () } // stopTime() /* you need to call the stopTime( ) function to terminate the stop watch */ window.addEventListener( 'load', function ( ) { var stop = document.getElementById ("stop"); stop.addEventListener( 'click', stopTime ); }); // stopwatch.js end 
-
-/*
-var stopWatch = function () { 
-  // javascript statement here 
-  clear = setTimeout( "stopWatch( )", 1000 ); 
 } 
-*/
-/*
-//timer code from: https://yogeshchauhan.com/how-to-calculate-elapsed-time-in-javascript/
-let sec = 0,
-min = 1,
-hour = 1;
-var secVar, minVar, hourVar;
 
-function setSec() {
-    if (sec >= 60) {
-    setMin();
-    sec = 0;
-    }
-    if (sec < 10) {
-    document.getElementById("seconds").innerHTML = "0" + sec;
-    } else {
-    document.getElementById("seconds").innerHTML = sec;
-    }
-    sec = sec + 1;
-    secVar = setTimeout(setSec, 1000);
-}
-
-function setMin() {
-    if (min >= 60) {
-    setHour();
-    min = 0;
-    }
-    if (min < 10) {
-    document.getElementById("minutes").innerHTML = "0" + min;
-    } else {
-    document.getElementById("minutes").innerHTML = min;
-    }
-    min = min + 1;
-}
-
-function setHour() {
-    if (hour < 10) {
-    document.getElementById("hour").innerHTML = "0" + hour;
-    } else {
-    document.getElementById("hour").innerHTML = hour;
-    }
-    hour = hour + 1;
-}
-*/
 
 //load the deck and close start modal on hitting start button
 const startGame = document.getElementById('start-button');
@@ -431,8 +373,6 @@ let hidePH = document.getElementById('placeholder');
 let timer = document.getElementById('timer');
 let startNewGame = document.getElementById("myModal2");
 
-//check every second for completion of game
-setInterval(timer16, timer32, timer64, 1000);
 
 //check for game completion and open congrats modal
 let win16 = document.getElementsByClassName('match');
@@ -444,7 +384,6 @@ let congrats = document.getElementById('myModal4');
 startGame.onclick = function () {
 	timer.style.display = "block";
 	//call start stopwatch function
-    //setSec();
 	startTime();
 	//hide the div holding the full height blank background
     hidePH.style.display = "none";
@@ -483,7 +422,6 @@ startGame.onclick = function () {
         //front of the card
         const front = document.createElement('div');
         front.classList.add('front');
-        //back.style.backgroundImage = 'static/images/Deck.jpg';
 
         //back of the card with the individual image
         const back = document.createElement('div');
@@ -511,17 +449,15 @@ startGame.onclick = function () {
     let count = 0;
     let firstGuess = ''
     let secondGuess = ''
-    let previousTarget = 'null'
     let delay = 1200
 
     //add 'selected' class on click & toggle
     grid.addEventListener('click', function (event) {
         let clicked = event.target;
         //do not allow the game board to be selected, do not allow the same card to be clicked twice in a row, do not allow a matched pair to be clicked again 
-        if (clicked.nodeName === 'SECTION' || clicked === previousTarget || clicked.parentNode.classList.contains('match')) { 
+        if (clicked.nodeName === 'SECTION' || clicked.parentNode.classList.contains('match') || clicked.parentNode.classList.contains('selected')) { 
           return; 
         } 
-        //clicked.classList.toggle('selected'); for ridiculous mode, off for now
         //call match function
         if (count < 2) {
           count++
@@ -548,7 +484,6 @@ startGame.onclick = function () {
               setTimeout(resetGuesses, delay)
             }
           }
-          previousTarget = clicked;
         }
     });
 
@@ -626,17 +561,15 @@ startGame.onclick = function () {
     let count = 0;
     let firstGuess = ''
     let secondGuess = ''
-    let previousTarget = 'null'
     let delay = 1200
 
     //add 'selected' class on click & toggle
     grid.addEventListener('click', function (event) {
         let clicked = event.target;
         //do not allow the game board to be selected, do not allow the same card to be clicked twice in a row, do not allow a matched pair to be clicked again 
-        if (clicked.nodeName === 'SECTION' || clicked === previousTarget || clicked.parentNode.classList.contains('match')) { 
+        if (clicked.nodeName === 'SECTION' || clicked.parentNode.classList.contains('selected') || clicked.parentNode.classList.contains('match')) { 
           return; 
         } 
-        //clicked.classList.toggle('selected'); for ridiculous mode, off for now
         //call match function
         if (count < 2) {
           count++
@@ -663,7 +596,6 @@ startGame.onclick = function () {
               setTimeout(resetGuesses, delay)
             }
           }
-          previousTarget = clicked;
         }
     });
 
@@ -714,7 +646,6 @@ startGame.onclick = function () {
         //front of the card
         const front = document.createElement('div');
         front.classList.add('front');
-        //back.style.backgroundImage = 'static/images/Deck.jpg';
 
         //back of the card with the individual image
         const back = document.createElement('div');
@@ -742,14 +673,13 @@ startGame.onclick = function () {
     let count = 0;
     let firstGuess = ''
     let secondGuess = ''
-    let previousTarget = 'null'
     let delay = 1200
 
     //add 'selected' class on click & toggle
     grid.addEventListener('click', function (event) {
         let clicked = event.target;
         //do not allow the game board to be selected, do not allow the same card to be clicked twice in a row, do not allow a matched pair to be clicked again 
-        if (clicked.nodeName === 'SECTION' || clicked === previousTarget || clicked.parentNode.classList.contains('match')) { 
+        if (clicked.nodeName === 'SECTION' || clicked.parentNode.classList.contains('selected') || clicked.parentNode.classList.contains('match')) { 
           return; 
         } 
         //clicked.classList.toggle('selected'); for ridiculous mode, off for now
@@ -779,7 +709,6 @@ startGame.onclick = function () {
               setTimeout(resetGuesses, delay)
             }
           }
-          previousTarget = clicked;
         }
     });
 
@@ -823,10 +752,6 @@ setInterval(timer16, 1000);
 setInterval(timer32, 1000);
 setInterval(timer64, 1000);
 
-
-//check every second for completion of 16 card game
-//setInterval(timer16, 1000);
-
 //function checks for 16 match classes and once found displays the congrats modal, removes the match class from all cards, hides the gameboard, hides the timer and displays the doodle placeholder image.
 function timer16() {
 	if (cardCount16.length === 16) {
@@ -838,7 +763,7 @@ function timer16() {
 	}
 }
 
-//function checks for 16 match classes and once found displays the congrats modal, removes the match class from all cards, hides the gameboard, hides the timer and displays the doodle placeholder image.
+//function checks for 32 match classes and once found displays the congrats modal, removes the match class from all cards, hides the gameboard, hides the timer and displays the doodle placeholder image.
 function timer32() {
 	if (cardCount32.length === 32) {
       if (win32.length === 32) {
@@ -849,7 +774,7 @@ function timer32() {
 	}
 }
 
-//function checks for 16 match classes and once found displays the congrats modal, removes the match class from all cards, hides the gameboard, hides the timer and displays the doodle placeholder image.
+//function checks for 64 match classes and once found displays the congrats modal, removes the match class from all cards, hides the gameboard, hides the timer and displays the doodle placeholder image.
 function timer64() {
 	if (cardCount64.length === 64) {
       if (win64.length === 64) {
