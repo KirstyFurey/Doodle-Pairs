@@ -195,36 +195,6 @@ ol li:before {
 	border: 2px solid #30bb34;
 }
 
-@media only screen and (max-width: 500px) {
-	.social-logos {
-        width: 4vw;
-    }
-	
-	#placeholder {
-	height: 200px;
-	background-image: url("../images/Doodle-Tile-opacity.jpg");
-    }
-}
-
-@media only screen and (max-width: 360px) {
-	main {
-		padding: 15px;
-	}
-	.grid {
-		max-width: 250px;
-		padding: 5px;
-	}
-	
-	.card, .front, .back {
-		width: 40px;
-		height: 56px;
-	}
-	
-	#placeholder {
-	height: 200px;
-	background-image: url("../images/Doodle-Tile-opacity.jpg");
-    }
-}
 /*Site background*/
 #placeholder {
 	height: 100vh;
@@ -385,15 +355,10 @@ footer a {
 	background-image: url("../images/Doodle-Tile-opacity.jpg");
     }
 }
-/*
+
 @media only screen and (max-width: 500px) {
 	.social-logos {
         width: 4vw;
-    }
-	
-	#placeholder {
-	height: 200px;
-	background-image: url("../images/Doodle-Tile-opacity.jpg");
     }
 }
 
@@ -410,9 +375,4 @@ footer a {
 		width: 40px;
 		height: 56px;
 	}
-	
-	#placeholder {
-	height: 200px;
-	background-image: url("../images/Doodle-Tile-opacity.jpg");
-    }
-}*/
+}
