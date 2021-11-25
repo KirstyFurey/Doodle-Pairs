@@ -314,11 +314,9 @@ footer a {
 		height: 138px;
 	}
 	
-	.card {
-	position: relative;
-    transition: all 0.4s linear;
-    transform-style: preserve-3d;
-    margin: 2px;
+	#placeholder {
+	height: 200px;
+	background-image: url("../images/Doodle-Tile-opacity.jpg");
     }
 }
 @media only screen and (max-width: 620px) {
@@ -331,11 +329,9 @@ footer a {
 		height: 112px;
 	}
 	
-	.card {
-	position: relative;
-    transition: all 0.4s linear;
-    transform-style: preserve-3d;
-    margin: 2px;
+	#placeholder {
+	height: 200px;
+	background-image: url("../images/Doodle-Tile-opacity.jpg");
     }
 }
 
@@ -354,17 +350,20 @@ footer a {
 		height: 70px;
 	}
 	
-	.card {
-	position: relative;
-    transition: all 0.4s linear;
-    transform-style: preserve-3d;
-    margin: 2px;
+	#placeholder {
+	height: 200px;
+	background-image: url("../images/Doodle-Tile-opacity.jpg");
     }
 }
 
 @media only screen and (max-width: 500px) {
 	.social-logos {
         width: 4vw;
+    }
+	
+	#placeholder {
+	height: 200px;
+	background-image: url("../images/Doodle-Tile-opacity.jpg");
     }
 }
 
@@ -382,10 +381,8 @@ footer a {
 		height: 56px;
 	}
 	
-	.card {
-	position: relative;
-    transition: all 0.4s linear;
-    transform-style: preserve-3d;
-    margin: 2px;
+	#placeholder {
+	height: 200px;
+	background-image: url("../images/Doodle-Tile-opacity.jpg");
     }
 }
