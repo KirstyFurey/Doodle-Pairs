@@ -68,6 +68,7 @@ Used to create background and card deck
 ### Bugs and Fixes ###
 - The first test via GitHub Pages showed the font I initially linked to was not being displayed, so I found one very similar on Google Fonts to switch it out. 
 - Initially had overly complicated instructions on game completion to load and hide elements and reload page when user clicks outside of modal. Simplified by chaning 'play again' button to a reset button that reloads the game page.
+- Mobile version not working correctly in live environment on a mobile device - all works as expected on developer view for mobile on desktop.
 
 ### Repository Link ###
 The site remote repository can be located here:
