@@ -262,13 +262,13 @@ main {
 .match {
 	border: none;
 	box-shadow: none;
-    background-image: none !important;
+    background-image: none /*!important;*/
 }
 
 .match .front {
-	background: white !important;
-	border: none !important;
-	box-shadow: none !important;
+	background: white /*!important*/;
+	border: none /*!important*/;
+	box-shadow: none /*!important*/;
 }
 
 /*Footer*/
@@ -302,10 +302,6 @@ footer a {
 	.modal-content {
 		padding: 0px 10px;
 	}
-	
-	.back, .front {
-		backface-visibility: hidden;
-}
 
 @media only screen and (max-width: 740px) {
 	.grid {
@@ -316,9 +312,6 @@ footer a {
 		width: 100px;
 		height: 138px;
 	}
-	
-	.back, .front {
-		backface-visibility: hidden;
 }
 @media only screen and (max-width: 620px) {
 	.grid {
@@ -329,9 +322,6 @@ footer a {
 		width: 80px;
 		height: 112px;
 	}
-	
-	.back, .front {
-		backface-visibility: hidden;
 }
 
 @media only screen and (max-width: 550px) {
@@ -348,18 +338,12 @@ footer a {
 		width: 50px;
 		height: 70px;
 	}
-	
-	.back, .front {
-		backface-visibility: hidden;
 }
 
 @media only screen and (max-width: 500px) {
 	.social-logos {
         width: 4vw;
     }
-	
-	.back, .front {
-		backface-visibility: hidden;
 }
 
 @media only screen and (max-width: 360px) {
@@ -374,9 +358,5 @@ footer a {
 	.card, .front, .back {
 		width: 40px;
 		height: 56px;
-	}
-	
-	.back, .front {
-		backface-visibility: hidden;
 	}
 }
