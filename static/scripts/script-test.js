@@ -62,7 +62,7 @@ congratsReset.onclick = function() {
 
 //The decks
 //array to hold 8 cards for 16 card game
-const cardsArray16 = [
+/*const cardsArray16 = [
 	{
 		name: 'alien',
 		img: 'static/images/alien.jpg',
@@ -95,10 +95,9 @@ const cardsArray16 = [
 		name: 'cloud',
 		img: 'static/images/cloud.jpg',
 	},
-]
-
+]*/
 //array to hold 16 cards for 32 card game
-const cardsArray32 = [
+/*const cardsArray32 = [
 	{
 		name: 'alien',
 		img: 'static/images/alien.jpg',
@@ -163,9 +162,9 @@ const cardsArray32 = [
 		name: 'ice-lolly',
 		img: 'static/images/ice-lolly.jpg',
 	},
-]
+]*/
 //array to hold all 32 cards for 64 card game
-const cardsArray64 = [
+/*const cardsArray64 = [
 	{
 		name: 'alien',
 		img: 'static/images/alien.jpg',
@@ -294,16 +293,145 @@ const cardsArray64 = [
 		name: 'yin-yang',
 		img: 'static/images/yin-yang.jpg',
 	},
-]
+]*/
+const cardsArray = [
+	{
+		name: 'alien',
+		img: 'static/images/alien.jpg',
+	},
+	{
+		name: 'antlers',
+		img: 'static/images/antlers.jpg',
+	},
+	{
+		name: 'apple',
+		img: 'static/images/apple.jpg',
+	},
+	{
+		name: 'avocado',
+		img: 'static/images/avocado.jpg',
+	},
+	{
+		name: 'broken-heart',
+		img: 'static/images/broken-heart.jpg',
+	},
+	{
+		name: 'cactus',
+		img: 'static/images/cactus.jpg',
+	},
+	{
+		name: 'cat',
+		img: 'static/images/cat.jpg',
+	},
+	{
+		name: 'cloud',
+		img: 'static/images/cloud.jpg',
+	},
+	{
+		name: 'diamond',
+		img: 'static/images/diamond.jpg',
+	},
+	{
+		name: 'donut',
+		img: 'static/images/donut.jpg',
+	},
+	{
+		name: 'drink',
+		img: 'static/images/drink.jpg',
+	},
+	{
+		name: 'egg',
+		img: 'static/images/egg.jpg',
+	},
+	{
+		name: 'eye',
+		img: 'static/images/eye.jpg',
+	},
+	{
+		name: 'glasses',
+		img: 'static/images/glasses.jpg',
+	},
+	{
+		name: 'ice-cream',
+		img: 'static/images/ice-cream.jpg',
+	},
+	{
+		name: 'ice-lolly',
+		img: 'static/images/ice-lolly.jpg',
+	},
+	{
+		name: 'lightning',
+		img: 'static/images/lightning.jpg',
+	},
+	{
+		name: 'lollypop',
+		img: 'static/images/lollypop.jpg',
+	},
+	{
+		name: 'milk-carton',
+		img: 'static/images/milk-carton.jpg',
+	},
+	{
+		name: 'mountains',
+		img: 'static/images/mountains.jpg',
+	},
+	{
+		name: 'moustache',
+		img: 'static/images/moustache.jpg',
+	},
+	{
+		name: 'music',
+		img: 'static/images/music.jpg',
+	},
+	{
+		name: 'nope',
+		img: 'static/images/nope.jpg',
+	},
+	{
+		name: 'paper-plane',
+		img: 'static/images/paper-plane.jpg',
+	},
+	{
+		name: 'pizza',
+		img: 'static/images/pizza.jpg',
+	},
+	{
+		name: 'sunrise',
+		img: 'static/images/sunrise.jpg',
+	},
+	{
+		name: 'tea',
+		img: 'static/images/tea.jpg',
+	},
+	{
+		name: 'umbrella',
+		img: 'static/images/umbrella.jpg',
+	},
+	{
+		name: 'unicorn',
+		img: 'static/images/unicorn.jpg',
+	},
+	{
+		name: 'whale',
+		img: 'static/images/whale.jpg',
+	},
+	{
+		name: 'yes',
+		img: 'static/images/yes.jpg',
+	},
+	{
+		name: 'yin-yang',
+		img: 'static/images/yin-yang.jpg',
+	},
+];
+// Duplicate each array to create a match for each card
+const gameGrid = cardsArray.concat(cardsArray);
 
 //the timer
 //code from https://www.ostraining.com/blog/coding/stopwatch/
-// initialize your variables outside the function 
-var count = 0; 
+
 var clearTime; 
-var seconds = 0, minutes = 0, hours = 0; 
-var clearState; 
-var clear;
+var seconds = 0, minutes = 0, hours = 0;
 var secs, mins, gethours ; 
 
 function startWatch( ) { 
@@ -336,12 +464,7 @@ function startTime() {
 		startWatch( ); 
 	} 
 }
-/*
-var stopWatch = function () { 
-    // javascript statement here 
-    clear = setTimeout( "stopWatch()", 1000 );
-}
-*/
+
 //create a function to stop the time 
 function stopTime( ) { 
 	/* check if seconds, minutes and hours are not equal to 0 */ 
@@ -369,70 +492,18 @@ function stopTime( ) {
 		/* clear the stop watch using the setTimeout( ) return value 'clearTime' as ID */ 
 		clearTimeout( clearTime ); 
 	} 
-}
-	// if () } // stopTime() /* you need to call the stopTime( ) function to terminate the stop watch */ window.addEventListener( 'load', function ( ) { var stop = document.getElementById ("stop"); stop.addEventListener( 'click', stopTime ); }); // stopwatch.js end 
-
-/*
-var stopWatch = function () { 
-  // javascript statement here 
-  clear = setTimeout( "stopWatch( )", 1000 ); 
 } 
-*/
-/*
-//timer code from: https://yogeshchauhan.com/how-to-calculate-elapsed-time-in-javascript/
-let sec = 0,
-min = 1,
-hour = 1;
-var secVar, minVar, hourVar;
 
-function setSec() {
-    if (sec >= 60) {
-    setMin();
-    sec = 0;
-    }
-    if (sec < 10) {
-    document.getElementById("seconds").innerHTML = "0" + sec;
-    } else {
-    document.getElementById("seconds").innerHTML = sec;
-    }
-    sec = sec + 1;
-    secVar = setTimeout(setSec, 1000);
-}
-
-function setMin() {
-    if (min >= 60) {
-    setHour();
-    min = 0;
-    }
-    if (min < 10) {
-    document.getElementById("minutes").innerHTML = "0" + min;
-    } else {
-    document.getElementById("minutes").innerHTML = min;
-    }
-    min = min + 1;
-}
-
-function setHour() {
-    if (hour < 10) {
-    document.getElementById("hour").innerHTML = "0" + hour;
-    } else {
-    document.getElementById("hour").innerHTML = hour;
-    }
-    hour = hour + 1;
-}
-*/
 
 //load the deck and close start modal on hitting start button
 const startGame = document.getElementById('start-button');
 let start16 = document.getElementById('16-deck');
-let start32 = document.getElementById('32-deck');
-let start64 = document.getElementById('64-deck');
+//let start32 = document.getElementById('32-deck');
+//let start64 = document.getElementById('64-deck');
 let hidePH = document.getElementById('placeholder');
 let timer = document.getElementById('timer');
 let startNewGame = document.getElementById("myModal2");
 
-//check every second for completion of game
-setInterval(timer16, timer32, timer64, 1000);
 
 //check for game completion and open congrats modal
 let win16 = document.getElementsByClassName('match');
@@ -440,22 +511,9 @@ let win32 = document.getElementsByClassName('match');
 let win64 = document.getElementsByClassName('match');
 let congrats = document.getElementById('myModal4');
 
-//game play
-startGame.onclick = function () {
-	timer.style.display = "block";
-	//call start stopwatch function
-    //setSec();
-	startTime();
-	//hide the div holding the full height blank background
-    hidePH.style.display = "none";
-	//
-	//
-	//if statement to create 16 card game
-	if (start16.checked === true) {
-    
-    //code for deck creation and card shuffle from https://www.taniarascia.com/how-to-create-a-memory-game-super-mario-with-plain-javascript/
+function game() {
 
-    // Grab the game board div
+ // Grab the game board div
     const game = document.getElementById('game-board');
 
     // Create a section with a class of grid
@@ -464,15 +522,12 @@ startGame.onclick = function () {
 
     // Append the grid section to the game div
     game.appendChild(grid);
-
-    // Duplicate each array to create a match for each card
-    let gameGrid16 = cardsArray16.concat(cardsArray16);
 	
 	// Randomize game grid on each load
-    gameGrid16.sort(() => 0.5 - Math.random());
+    gameGrid.sort(() => 0.5 - Math.random());
 
       // For each item in the gameGrid array...
-      gameGrid16.forEach(item => {
+      gameGrid.forEach(item => {
         // Create a parent div to hold front and back of cards
         const card = document.createElement('div');
         // Apply a card class to that div
@@ -483,7 +538,6 @@ startGame.onclick = function () {
         //front of the card
         const front = document.createElement('div');
         front.classList.add('front');
-        //back.style.backgroundImage = 'static/images/Deck.jpg';
 
         //back of the card with the individual image
         const back = document.createElement('div');
@@ -511,17 +565,15 @@ startGame.onclick = function () {
     let count = 0;
     let firstGuess = ''
     let secondGuess = ''
-    let previousTarget = 'null'
     let delay = 1200
 
     //add 'selected' class on click & toggle
     grid.addEventListener('click', function (event) {
         let clicked = event.target;
         //do not allow the game board to be selected, do not allow the same card to be clicked twice in a row, do not allow a matched pair to be clicked again 
-        if (clicked.nodeName === 'SECTION' || clicked === previousTarget || clicked.parentNode.classList.contains('match')) { 
+        if (clicked.nodeName === 'SECTION' || clicked.parentNode.classList.contains('match') || clicked.parentNode.classList.contains('selected')) { 
           return; 
         } 
-        //clicked.classList.toggle('selected'); for ridiculous mode, off for now
         //call match function
         if (count < 2) {
           count++
@@ -548,7 +600,6 @@ startGame.onclick = function () {
               setTimeout(resetGuesses, delay)
             }
           }
-          previousTarget = clicked;
         }
     });
 
@@ -563,239 +614,22 @@ startGame.onclick = function () {
           card.classList.remove('selected')
         })
 	}
-	}
+}
+
+//game play
+startGame.onclick = function () {
+	timer.style.display = "block";
+	//call start stopwatch function
+	startTime();
+	//hide the div holding the full height blank background
+    hidePH.style.display = "none";
 	//
 	//
-	//if statement to create 32 card game
-	else if (start32.checked === true) {
+	//if statement to create 16 card game
+	if (start16.checked === true) {
+		game();
     //code for deck creation and card shuffle from https://www.taniarascia.com/how-to-create-a-memory-game-super-mario-with-plain-javascript/
-
-    // Grab the game board div
-    const game = document.getElementById('game-board');
-
-    // Create a section with a class of grid
-    const grid = document.createElement('section');
-    grid.setAttribute('class', 'grid');
-
-    // Append the grid section to the game div
-    game.appendChild(grid);
-
-    // Duplicate each array to create a match for each card
-    let gameGrid32 = cardsArray32.concat(cardsArray32);
-	
-	// Randomize game grid on each load
-    gameGrid32.sort(() => 0.5 - Math.random());
-
-      // For each item in the gameGrid array...
-      gameGrid32.forEach(item => {
-        // Create a parent div to hold front and back of cards
-        const card = document.createElement('div');
-        // Apply a card class to that div
-        card.classList.add('card');
-        // Set the data-name attribute of the div to the cardsArray name
-        card.dataset.name = item.name;
-
-        //front of the card
-        const front = document.createElement('div');
-        front.classList.add('front');
-        //back.style.backgroundImage = 'static/images/Deck.jpg';
-
-        //back of the card with the individual image
-        const back = document.createElement('div');
-        back.classList.add('back');
-        // Apply the background image of the div to the cardsArray image
-        back.style.backgroundImage = `url(${item.img})`;
-
-        // Append the div to the grid section
-        grid.appendChild(card);
-        card.appendChild(front);
-        card.appendChild(back);
-	})
-	
-	//32 deck animation, matches and guess
-
-    //Matches function
-    // Add match CSS
-    const match = () => {
-        var selected = document.querySelectorAll('.selected')
-        selected.forEach((card) => {
-        card.classList.add('match')
-        })
-    }
-
-    let count = 0;
-    let firstGuess = ''
-    let secondGuess = ''
-    let previousTarget = 'null'
-    let delay = 1200
-
-    //add 'selected' class on click & toggle
-    grid.addEventListener('click', function (event) {
-        let clicked = event.target;
-        //do not allow the game board to be selected, do not allow the same card to be clicked twice in a row, do not allow a matched pair to be clicked again 
-        if (clicked.nodeName === 'SECTION' || clicked === previousTarget || clicked.parentNode.classList.contains('match')) { 
-          return; 
-        } 
-        //clicked.classList.toggle('selected'); for ridiculous mode, off for now
-        //call match function
-        if (count < 2) {
-          count++
-          if (count === 1) {
-            // Assign first guess
-            firstGuess = clicked.parentNode.dataset.name
-            console.log(firstGuess)
-            clicked.parentNode.classList.add('selected')
-          } else {
-            // Assign second guess
-            secondGuess = clicked.parentNode.dataset.name
-            console.log(secondGuess)
-            clicked.parentNode.classList.add('selected')
-          }
-          // If both guesses are not empty...
-          if (firstGuess !== '' && secondGuess !== '') {
-            // and the first guess matches the second match...
-            if (firstGuess === secondGuess) {
-              // run the match function, with 1200ms delay
-              setTimeout(match, delay)
-              setTimeout(resetGuesses, delay)
-            }
-            else {
-              setTimeout(resetGuesses, delay)
-            }
-          }
-          previousTarget = clicked;
-        }
-    });
-
-    // reset guesses to allow continued matches
-    const resetGuesses = () => {
-        firstGuess = ''
-        secondGuess = ''
-        count = 0
-
-        var selected = document.querySelectorAll('.selected')
-        selected.forEach((card) => {
-          card.classList.remove('selected')
-        })
-	}
-	}
 	//
-	//
-	//if statement to create 64 card game
-	else if (start64.checked === true) {
-
-    //code for deck creation and card shuffle from https://www.taniarascia.com/how-to-create-a-memory-game-super-mario-with-plain-javascript/
-
-    // Grab the game board div
-    const game = document.getElementById('game-board');
-
-    // Create a section with a class of grid
-    const grid = document.createElement('section');
-    grid.setAttribute('class', 'grid');
-
-    // Append the grid section to the game div
-    game.appendChild(grid);
-
-    // Duplicate each array to create a match for each card
-    let gameGrid64 = cardsArray64.concat(cardsArray64);
-	
-	// Randomize game grid on each load
-    gameGrid64.sort(() => 0.5 - Math.random());
-
-      // For each item in the gameGrid array...
-      gameGrid64.forEach(item => {
-        // Create a parent div to hold front and back of cards
-        const card = document.createElement('div');
-        // Apply a card class to that div
-        card.classList.add('card');
-        // Set the data-name attribute of the div to the cardsArray name
-        card.dataset.name = item.name;
-
-        //front of the card
-        const front = document.createElement('div');
-        front.classList.add('front');
-        //back.style.backgroundImage = 'static/images/Deck.jpg';
-
-        //back of the card with the individual image
-        const back = document.createElement('div');
-        back.classList.add('back');
-        // Apply the background image of the div to the cardsArray image
-        back.style.backgroundImage = `url(${item.img})`;
-
-        // Append the div to the grid section
-        grid.appendChild(card);
-        card.appendChild(front);
-        card.appendChild(back);
-	})	
-    
-    //64 deck animation matches and guess
-		
-    //Matches function
-    // Add match CSS
-    const match = () => {
-        var selected = document.querySelectorAll('.selected')
-        selected.forEach((card) => {
-        card.classList.add('match')
-        })
-    }
-
-    let count = 0;
-    let firstGuess = ''
-    let secondGuess = ''
-    let previousTarget = 'null'
-    let delay = 1200
-
-    //add 'selected' class on click & toggle
-    grid.addEventListener('click', function (event) {
-        let clicked = event.target;
-        //do not allow the game board to be selected, do not allow the same card to be clicked twice in a row, do not allow a matched pair to be clicked again 
-        if (clicked.nodeName === 'SECTION' || clicked === previousTarget || clicked.parentNode.classList.contains('match')) { 
-          return; 
-        } 
-        //clicked.classList.toggle('selected'); for ridiculous mode, off for now
-        //call match function
-        if (count < 2) {
-          count++
-          if (count === 1) {
-            // Assign first guess
-            firstGuess = clicked.parentNode.dataset.name
-            console.log(firstGuess)
-            clicked.parentNode.classList.add('selected')
-          } else {
-            // Assign second guess
-            secondGuess = clicked.parentNode.dataset.name
-            console.log(secondGuess)
-            clicked.parentNode.classList.add('selected')
-          }
-          // If both guesses are not empty...
-          if (firstGuess !== '' && secondGuess !== '') {
-            // and the first guess matches the second match...
-            if (firstGuess === secondGuess) {
-              // run the match function, with 1200ms delay
-              setTimeout(match, delay)
-              setTimeout(resetGuesses, delay)
-            }
-            else {
-              setTimeout(resetGuesses, delay)
-            }
-          }
-          previousTarget = clicked;
-        }
-    });
-
-    // reset guesses to allow continued matches
-    const resetGuesses = () => {
-        firstGuess = ''
-        secondGuess = ''
-        count = 0
-
-        var selected = document.querySelectorAll('.selected')
-        selected.forEach((card) => {
-          card.classList.remove('selected')
-        })
-	}
-		
-    //else statement to ensure start button cannot be clicked without making a selection
 	} else {
 		return;
 	}
@@ -823,10 +657,6 @@ setInterval(timer16, 1000);
 setInterval(timer32, 1000);
 setInterval(timer64, 1000);
 
-
-//check every second for completion of 16 card game
-//setInterval(timer16, 1000);
-
 //function checks for 16 match classes and once found displays the congrats modal, removes the match class from all cards, hides the gameboard, hides the timer and displays the doodle placeholder image.
 function timer16() {
 	if (cardCount16.length === 16) {
@@ -838,7 +668,7 @@ function timer16() {
 	}
 }
 
-//function checks for 16 match classes and once found displays the congrats modal, removes the match class from all cards, hides the gameboard, hides the timer and displays the doodle placeholder image.
+//function checks for 32 match classes and once found displays the congrats modal, removes the match class from all cards, hides the gameboard, hides the timer and displays the doodle placeholder image.
 function timer32() {
 	if (cardCount32.length === 32) {
       if (win32.length === 32) {
@@ -849,7 +679,7 @@ function timer32() {
 	}
 }
 
-//function checks for 16 match classes and once found displays the congrats modal, removes the match class from all cards, hides the gameboard, hides the timer and displays the doodle placeholder image.
+//function checks for 64 match classes and once found displays the congrats modal, removes the match class from all cards, hides the gameboard, hides the timer and displays the doodle placeholder image.
 function timer64() {
 	if (cardCount64.length === 64) {
       if (win64.length === 64) {
