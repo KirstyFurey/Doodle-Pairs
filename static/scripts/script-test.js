@@ -298,99 +298,48 @@ startGame.onclick = function () {
 	//if statement to create 16 card game
 	if (start16.checked === true) {
       cards = cardsArray.slice(0, 8).concat(cardsArray.slice(0, 8));
-      // Randomize game grid on each load
-      cards.sort(() => 0.5 - Math.random());
-      // For each item in the cardsArray...
-      cards.forEach(item => {
-        // Create a parent div to hold front and back of cards
-        const card = document.createElement('div');
-        // Apply a card class to that div
-        card.classList.add('card');
-        // Set the data-name attribute of the div to the cardsArray name
-        card.dataset.name = item.name;
-
-        //front of the card
-        const front = document.createElement('div');
-        front.classList.add('front');
-
-        //back of the card with the individual image
-        const back = document.createElement('div');
-        back.classList.add('back');
-        // Apply the background image of the div to the cardsArray image
-        back.style.backgroundImage = `url(${item.img})`;
-
-        // Append the div to the grid section
-        grid.appendChild(card);
-        card.appendChild(front);
-        card.appendChild(back);
-      })
 	}
 	
 	//if statement to create 32 card game
 	else if (start32.checked === true) {
       cards = cardsArray.slice(0, 16).concat(cardsArray.slice(0, 16));
-      // Randomize game grid on each load
-      cards.sort(() => 0.5 - Math.random());
-      // For each item in the cardsArray...
-      cards.forEach(item => {
-        // Create a parent div to hold front and back of cards
-        const card = document.createElement('div');
-        // Apply a card class to that div
-        card.classList.add('card');
-        // Set the data-name attribute of the div to the cardsArray name
-        card.dataset.name = item.name;
-
-        //front of the card
-        const front = document.createElement('div');
-        front.classList.add('front');
-
-        //back of the card with the individual image
-        const back = document.createElement('div');
-        back.classList.add('back');
-        // Apply the background image of the div to the cardsArray image
-        back.style.backgroundImage = `url(${item.img})`;
-
-        // Append the div to the grid section
-        grid.appendChild(card);
-        card.appendChild(front);
-        card.appendChild(back);
-      })
 	}
 	
 	//if statement to create 64 card game
 	else if (start64.checked === true) {
       cards = cardsArray.concat(cardsArray);
-      // Randomize game grid on each load
-      cards.sort(() => 0.5 - Math.random());
-      // For each item in the cardsArray...
-      cards.forEach(item => {
-        // Create a parent div to hold front and back of cards
-        const card = document.createElement('div');
-        // Apply a card class to that div
-        card.classList.add('card');
-        // Set the data-name attribute of the div to the cardsArray name
-        card.dataset.name = item.name;
-
-        //front of the card
-        const front = document.createElement('div');
-        front.classList.add('front');
-
-        //back of the card with the individual image
-        const back = document.createElement('div');
-        back.classList.add('back');
-        // Apply the background image of the div to the cardsArray image
-        back.style.backgroundImage = `url(${item.img})`;
-
-        // Append the div to the grid section
-        grid.appendChild(card);
-        card.appendChild(front);
-        card.appendChild(back);
-      })
 	}
-	
 	else {
 		return;
 	}
+	
+	// Randomize game grid on each load
+    cards.sort(() => 0.5 - Math.random());
+    // For each item in the cardsArray...
+    cards.forEach(item => {
+      // Create a parent div to hold front and back of cards
+      const card = document.createElement('div');
+      // Apply a card class to that div
+      card.classList.add('card');
+      // Set the data-name attribute of the div to the cardsArray name
+      card.dataset.name = item.name;
+
+      //front of the card
+      const front = document.createElement('div');
+      front.classList.add('front');
+
+      //back of the card with the individual image
+      const back = document.createElement('div');
+      back.classList.add('back');
+      // Apply the background image of the div to the cardsArray image
+      back.style.backgroundImage = `url(${item.img})`;
+
+      // Append the div to the grid section
+      grid.appendChild(card);
+      card.appendChild(front);
+      card.appendChild(back);
+      })
+	
 	startNewGame.style.display = "none";
 }
 
