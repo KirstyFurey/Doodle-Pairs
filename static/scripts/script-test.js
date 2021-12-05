@@ -60,240 +60,8 @@ congratsReset.onclick = function() {
 	window.location.reload();
 }
 
-//The decks
-//array to hold 8 cards for 16 card game
-/*const cardsArray16 = [
-	{
-		name: 'alien',
-		img: 'static/images/alien.jpg',
-	},
-	{
-		name: 'antlers',
-		img: 'static/images/antlers.jpg',
-	},
-	{
-		name: 'apple',
-		img: 'static/images/apple.jpg',
-	},
-	{
-		name: 'avocado',
-		img: 'static/images/avocado.jpg',
-	},
-	{
-		name: 'broken-heart',
-		img: 'static/images/broken-heart.jpg',
-	},
-	{
-		name: 'cactus',
-		img: 'static/images/cactus.jpg',
-	},
-	{
-		name: 'cat',
-		img: 'static/images/cat.jpg',
-	},
-	{
-		name: 'cloud',
-		img: 'static/images/cloud.jpg',
-	},
-]*/
-//array to hold 16 cards for 32 card game
-/*const cardsArray32 = [
-	{
-		name: 'alien',
-		img: 'static/images/alien.jpg',
-	},
-	{
-		name: 'antlers',
-		img: 'static/images/antlers.jpg',
-	},
-	{
-		name: 'apple',
-		img: 'static/images/apple.jpg',
-	},
-	{
-		name: 'avocado',
-		img: 'static/images/avocado.jpg',
-	},
-	{
-		name: 'broken-heart',
-		img: 'static/images/broken-heart.jpg',
-	},
-	{
-		name: 'cactus',
-		img: 'static/images/cactus.jpg',
-	},
-	{
-		name: 'cat',
-		img: 'static/images/cat.jpg',
-	},
-	{
-		name: 'cloud',
-		img: 'static/images/cloud.jpg',
-	},
-	{
-		name: 'diamond',
-		img: 'static/images/diamond.jpg',
-	},
-	{
-		name: 'donut',
-		img: 'static/images/donut.jpg',
-	},
-	{
-		name: 'drink',
-		img: 'static/images/drink.jpg',
-	},
-	{
-		name: 'egg',
-		img: 'static/images/egg.jpg',
-	},
-	{
-		name: 'eye',
-		img: 'static/images/eye.jpg',
-	},
-	{
-		name: 'glasses',
-		img: 'static/images/glasses.jpg',
-	},
-	{
-		name: 'ice-cream',
-		img: 'static/images/ice-cream.jpg',
-	},
-	{
-		name: 'ice-lolly',
-		img: 'static/images/ice-lolly.jpg',
-	},
-]*/
+//The deck
 //array to hold all 32 cards for 64 card game
-/*const cardsArray64 = [
-	{
-		name: 'alien',
-		img: 'static/images/alien.jpg',
-	},
-	{
-		name: 'antlers',
-		img: 'static/images/antlers.jpg',
-	},
-	{
-		name: 'apple',
-		img: 'static/images/apple.jpg',
-	},
-	{
-		name: 'avocado',
-		img: 'static/images/avocado.jpg',
-	},
-	{
-		name: 'broken-heart',
-		img: 'static/images/broken-heart.jpg',
-	},
-	{
-		name: 'cactus',
-		img: 'static/images/cactus.jpg',
-	},
-	{
-		name: 'cat',
-		img: 'static/images/cat.jpg',
-	},
-	{
-		name: 'cloud',
-		img: 'static/images/cloud.jpg',
-	},
-	{
-		name: 'diamond',
-		img: 'static/images/diamond.jpg',
-	},
-	{
-		name: 'donut',
-		img: 'static/images/donut.jpg',
-	},
-	{
-		name: 'drink',
-		img: 'static/images/drink.jpg',
-	},
-	{
-		name: 'egg',
-		img: 'static/images/egg.jpg',
-	},
-	{
-		name: 'eye',
-		img: 'static/images/eye.jpg',
-	},
-	{
-		name: 'glasses',
-		img: 'static/images/glasses.jpg',
-	},
-	{
-		name: 'ice-cream',
-		img: 'static/images/ice-cream.jpg',
-	},
-	{
-		name: 'ice-lolly',
-		img: 'static/images/ice-lolly.jpg',
-	},
-	{
-		name: 'lightning',
-		img: 'static/images/lightning.jpg',
-	},
-	{
-		name: 'lollypop',
-		img: 'static/images/lollypop.jpg',
-	},
-	{
-		name: 'milk-carton',
-		img: 'static/images/milk-carton.jpg',
-	},
-	{
-		name: 'mountains',
-		img: 'static/images/mountains.jpg',
-	},
-	{
-		name: 'moustache',
-		img: 'static/images/moustache.jpg',
-	},
-	{
-		name: 'music',
-		img: 'static/images/music.jpg',
-	},
-	{
-		name: 'nope',
-		img: 'static/images/nope.jpg',
-	},
-	{
-		name: 'paper-plane',
-		img: 'static/images/paper-plane.jpg',
-	},
-	{
-		name: 'pizza',
-		img: 'static/images/pizza.jpg',
-	},
-	{
-		name: 'sunrise',
-		img: 'static/images/sunrise.jpg',
-	},
-	{
-		name: 'tea',
-		img: 'static/images/tea.jpg',
-	},
-	{
-		name: 'umbrella',
-		img: 'static/images/umbrella.jpg',
-	},
-	{
-		name: 'unicorn',
-		img: 'static/images/unicorn.jpg',
-	},
-	{
-		name: 'whale',
-		img: 'static/images/whale.jpg',
-	},
-	{
-		name: 'yes',
-		img: 'static/images/yes.jpg',
-	},
-	{
-		name: 'yin-yang',
-		img: 'static/images/yin-yang.jpg',
-	},
-]*/
 const cardsArray = [
 	{
 		name: 'alien',
@@ -423,9 +191,7 @@ const cardsArray = [
 		name: 'yin-yang',
 		img: 'static/images/yin-yang.jpg',
 	},
-];
-// Duplicate each array to create a match for each card
-const gameGrid = cardsArray.concat(cardsArray);
+]
 
 //the timer
 //code from https://www.ostraining.com/blog/coding/stopwatch/
@@ -498,36 +264,44 @@ function stopTime( ) {
 //load the deck and close start modal on hitting start button
 const startGame = document.getElementById('start-button');
 let start16 = document.getElementById('16-deck');
-//let start32 = document.getElementById('32-deck');
-//let start64 = document.getElementById('64-deck');
+let start32 = document.getElementById('32-deck');
+let start64 = document.getElementById('64-deck');
 let hidePH = document.getElementById('placeholder');
 let timer = document.getElementById('timer');
 let startNewGame = document.getElementById("myModal2");
 
+let cards;
 
-//check for game completion and open congrats modal
-let win16 = document.getElementsByClassName('match');
-let win32 = document.getElementsByClassName('match');
-let win64 = document.getElementsByClassName('match');
-let congrats = document.getElementById('myModal4');
+//deck creation
+//code for deck creation and card shuffle from https://www.taniarascia.com/how-to-create-a-memory-game-super-mario-with-plain-javascript/
+// Grab the game board div
+const game = document.getElementById('game-board');
+game.parentNode.style.display = ('none');
 
-function game() {
+// Create a section with a class of grid
+const grid = document.createElement('section');
+grid.setAttribute('class', 'grid');
 
- // Grab the game board div
-    const game = document.getElementById('game-board');
+// Append the grid section to the game div
+game.appendChild(grid);
 
-    // Create a section with a class of grid
-    const grid = document.createElement('section');
-    grid.setAttribute('class', 'grid');
-
-    // Append the grid section to the game div
-    game.appendChild(grid);
+//game play
+startGame.onclick = function () {
+	timer.style.display = "block";
+	//call start stopwatch function
+	startTime();
+	//hide the div holding the full height blank background
+    hidePH.style.display = "none";
+	//show the game board
+	game.parentNode.style.display = ('block');
 	
-	// Randomize game grid on each load
-    gameGrid.sort(() => 0.5 - Math.random());
-
-      // For each item in the gameGrid array...
-      gameGrid.forEach(item => {
+	//if statement to create 16 card game
+	if (start16.checked === true) {
+      cards = cardsArray.slice(0, 8).concat(cardsArray.slice(0, 8));
+      // Randomize game grid on each load
+      cards.sort(() => 0.5 - Math.random());
+      // For each item in the cardsArray...
+      cards.forEach(item => {
         // Create a parent div to hold front and back of cards
         const card = document.createElement('div');
         // Apply a card class to that div
@@ -549,143 +323,155 @@ function game() {
         grid.appendChild(card);
         card.appendChild(front);
         card.appendChild(back);
-	})
-    //
-	//16 deck animation, matches and gueses	
-
-    //Matches function
-    // Add match CSS
-    const match = () => {
-        var selected = document.querySelectorAll('.selected')
-        selected.forEach((card) => {
-        card.classList.add('match')
-        })
-    }
-
-    let count = 0;
-    let firstGuess = ''
-    let secondGuess = ''
-    let delay = 1200
-
-    //add 'selected' class on click & toggle
-    grid.addEventListener('click', function (event) {
-        let clicked = event.target;
-        //do not allow the game board to be selected, do not allow the same card to be clicked twice in a row, do not allow a matched pair to be clicked again 
-        if (clicked.nodeName === 'SECTION' || clicked.parentNode.classList.contains('match') || clicked.parentNode.classList.contains('selected')) { 
-          return; 
-        } 
-        //call match function
-        if (count < 2) {
-          count++
-          if (count === 1) {
-            // Assign first guess
-            firstGuess = clicked.parentNode.dataset.name
-            console.log(firstGuess)
-            clicked.parentNode.classList.add('selected')
-          } else {
-            // Assign second guess
-            secondGuess = clicked.parentNode.dataset.name
-            console.log(secondGuess)
-            clicked.parentNode.classList.add('selected')
-          }
-          // If both guesses are not empty...
-          if (firstGuess !== '' && secondGuess !== '') {
-            // and the first guess matches the second match...
-            if (firstGuess === secondGuess) {
-              // run the match function, with 1200ms delay
-              setTimeout(match, delay)
-              setTimeout(resetGuesses, delay)
-            }
-            else {
-              setTimeout(resetGuesses, delay)
-            }
-          }
-        }
-    });
-
-    // reset guesses to allow continued matches
-    const resetGuesses = () => {
-        firstGuess = ''
-        secondGuess = ''
-        count = 0
-
-        var selected = document.querySelectorAll('.selected')
-        selected.forEach((card) => {
-          card.classList.remove('selected')
-        })
+      })
 	}
-}
+	
+	//if statement to create 32 card game
+	else if (start32.checked === true) {
+      cards = cardsArray.slice(0, 16).concat(cardsArray.slice(0, 16));
+      // Randomize game grid on each load
+      cards.sort(() => 0.5 - Math.random());
+      // For each item in the cardsArray...
+      cards.forEach(item => {
+        // Create a parent div to hold front and back of cards
+        const card = document.createElement('div');
+        // Apply a card class to that div
+        card.classList.add('card');
+        // Set the data-name attribute of the div to the cardsArray name
+        card.dataset.name = item.name;
 
-//game play
-startGame.onclick = function () {
-	timer.style.display = "block";
-	//call start stopwatch function
-	startTime();
-	//hide the div holding the full height blank background
-    hidePH.style.display = "none";
-	//
-	//
-	//if statement to create 16 card game
-	if (start16.checked === true) {
-		game();
-    //code for deck creation and card shuffle from https://www.taniarascia.com/how-to-create-a-memory-game-super-mario-with-plain-javascript/
-	//
-	} else {
+        //front of the card
+        const front = document.createElement('div');
+        front.classList.add('front');
+
+        //back of the card with the individual image
+        const back = document.createElement('div');
+        back.classList.add('back');
+        // Apply the background image of the div to the cardsArray image
+        back.style.backgroundImage = `url(${item.img})`;
+
+        // Append the div to the grid section
+        grid.appendChild(card);
+        card.appendChild(front);
+        card.appendChild(back);
+      })
+	}
+	
+	//if statement to create 64 card game
+	else if (start64.checked === true) {
+      cards = cardsArray.concat(cardsArray);
+      // Randomize game grid on each load
+      cards.sort(() => 0.5 - Math.random());
+      // For each item in the cardsArray...
+      cards.forEach(item => {
+        // Create a parent div to hold front and back of cards
+        const card = document.createElement('div');
+        // Apply a card class to that div
+        card.classList.add('card');
+        // Set the data-name attribute of the div to the cardsArray name
+        card.dataset.name = item.name;
+
+        //front of the card
+        const front = document.createElement('div');
+        front.classList.add('front');
+
+        //back of the card with the individual image
+        const back = document.createElement('div');
+        back.classList.add('back');
+        // Apply the background image of the div to the cardsArray image
+        back.style.backgroundImage = `url(${item.img})`;
+
+        // Append the div to the grid section
+        grid.appendChild(card);
+        card.appendChild(front);
+        card.appendChild(back);
+      })
+	}
+	
+	else {
 		return;
 	}
 	startNewGame.style.display = "none";
 }
 
-//make the start button open the reset modal instead of the start modal once a game has started
-let gameOngoing = document.getElementById("start");
-let gameWarning = document.getElementsByClassName("grid");
-//syntax for the if statement from: https://stackoverflow.com/questions/26254957/if-class-exists-do-something-with-javascript
-gameOngoing.onclick = function () {
-	if (gameWarning.length > 0) {
-		startNewGame.style.display = "none";
-		resetModal.style.display = "block";
-	}
+//animation, matches and gueses	
+
+//Matches function
+// Add match CSS
+const match = () => {
+  let selected = document.querySelectorAll('.selected')
+  selected.forEach((card) => {
+  card.classList.add('match')
+  })
+}
+
+let count = 0;
+let firstGuess = ''
+let secondGuess = ''
+let delay = 1200
+
+//add 'selected' class on click
+grid.addEventListener('click', function (event) {
+    let clicked = event.target;
+    //do not allow the game board to be selected, do not allow the same card to be clicked twice in a row, do not allow a matched pair to be clicked again 
+    if (clicked.nodeName === 'SECTION' || clicked.parentNode.classList.contains('match') || clicked.parentNode.classList.contains('selected')) { 
+      return; 
+    } 
+    //call match function
+    if (count < 2) {
+      count++
+      if (count === 1) {
+        // Assign first guess
+        firstGuess = clicked.parentNode.dataset.name
+        console.log(firstGuess)
+        clicked.parentNode.classList.add('selected')
+      } else {
+        // Assign second guess
+        secondGuess = clicked.parentNode.dataset.name
+        console.log(secondGuess)
+        clicked.parentNode.classList.add('selected')
+      }
+      // If both guesses are not empty...
+      if (firstGuess !== '' && secondGuess !== '') {
+        // and the first guess matches the second match...
+        if (firstGuess === secondGuess) {
+          // run the match function, with 1200ms delay
+          setTimeout(match, delay)
+          setTimeout(resetGuesses, delay)
+        }
+        else {
+          setTimeout(resetGuesses, delay)
+        }
+      }
+    }
+});
+
+// reset guesses to allow continued matches
+const resetGuesses = () => {
+    firstGuess = ''
+    secondGuess = ''
+    count = 0
+
+    let selected = document.querySelectorAll('.selected')
+    selected.forEach((card) => {
+      card.classList.remove('selected')
+    })
 }
 
 //game completion
-let cardCount16 = document.getElementsByClassName('card');
-let cardCount32 = document.getElementsByClassName('card');
-let cardCount64 = document.getElementsByClassName('card');
+//check for game completion and open congrats modal
+let congrats = document.getElementById('myModal4');
+let cardCount = document.getElementsByClassName('card');
+let matchCount = document.getElementsByClassName('match');
 
 //check every second for completion of game
-setInterval(timer16, 1000);
-setInterval(timer32, 1000);
-setInterval(timer64, 1000);
+setInterval(winCheck, 1000);
 
-//function checks for 16 match classes and once found displays the congrats modal, removes the match class from all cards, hides the gameboard, hides the timer and displays the doodle placeholder image.
-function timer16() {
-	if (cardCount16.length === 16) {
-      if (win16.length === 16) {
-        congrats.style.display = "block";
-        stopTime();
-        timer.style.display = "none";
-      } 
-	}
-}
-
-//function checks for 32 match classes and once found displays the congrats modal, removes the match class from all cards, hides the gameboard, hides the timer and displays the doodle placeholder image.
-function timer32() {
-	if (cardCount32.length === 32) {
-      if (win32.length === 32) {
-        congrats.style.display = "block";
-        stopTime();
-        timer.style.display = "none";
-      }
-	}
-}
-
-//function checks for 64 match classes and once found displays the congrats modal, removes the match class from all cards, hides the gameboard, hides the timer and displays the doodle placeholder image.
-function timer64() {
-	if (cardCount64.length === 64) {
-      if (win64.length === 64) {
-        congrats.style.display = "block";
-        stopTime();
-        timer.style.display = "none";
-      }
-	}
+//function checks that number of instances of match class matches number of instances of card class and once found displays the congrats modal, removes the match class from all cards, hides the gameboard, hides the timer and displays the doodle placeholder image.
+function winCheck() {
+    if (cardCount.length === matchCount.length && cardCount.length > 1) {
+      congrats.style.display = "block";
+      stopTime();
+      timer.style.display = "none";
+    } 
 }
