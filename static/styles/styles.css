@@ -39,7 +39,7 @@ nav a {
 	color: #000000;
 }
 
-button {
+button, nav a {
 	background: none;
 	color: inherit;
 	border: none;
@@ -50,7 +50,7 @@ button {
 	letter-spacing: 0.2em;
 }
 
-button:hover {
+button:hover, nav a:hover {
 	color: #30BB34;
 }
 

@@ -3,16 +3,16 @@
 //Modal writing code amended from https://www.w3schools.com/howto/howto_css_modals.asp
 // Making Javascript work on multiple modals - code amended from : https://stackoverflow.com/questions/40645032/creating-multiple-modals-on-a-single-page 
 // Get the button that opens the modal
-var btn = document.querySelectorAll("button.modal-button");
+let btn = document.querySelectorAll("a.modal-button");
 
 // All page modals
-var modals = document.querySelectorAll('.modal');
+let modals = document.querySelectorAll('.modal');
 
 // Get the <span> element that closes the modal
-var spans = document.getElementsByClassName("close");
+let spans = document.getElementsByClassName("close");
 
 // When the user clicks the button, open the modal
-for (var i = 0; i < btn.length; i++) {
+for (let i = 0; i < btn.length; i++) {
     btn[i].onclick = function(e) {
       e.preventDefault();
       let modal = document.querySelector(e.target.getAttribute("href"));
@@ -21,9 +21,9 @@ for (var i = 0; i < btn.length; i++) {
 }
 
 // When the user clicks on <span> (x), close the modal
-for (var j = 0; j < spans.length; j++) {
+for (let j = 0; j < spans.length; j++) {
     spans[j].onclick = function() {
-      for (var index in modals) {
+      for (let index in modals) {
       if (typeof modals[index].style !== 'undefined') modals[index].style.display = "none";    
     }
     }
@@ -32,16 +32,16 @@ for (var j = 0; j < spans.length; j++) {
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
     if (event.target.classList.contains('modal')) {
-     for (var index in modals) {
+     for (let index in modals) {
       if (typeof modals[index].style !== 'undefined') modals[index].style.display = "none";    
      }
     }
 }
 
 // Get the button to cancel reset and return to game
-var resetModal = document.getElementById("myModal3");
-var cancel = document.getElementById("cancel");
-var reset = document.getElementById("hard-reset");
+let resetModal = document.getElementById("myModal3");
+let cancel = document.getElementById("cancel");
+let reset = document.getElementById("hard-reset");
 
 //Cancel button to close modal
 cancel.onclick = function() {
@@ -59,6 +59,13 @@ let congratsReset = document.getElementById("congrats-reset");
 congratsReset.onclick = function() {
 	window.location.reload();
 }
+
+//hide the reset nav button by default
+let resetButton = document.getElementById('reset');
+resetButton.style.display = 'none';
+
+//declare startButton to allow it to be hidden once game started
+let startButton = document.getElementById('start');
 
 //The deck
 //array to hold all 32 cards for 64 card game
@@ -196,9 +203,9 @@ const cardsArray = [
 //the timer
 //code from https://www.ostraining.com/blog/coding/stopwatch/
 
-var clearTime; 
-var seconds = 0, minutes = 0, hours = 0;
-var secs, mins, gethours ; 
+let clearTime; 
+let seconds = 0, minutes = 0, hours = 0;
+let secs, mins, gethours ; 
 
 function startWatch( ) { 
 	/* check if seconds is equal to 60 and add a +1 to minutes, and set seconds to 0 */ 
@@ -215,7 +222,7 @@ function startWatch( ) {
 	gethours = ( hours < 10 ) ? ( '0' + hours + ': ' ) : ( hours + ': ' ); 
 	secs = ( seconds < 10 ) ? ( '0' + seconds ) : ( seconds ); 
 	// display the stopwatch 
-	var x = document .getElementById("timer"); 
+	let x = document .getElementById("timer"); 
 	x.innerHTML = 'Game Duration: ' + gethours + mins + secs; 
 	/* call the seconds counter after displaying the stop watch and increment seconds by +1 to keep it counting */ 
 	seconds++; 
@@ -236,10 +243,10 @@ function stopTime( ) {
 	/* check if seconds, minutes and hours are not equal to 0 */ 
 	if ( seconds !== 0 || minutes !== 0 || hours !== 0 ) { 
 		/* display the full time before reseting the stop watch */ 
-		var fulltime = document.getElementById( "fulltime" ); 
+		let fulltime = document.getElementById( "fulltime" ); 
 		//display the full time 
 		fulltime.style.display = "block"; 
-		var time = gethours + mins + secs; 
+		let time = gethours + mins + secs; 
 		fulltime.innerHTML = time; 
 		// reset the stop watch 
 		seconds = 0; minutes = 0; hours = 0; 
@@ -247,13 +254,13 @@ function stopTime( ) {
 		mins = '0' + minutes + ': '; 
 		gethours = '0' + hours + ': '; 
 		/* display the stopwatch after it's been stopped */ 
-		var x = document.getElementById ("timer"); 
-		var stopTime = gethours + mins + secs; 
+		let x = document.getElementById ("timer"); 
+		let stopTime = gethours + mins + secs; 
 		x.innerHTML = stopTime; 
 		///* display all stop watch control buttons */ 
-		//var showStart = document.getElementById ('start'); 
+		//let showStart = document.getElementById ('start'); 
 		//showStart.style.display = "inline-block"; 
-		//var showStop = document.getElementById ("stop"); 
+		//let showStop = document.getElementById ("stop"); 
 		//showStop.style.display = "inline-block"; 
 		/* clear the stop watch using the setTimeout( ) return value 'clearTime' as ID */ 
 		clearTimeout( clearTime ); 
@@ -287,79 +294,39 @@ game.appendChild(grid);
 
 //game play
 startGame.onclick = function () {
-	timer.style.display = "block";
-	//call start stopwatch function
-	startTime();
-	//hide the div holding the full height blank background
-    hidePH.style.display = "none";
-	//show the game board
-	game.parentNode.style.display = ('block');
-	
 	//if statement to create 16 card game
-	if (start16.checked === true) {
+	if (start16.checked) {
       cards = cardsArray.slice(0, 8).concat(cardsArray.slice(0, 8));
-      // Randomize game grid on each load
-      cards.sort(() => 0.5 - Math.random());
-      // For each item in the cardsArray...
-      cards.forEach(item => {
-        // Create a parent div to hold front and back of cards
-        const card = document.createElement('div');
-        // Apply a card class to that div
-        card.classList.add('card');
-        // Set the data-name attribute of the div to the cardsArray name
-        card.dataset.name = item.name;
-
-        //front of the card
-        const front = document.createElement('div');
-        front.classList.add('front');
-
-        //back of the card with the individual image
-        const back = document.createElement('div');
-        back.classList.add('back');
-        // Apply the background image of the div to the cardsArray image
-        back.style.backgroundImage = `url(${item.img})`;
-
-        // Append the div to the grid section
-        grid.appendChild(card);
-        card.appendChild(front);
-        card.appendChild(back);
-      })
 	}
 	
 	//if statement to create 32 card game
-	else if (start32.checked === true) {
+	else if (start32.checked) {
       cards = cardsArray.slice(0, 16).concat(cardsArray.slice(0, 16));
-      // Randomize game grid on each load
-      cards.sort(() => 0.5 - Math.random());
-      // For each item in the cardsArray...
-      cards.forEach(item => {
-        // Create a parent div to hold front and back of cards
-        const card = document.createElement('div');
-        // Apply a card class to that div
-        card.classList.add('card');
-        // Set the data-name attribute of the div to the cardsArray name
-        card.dataset.name = item.name;
-
-        //front of the card
-        const front = document.createElement('div');
-        front.classList.add('front');
-
-        //back of the card with the individual image
-        const back = document.createElement('div');
-        back.classList.add('back');
-        // Apply the background image of the div to the cardsArray image
-        back.style.backgroundImage = `url(${item.img})`;
-
-        // Append the div to the grid section
-        grid.appendChild(card);
-        card.appendChild(front);
-        card.appendChild(back);
-      })
 	}
 	
 	//if statement to create 64 card game
-	else if (start64.checked === true) {
+	else if (start64.checked) {
       cards = cardsArray.concat(cardsArray);
+	}
+	else {
+		let makeSelection = document.getElementById('make-selection');
+		makeSelection.innerHTML = 'Please select a deck size';
+		return;
+	}
+	
+	if (start16.checked || start32.checked || start64.checked) {
+      timer.style.display = 'block';
+      //call start stopwatch function
+      startTime();
+      //hide the div holding the full height blank background
+      hidePH.style.display = 'none';
+      //show the game board
+      game.parentNode.style.display = 'block';
+      //hide start button
+      startButton.style.display = 'none';
+      //show reset button
+      resetButton.style.display = 'block';
+		
       // Randomize game grid on each load
       cards.sort(() => 0.5 - Math.random());
       // For each item in the cardsArray...
@@ -385,12 +352,11 @@ startGame.onclick = function () {
         grid.appendChild(card);
         card.appendChild(front);
         card.appendChild(back);
-      })
-	}
-	
-	else {
+        })
+	} else {
 		return;
 	}
+	
 	startNewGame.style.display = "none";
 }
 
