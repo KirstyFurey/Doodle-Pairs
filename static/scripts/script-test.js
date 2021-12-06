@@ -380,7 +380,7 @@ let delay = 1200
 grid.addEventListener('click', function (event) {
     let clicked = event.target;
     //do not allow the game board to be selected, do not allow the same card to be clicked twice in a row, do not allow a matched pair to be clicked again 
-    if (clicked.nodeName === 'SECTION' || clicked.parentNode.classList.contains('match') || clicked.parentNode.classList.contains('selected')) { 
+    if (clicked.nodeName === 'SECTION' || clicked.classList.contains('grid') || clicked.parentNode.classList.contains('match') || clicked.parentNode.classList.contains('selected')) { 
       return; 
     } 
     //call match function
