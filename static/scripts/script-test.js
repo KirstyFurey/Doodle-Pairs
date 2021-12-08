@@ -26,7 +26,7 @@ for (let j = 0; j < spans.length; j++) {
       for (let index in modals) {
       if (typeof modals[index].style !== 'undefined') modals[index].style.display = 'none';    
     }
-    }
+	}
 }
 
 // When the user clicks anywhere outside of the modal, close it
@@ -323,6 +323,7 @@ startGame.onclick = function () {
       startTime();
       pauseTime();
       pauseTimer();
+      //restartTimer();
       //hide the div holding the full height blank background
       hidePH.style.display = 'none';
       //show the game board
@@ -467,6 +468,20 @@ function pauseTimer() {
 
 //let timerRestart;
 /*
+function restartTimer() {
+	//let getReset = document.getElementById('x-close');
+	//getReset.onclick = function() {
+	//if (seconds !== 0 || minutes !== 0 || hours !== 0) {
+		startTime();
+	//} //else {
+		//return;
+	//}
+	//}
+}
+*/
+
+
+/*
 function pauseTime() {
   // Collect all .image into a NodeList
   let getModal = document.querySelectorAll('.modal');
@@ -485,4 +500,3 @@ function pauseTime() {
   }
 }
 */
-
