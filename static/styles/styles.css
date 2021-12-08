@@ -62,7 +62,7 @@ button:hover, nav a:hover {
 }
 
 /*The timer*/
-#timer {
+#timer, #pause-timer {
 	text-align: center;
 	display: none;
 }

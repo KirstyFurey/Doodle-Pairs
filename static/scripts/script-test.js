@@ -46,19 +46,19 @@ let reset = document.getElementById('hard-reset');
 //Cancel button to close modal
 cancel.onclick = function() {
 	resetModal.style.display = 'none';
-}
+};
 
 //Reset board
 reset.onclick  = function() {
 	window.location.reload();
-}
+};
 
 //Reset button clicked in congrats modal reloads window
 let congratsReset = document.getElementById('congrats-reset');
 
 congratsReset.onclick = function() {
 	window.location.reload();
-}
+};
 
 //hide the reset nav button by default
 let resetButton = document.getElementById('reset');
@@ -198,7 +198,7 @@ const cardsArray = [
 		name: 'yin-yang',
 		img: 'static/images/yin-yang.jpg',
 	},
-]
+];
 
 //the timer
 //code from https://www.ostraining.com/blog/coding/stopwatch/
@@ -211,13 +211,13 @@ const startWatch = () => {
 	/* check if seconds is equal to 60 and add a +1 to minutes, and set seconds to 0 */ 
 	if ( seconds === 60 ) { 
 		seconds = 0; minutes = minutes + 1; 
-	} 
+	}
 	/* you use the javascript tenary operator to format how the minutes should look and add 0 to minutes if less than 10 */ 
 	mins = ( minutes < 10 ) ? ( '0' + minutes + ': ' ) : ( minutes + ': ' ); 
 	/* check if minutes is equal to 60 and add a +1 to hours set minutes to 0 */ 
 	if ( minutes === 60 ) { 
 		minutes = 0; hours = hours + 1; 
-	} 
+	}
 	/* you use the javascript tenary operator to format how the hours should look and add 0 to hours if less than 10 */ 
 	gethours = ( hours < 10 ) ? ( '0' + hours + ': ' ) : ( hours + ': ' ); 
 	secs = ( seconds < 10 ) ? ( '0' + seconds ) : ( seconds ); 
@@ -227,45 +227,48 @@ const startWatch = () => {
 	/* call the seconds counter after displaying the stop watch and increment seconds by +1 to keep it counting */ 
 	seconds++; 
 	/* call the setTimeout( ) to keep the stop watch alive ! */ 
-	clearTime = setTimeout( 'startWatch( )', 1000 ); } 
-    // startWatch( ) //create a function to start the stop watch 
+	clearTime = setTimeout('startWatch()', 1000 ); 
+}; 
  
 const startTime = () => { 
 /* check if seconds, minutes, and hours are equal to zero and start the stop watch */ 
     if ( seconds === 0 && minutes === 0 && hours === 0 ) { 
 		/* call the startWatch( ) function to execute the stop watch whenever the startTime( ) is triggered */ 
 		startWatch( ); 
-	} 
-}
+	}
+};
 
 //create a function to stop the time 
 const stopTime = () => { 
 	/* check if seconds, minutes and hours are not equal to 0 */ 
-	if ( seconds !== 0 || minutes !== 0 || hours !== 0 ) { 
+	if ( seconds !== 0 || minutes !== 0 || hours !== 0 ); { 
 		/* display the full time before reseting the stop watch */ 
 		let fulltime = document.getElementById( 'fulltime' ); 
 		//display the full time 
 		fulltime.style.display = 'block'; 
 		let time = gethours + mins + secs; 
 		fulltime.innerHTML = time; 
+		//let pauseTime = document.getElementById('timer');
+		//pauseTime.style.display = 'block';
+		//pauseTime.innerHTML = 'GAME PAUSED ' + time;
 		// reset the stop watch 
-		seconds = 0; minutes = 0; hours = 0; 
-		secs = '0' + seconds; 
-		mins = '0' + minutes + ': '; 
-		gethours = '0' + hours + ': '; 
+		//seconds = 0; minutes = 0; hours = 0; 
+		//secs = '0' + seconds; 
+		//mins = '0' + minutes + ': '; 
+		//gethours = '0' + hours + ': '; 
 		/* display the stopwatch after it's been stopped */ 
-		let x = document.getElementById ('timer'); 
+		let x = document.getElementById ("timer"); 
 		let stopTime = gethours + mins + secs; 
-		x.innerHTML = stopTime; 
+		x.innerHTML = 'GAME PAUSED ' + stopTime; 
 		///* display all stop watch control buttons */ 
 		//let showStart = document.getElementById ('start'); 
 		//showStart.style.display = 'inline-block'; 
 		//let showStop = document.getElementById ('stop'); 
 		//showStop.style.display = 'inline-block'; 
 		/* clear the stop watch using the setTimeout( ) return value 'clearTime' as ID */ 
-		clearTimeout( clearTime ); 
+		clearTimeout(clearTime); 
 	} 
-} 
+};
 
 
 //load the deck and close start modal on hitting start button
@@ -318,6 +321,8 @@ startGame.onclick = function () {
       timer.style.display = 'block';
       //call start stopwatch function
       startTime();
+      pauseTime();
+      pauseTimer();
       //hide the div holding the full height blank background
       hidePH.style.display = 'none';
       //show the game board
@@ -364,16 +369,16 @@ startGame.onclick = function () {
 //Matches function
 // Add match CSS
 const match = () => {
-  let selected = document.querySelectorAll('.selected')
+  let selected = document.querySelectorAll('.selected');
   selected.forEach((card) => {
-  card.classList.add('match')
-  })
-}
+  card.classList.add('match');
+  });
+};
 
 let count = 0;
-let firstGuess = ''
-let secondGuess = ''
-let delay = 1200
+let firstGuess = '';
+let secondGuess = '';
+let delay = 1200;
 
 //game play - assign guesses and check for matches, and hide matched cards
 //add 'selected' class on click
@@ -385,28 +390,28 @@ grid.addEventListener('click', function (event) {
     } 
     //call match function
     if (count < 2) {
-      count++
+      count++;
       if (count === 1) {
         // Assign first guess
-        firstGuess = clicked.parentNode.dataset.name
-        console.log(firstGuess)
-        clicked.parentNode.classList.add('selected')
+        firstGuess = clicked.parentNode.dataset.name;
+        console.log(firstGuess);
+        clicked.parentNode.classList.add('selected');
       } else {
         // Assign second guess
-        secondGuess = clicked.parentNode.dataset.name
-        console.log(secondGuess)
-        clicked.parentNode.classList.add('selected')
+        secondGuess = clicked.parentNode.dataset.name;
+        console.log(secondGuess);
+        clicked.parentNode.classList.add('selected');
       }
       // If both guesses are not empty...
       if (firstGuess !== '' && secondGuess !== '') {
         // and the first guess matches the second match...
         if (firstGuess === secondGuess) {
           // run the match function, with 1200ms delay
-          setTimeout(match, delay)
-          setTimeout(resetGuesses, delay)
+          setTimeout(match, delay);
+          setTimeout(resetGuesses, delay);
         }
         else {
-          setTimeout(resetGuesses, delay)
+          setTimeout(resetGuesses, delay);
         }
       }
     }
@@ -414,15 +419,15 @@ grid.addEventListener('click', function (event) {
 
 // reset guesses to allow continued matches
 const resetGuesses = () => {
-    firstGuess = ''
-    secondGuess = ''
-    count = 0
+    firstGuess = '';
+    secondGuess = '';
+    count = 0;
 
-    let selected = document.querySelectorAll('.selected')
+    let selected = document.querySelectorAll('.selected');
     selected.forEach((card) => {
-      card.classList.remove('selected')
+      card.classList.remove('selected');
     })
-}
+};
 
 //game completion
 //check for game completion and open congrats modal
@@ -441,3 +446,43 @@ function winCheck() {
       timer.style.display = 'none';
     } 
 }
+
+//let pause;
+
+function pauseTime() {
+	let getModal = document.getElementById('reset');
+	getModal.onclick = function() {
+      stopTime();
+      //clearTimeout()
+	}
+}
+
+function pauseTimer() {
+	let getModal = document.getElementById('htp');
+	getModal.onclick = function() {
+      stopTime();
+      //clearTimeout()
+	}
+}
+
+//let timerRestart;
+/*
+function pauseTime() {
+  // Collect all .image into a NodeList
+  let getModal = document.querySelectorAll('.modal');
+  // Declare i and qty for "for" loop
+  let i, qty = getModal.length;
+  // Use "for" loop to iterate through NodeList
+  for (i = 0; i < qty; i++) {
+    // If this div.image at index [i] is "none"...
+    if (grid.length > 0 && getModal[i].style.display === 'block') {
+      // then make it "block"... 
+      stopTime();
+    } else {
+      // otherwise set display to "none"
+      startTime();
+    }
+  }
+}
+*/
+
