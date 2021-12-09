@@ -405,7 +405,7 @@ const matchCard = () => {
 
 //add red border to unmatched pair
 const noMatch = () => {
-  let noMatchPair = document.querySelectorAll('.wrong');
+  let noMatchPair = document.querySelectorAll('.selected');
   noMatchPair.forEach((card) => {
   card.style.borderColor = 'red';
   });
@@ -451,7 +451,6 @@ grid.addEventListener('click', function (event) {
           setTimeout(resetGuesses, delay);
         }
         else {
-          clicked.parentNode.classList.add('wrong');
           noMatch();
           //noBorder();
           setTimeout(resetGuesses, delay);
@@ -468,7 +467,8 @@ const resetGuesses = () => {
 
     let selected = document.querySelectorAll('.selected');
     selected.forEach((card) => {
-      card.classList.remove('selected');
+    card.classList.remove('selected');
+    card.style.borderColor = 'black';
     })
 };
 
