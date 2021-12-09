@@ -1,64 +1,79 @@
-"use strict";
+'use strict';
 
 //Modal writing code amended from https://www.w3schools.com/howto/howto_css_modals.asp
 // Making Javascript work on multiple modals - code amended from : https://stackoverflow.com/questions/40645032/creating-multiple-modals-on-a-single-page 
 // Get the button that opens the modal
-let btn = document.querySelectorAll("a.modal-button");
+let btn = document.querySelectorAll('a.modal-button');
 
 // All page modals
 let modals = document.querySelectorAll('.modal');
 
 // Get the <span> element that closes the modal
-let spans = document.getElementsByClassName("close");
+let spans = document.getElementsByClassName('close');
 
 // When the user clicks the button, open the modal
 for (let i = 0; i < btn.length; i++) {
     btn[i].onclick = function(e) {
       e.preventDefault();
-      let modal = document.querySelector(e.target.getAttribute("href"));
-      modal.style.display = "block";
+      let modal = document.querySelector(e.target.getAttribute('href'));
+      modal.style.display = 'block';
     }
 }
 
-// When the user clicks on <span> (x), close the modal
+// When the user clicks on <span> (x), close the modal, restart timer if it was paused
 for (let j = 0; j < spans.length; j++) {
     spans[j].onclick = function() {
       for (let index in modals) {
-      if (typeof modals[index].style !== 'undefined') modals[index].style.display = "none";    
+      if (typeof modals[index].style !== 'undefined') modals[index].style.display = 'none';    
     }
-    }
+    if (seconds !== 0 || minutes !== 0 || hours !== 0) {
+		startWatch();
+	} else {
+		return;
+	}
+	}
 }
 
-// When the user clicks anywhere outside of the modal, close it
+// When the user clicks anywhere outside of the modal, close it, restart timer if it was paused
 window.onclick = function(event) {
     if (event.target.classList.contains('modal')) {
      for (let index in modals) {
-      if (typeof modals[index].style !== 'undefined') modals[index].style.display = "none";    
+      if (typeof modals[index].style !== 'undefined') modals[index].style.display = 'none';    
      }
+     if (seconds !== 0 || minutes !== 0 || hours !== 0) {
+		startWatch();
+	} else {
+		return;
+	}
     }
 }
 
 // Get the button to cancel reset and return to game
-let resetModal = document.getElementById("myModal3");
-let cancel = document.getElementById("cancel");
-let reset = document.getElementById("hard-reset");
+let resetModal = document.getElementById('myModal3');
+let cancel = document.getElementById('cancel');
+let reset = document.getElementById('hard-reset');
 
 //Cancel button to close modal
 cancel.onclick = function() {
-	resetModal.style.display = "none";
-}
+	resetModal.style.display = 'none';
+    if (seconds !== 0 || minutes !== 0 || hours !== 0) {
+		startWatch();
+	} else {
+		return;
+	}
+};
 
 //Reset board
 reset.onclick  = function() {
 	window.location.reload();
-}
+};
 
 //Reset button clicked in congrats modal reloads window
-let congratsReset = document.getElementById("congrats-reset");
+let congratsReset = document.getElementById('congrats-reset');
 
 congratsReset.onclick = function() {
 	window.location.reload();
-}
+};
 
 //hide the reset nav button by default
 let resetButton = document.getElementById('reset');
@@ -198,7 +213,7 @@ const cardsArray = [
 		name: 'yin-yang',
 		img: 'static/images/yin-yang.jpg',
 	},
-]
+];
 
 //the timer
 //code from https://www.ostraining.com/blog/coding/stopwatch/
@@ -207,65 +222,68 @@ let clearTime;
 let seconds = 0, minutes = 0, hours = 0;
 let secs, mins, gethours ; 
 
-function startWatch( ) { 
+const startWatch = () => { 
 	/* check if seconds is equal to 60 and add a +1 to minutes, and set seconds to 0 */ 
 	if ( seconds === 60 ) { 
 		seconds = 0; minutes = minutes + 1; 
-	} 
+	}
 	/* you use the javascript tenary operator to format how the minutes should look and add 0 to minutes if less than 10 */ 
 	mins = ( minutes < 10 ) ? ( '0' + minutes + ': ' ) : ( minutes + ': ' ); 
 	/* check if minutes is equal to 60 and add a +1 to hours set minutes to 0 */ 
 	if ( minutes === 60 ) { 
 		minutes = 0; hours = hours + 1; 
-	} 
+	}
 	/* you use the javascript tenary operator to format how the hours should look and add 0 to hours if less than 10 */ 
 	gethours = ( hours < 10 ) ? ( '0' + hours + ': ' ) : ( hours + ': ' ); 
 	secs = ( seconds < 10 ) ? ( '0' + seconds ) : ( seconds ); 
 	// display the stopwatch 
-	let x = document .getElementById("timer"); 
+	let x = document .getElementById('timer'); 
 	x.innerHTML = 'Game Duration: ' + gethours + mins + secs; 
 	/* call the seconds counter after displaying the stop watch and increment seconds by +1 to keep it counting */ 
 	seconds++; 
 	/* call the setTimeout( ) to keep the stop watch alive ! */ 
-	clearTime = setTimeout( "startWatch( )", 1000 ); } 
-    // startWatch( ) //create a function to start the stop watch 
+	clearTime = setTimeout('startWatch()', 1000 ); 
+}; 
  
-function startTime() { 
+const startTime = () => { 
 /* check if seconds, minutes, and hours are equal to zero and start the stop watch */ 
     if ( seconds === 0 && minutes === 0 && hours === 0 ) { 
 		/* call the startWatch( ) function to execute the stop watch whenever the startTime( ) is triggered */ 
 		startWatch( ); 
-	} 
-}
+	}
+};
 
 //create a function to stop the time 
-function stopTime( ) { 
+const stopTime = () => { 
 	/* check if seconds, minutes and hours are not equal to 0 */ 
-	if ( seconds !== 0 || minutes !== 0 || hours !== 0 ) { 
+	if ( seconds !== 0 || minutes !== 0 || hours !== 0 ); { 
 		/* display the full time before reseting the stop watch */ 
-		let fulltime = document.getElementById( "fulltime" ); 
+		let fulltime = document.getElementById( 'fulltime' ); 
 		//display the full time 
-		fulltime.style.display = "block"; 
+		fulltime.style.display = 'block'; 
 		let time = gethours + mins + secs; 
 		fulltime.innerHTML = time; 
+		//let pauseTime = document.getElementById('timer');
+		//pauseTime.style.display = 'block';
+		//pauseTime.innerHTML = 'GAME PAUSED ' + time;
 		// reset the stop watch 
-		seconds = 0; minutes = 0; hours = 0; 
-		secs = '0' + seconds; 
-		mins = '0' + minutes + ': '; 
-		gethours = '0' + hours + ': '; 
+		//seconds = 0; minutes = 0; hours = 0; 
+		//secs = '0' + seconds; 
+		//mins = '0' + minutes + ': '; 
+		//gethours = '0' + hours + ': '; 
 		/* display the stopwatch after it's been stopped */ 
 		let x = document.getElementById ("timer"); 
 		let stopTime = gethours + mins + secs; 
-		x.innerHTML = stopTime; 
+		x.innerHTML = 'GAME PAUSED ' + stopTime; 
 		///* display all stop watch control buttons */ 
 		//let showStart = document.getElementById ('start'); 
-		//showStart.style.display = "inline-block"; 
-		//let showStop = document.getElementById ("stop"); 
-		//showStop.style.display = "inline-block"; 
+		//showStart.style.display = 'inline-block'; 
+		//let showStop = document.getElementById ('stop'); 
+		//showStop.style.display = 'inline-block'; 
 		/* clear the stop watch using the setTimeout( ) return value 'clearTime' as ID */ 
-		clearTimeout( clearTime ); 
+		clearTimeout(clearTime); 
 	} 
-} 
+};
 
 
 //load the deck and close start modal on hitting start button
@@ -275,7 +293,7 @@ let start32 = document.getElementById('32-deck');
 let start64 = document.getElementById('64-deck');
 let hidePH = document.getElementById('placeholder');
 let timer = document.getElementById('timer');
-let startNewGame = document.getElementById("myModal2");
+let startNewGame = document.getElementById('myModal2');
 
 let cards;
 
@@ -318,6 +336,9 @@ startGame.onclick = function () {
       timer.style.display = 'block';
       //call start stopwatch function
       startTime();
+      pauseTime();
+      pauseTimer();
+      //restartTimer();
       //hide the div holding the full height blank background
       hidePH.style.display = 'none';
       //show the game board
@@ -356,57 +377,57 @@ startGame.onclick = function () {
 	} else {
 		return;
 	}
-	
-	startNewGame.style.display = "none";
+	startNewGame.style.display = 'none';
 }
 
 //animation, matches and gueses	
-
+//
 //Matches function
 // Add match CSS
 const match = () => {
-  let selected = document.querySelectorAll('.selected')
+  let selected = document.querySelectorAll('.selected');
   selected.forEach((card) => {
-  card.classList.add('match')
-  })
-}
+  card.classList.add('match');
+  });
+};
 
 let count = 0;
-let firstGuess = ''
-let secondGuess = ''
-let delay = 1200
+let firstGuess = '';
+let secondGuess = '';
+let delay = 1200;
 
+//game play - assign guesses and check for matches, and hide matched cards
 //add 'selected' class on click
 grid.addEventListener('click', function (event) {
     let clicked = event.target;
     //do not allow the game board to be selected, do not allow the same card to be clicked twice in a row, do not allow a matched pair to be clicked again 
-    if (clicked.nodeName === 'SECTION' || clicked.parentNode.classList.contains('match') || clicked.parentNode.classList.contains('selected')) { 
+    if (clicked.nodeName === 'SECTION' || clicked.classList.contains('grid') || clicked.parentNode.classList.contains('match') || clicked.parentNode.classList.contains('selected')) { 
       return; 
     } 
     //call match function
     if (count < 2) {
-      count++
+      count++;
       if (count === 1) {
         // Assign first guess
-        firstGuess = clicked.parentNode.dataset.name
-        console.log(firstGuess)
-        clicked.parentNode.classList.add('selected')
+        firstGuess = clicked.parentNode.dataset.name;
+        console.log(firstGuess);
+        clicked.parentNode.classList.add('selected');
       } else {
         // Assign second guess
-        secondGuess = clicked.parentNode.dataset.name
-        console.log(secondGuess)
-        clicked.parentNode.classList.add('selected')
+        secondGuess = clicked.parentNode.dataset.name;
+        console.log(secondGuess);
+        clicked.parentNode.classList.add('selected');
       }
       // If both guesses are not empty...
       if (firstGuess !== '' && secondGuess !== '') {
         // and the first guess matches the second match...
         if (firstGuess === secondGuess) {
           // run the match function, with 1200ms delay
-          setTimeout(match, delay)
-          setTimeout(resetGuesses, delay)
+          setTimeout(match, delay);
+          setTimeout(resetGuesses, delay);
         }
         else {
-          setTimeout(resetGuesses, delay)
+          setTimeout(resetGuesses, delay);
         }
       }
     }
@@ -414,15 +435,15 @@ grid.addEventListener('click', function (event) {
 
 // reset guesses to allow continued matches
 const resetGuesses = () => {
-    firstGuess = ''
-    secondGuess = ''
-    count = 0
+    firstGuess = '';
+    secondGuess = '';
+    count = 0;
 
-    let selected = document.querySelectorAll('.selected')
+    let selected = document.querySelectorAll('.selected');
     selected.forEach((card) => {
-      card.classList.remove('selected')
+      card.classList.remove('selected');
     })
-}
+};
 
 //game completion
 //check for game completion and open congrats modal
@@ -436,8 +457,57 @@ setInterval(winCheck, 1000);
 //function checks that number of instances of match class matches number of instances of card class and once found displays the congrats modal, removes the match class from all cards, hides the gameboard, hides the timer and displays the doodle placeholder image.
 function winCheck() {
     if (cardCount.length === matchCount.length && cardCount.length > 1) {
-      congrats.style.display = "block";
+      congrats.style.display = 'block';
       stopTime();
-      timer.style.display = "none";
+      timer.style.display = 'none';
     } 
 }
+
+//let pause;
+
+function pauseTime() {
+	let getModal = document.getElementById('reset');
+	getModal.onclick = function() {
+      stopTime();
+	}
+}
+
+function pauseTimer() {
+	let getModal = document.getElementById('htp');
+	getModal.onclick = function() {
+      stopTime();
+	}
+}
+
+//let timerRestart;
+/*
+function restartTimer() {
+	//let getReset = document.getElementById('x-close');
+	//getReset.onclick = function() {
+	//if (seconds !== 0 || minutes !== 0 || hours !== 0) {
+		startTime();
+	//} //else {
+		//return;
+	//}
+	//}
+}
+*/
+
+/*
+function pauseTime() {
+  // Collect all .modal into a NodeList
+  let getModal = document.querySelectorAll('.modal');
+  // Declare i and qty for "for" loop
+  let i, qty = getModal.length;
+  // Use "for" loop to iterate through NodeList
+  for (i = 0; i < qty; i++) {
+    // If this div.image at index [i] is "none"...
+    if (grid.length > 0 && getModal[i].style.display === 'block') {
+      // then make it "block"... 
+      stopTime();
+    } else {
+      startWatch();
+    }
+  }
+}
+*/

@@ -20,21 +20,31 @@ for (let i = 0; i < btn.length; i++) {
     }
 }
 
-// When the user clicks on <span> (x), close the modal
+// When the user clicks on <span> (x), close the modal, restart timer if it was paused
 for (let j = 0; j < spans.length; j++) {
     spans[j].onclick = function() {
       for (let index in modals) {
       if (typeof modals[index].style !== 'undefined') modals[index].style.display = 'none';    
     }
+    if (seconds !== 0 || minutes !== 0 || hours !== 0) {
+		startWatch();
+	} else {
+		return;
+	}
 	}
 }
 
-// When the user clicks anywhere outside of the modal, close it
+// When the user clicks anywhere outside of the modal, close it, restart timer if it was paused
 window.onclick = function(event) {
     if (event.target.classList.contains('modal')) {
      for (let index in modals) {
       if (typeof modals[index].style !== 'undefined') modals[index].style.display = 'none';    
      }
+     if (seconds !== 0 || minutes !== 0 || hours !== 0) {
+		startWatch();
+	} else {
+		return;
+	}
     }
 }
 
@@ -46,6 +56,11 @@ let reset = document.getElementById('hard-reset');
 //Cancel button to close modal
 cancel.onclick = function() {
 	resetModal.style.display = 'none';
+    if (seconds !== 0 || minutes !== 0 || hours !== 0) {
+		startWatch();
+	} else {
+		return;
+	}
 };
 
 //Reset board
@@ -237,7 +252,20 @@ const startTime = () => {
 		startWatch( ); 
 	}
 };
-
+/*
+//restart timer after pause
+function restartTimer() {
+	let getReset = document.getElementById('x-close');
+	getReset.onclick = function() {
+	if (seconds !== 0 || minutes !== 0 || hours !== 0) {
+		startWatch();
+		resetModal.style.display = 'none';
+	} else {
+		return;
+	}
+	}
+}
+*/
 //create a function to stop the time 
 const stopTime = () => { 
 	/* check if seconds, minutes and hours are not equal to 0 */ 
@@ -454,7 +482,6 @@ function pauseTime() {
 	let getModal = document.getElementById('reset');
 	getModal.onclick = function() {
       stopTime();
-      //clearTimeout()
 	}
 }
 
@@ -462,7 +489,6 @@ function pauseTimer() {
 	let getModal = document.getElementById('htp');
 	getModal.onclick = function() {
       stopTime();
-      //clearTimeout()
 	}
 }
 
@@ -480,10 +506,9 @@ function restartTimer() {
 }
 */
 
-
 /*
 function pauseTime() {
-  // Collect all .image into a NodeList
+  // Collect all .modal into a NodeList
   let getModal = document.querySelectorAll('.modal');
   // Declare i and qty for "for" loop
   let i, qty = getModal.length;
@@ -494,8 +519,7 @@ function pauseTime() {
       // then make it "block"... 
       stopTime();
     } else {
-      // otherwise set display to "none"
-      startTime();
+      startWatch();
     }
   }
 }
