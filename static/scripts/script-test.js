@@ -37,14 +37,14 @@ for (let j = 0; j < spans.length; j++) {
 // When the user clicks anywhere outside of the modal, close it, restart timer if it was paused
 window.onclick = function(event) {
     if (event.target.classList.contains('modal')) {
-     for (let index in modals) {
-      if (typeof modals[index].style !== 'undefined') modals[index].style.display = 'none';    
-     }
-     if (seconds !== 0 || minutes !== 0 || hours !== 0) {
-		startWatch();
-	} else {
-		return;
-	}
+      for (let index in modals) {
+        if (typeof modals[index].style !== 'undefined') modals[index].style.display = 'none';    
+      }
+      if (seconds !== 0 || minutes !== 0 || hours !== 0) {
+        startWatch();
+      } else {
+      return;
+      }
     }
 }
 
@@ -252,20 +252,6 @@ const startTime = () => {
 		startWatch( ); 
 	}
 };
-/*
-//restart timer after pause
-function restartTimer() {
-	let getReset = document.getElementById('x-close');
-	getReset.onclick = function() {
-	if (seconds !== 0 || minutes !== 0 || hours !== 0) {
-		startWatch();
-		resetModal.style.display = 'none';
-	} else {
-		return;
-	}
-	}
-}
-*/
 //create a function to stop the time 
 const stopTime = () => { 
 	/* check if seconds, minutes and hours are not equal to 0 */ 
@@ -409,6 +395,29 @@ let firstGuess = '';
 let secondGuess = '';
 let delay = 1200;
 
+//add green border to matched pair
+const matchCard = () => {
+  let matchPair = document.querySelectorAll('.selected');
+  matchPair.forEach((card) => {
+  card.style.borderColor = '#30bb34';
+  });
+};
+
+//add red border to unmatched pair
+const noMatch = () => {
+  let noMatchPair = document.querySelectorAll('.wrong');
+  noMatchPair.forEach((card) => {
+  card.style.borderColor = 'red';
+  });
+};
+/*
+//const noBorder = () => {
+  let borderReset = document.querySelectorAll('.selected');
+  borderReset.forEach((card) => {
+  card.style.borderColor = 'black';
+  });
+};*/
+
 //game play - assign guesses and check for matches, and hide matched cards
 //add 'selected' class on click
 grid.addEventListener('click', function (event) {
@@ -435,11 +444,16 @@ grid.addEventListener('click', function (event) {
       if (firstGuess !== '' && secondGuess !== '') {
         // and the first guess matches the second match...
         if (firstGuess === secondGuess) {
+          matchCard();
           // run the match function, with 1200ms delay
           setTimeout(match, delay);
+          //setTimeout(matchCard, delay);
           setTimeout(resetGuesses, delay);
         }
         else {
+          clicked.parentNode.classList.add('wrong');
+          noMatch();
+          //noBorder();
           setTimeout(resetGuesses, delay);
         }
       }
@@ -476,8 +490,6 @@ function winCheck() {
     } 
 }
 
-//let pause;
-
 function pauseTime() {
 	let getModal = document.getElementById('reset');
 	getModal.onclick = function() {
@@ -491,36 +503,3 @@ function pauseTimer() {
       stopTime();
 	}
 }
-
-//let timerRestart;
-/*
-function restartTimer() {
-	//let getReset = document.getElementById('x-close');
-	//getReset.onclick = function() {
-	//if (seconds !== 0 || minutes !== 0 || hours !== 0) {
-		startTime();
-	//} //else {
-		//return;
-	//}
-	//}
-}
-*/
-
-/*
-function pauseTime() {
-  // Collect all .modal into a NodeList
-  let getModal = document.querySelectorAll('.modal');
-  // Declare i and qty for "for" loop
-  let i, qty = getModal.length;
-  // Use "for" loop to iterate through NodeList
-  for (i = 0; i < qty; i++) {
-    // If this div.image at index [i] is "none"...
-    if (grid.length > 0 && getModal[i].style.display === 'block') {
-      // then make it "block"... 
-      stopTime();
-    } else {
-      startWatch();
-    }
-  }
-}
-*/

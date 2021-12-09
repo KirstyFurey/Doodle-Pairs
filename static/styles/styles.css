@@ -267,6 +267,10 @@ main {
 	border: none !important;
     background-image: none !important;
 }
+/*
+.match .back {
+	border: 1px solid #30bb34;
+}*/
 
 .match .front  {
 	background: white !important;

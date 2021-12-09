@@ -40,7 +40,7 @@ window.onclick = function(event) {
      for (let index in modals) {
       if (typeof modals[index].style !== 'undefined') modals[index].style.display = 'none';    
      }
-     if (seconds !== 0 || minutes !== 0 || hours !== 0) {
+     if (seconds !== 0 || minutes !== 0 || hours !== 0 || event.target.classListcontains('congrats-modal')) {
 		startWatch();
 	} else {
 		return;
