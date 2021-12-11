@@ -69,6 +69,8 @@ Used to create the wireframes.
 ## Testing ##
 
 ### User Tests ###
+- Friend and family user tests show no bugs or faults.
+- iPhone SE user finds that the deck needs to be scrolled even on 16 deck so I changed the media query for this device size to make the 16 deck fit on one page.
 
 ### Bugs and Fixes ###
 - The first test via GitHub Pages showed the font I initially linked to was not being displayed, so I found one very similar on Google Fonts to switch it out. 

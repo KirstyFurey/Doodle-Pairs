@@ -382,4 +382,14 @@ footer a {
 	.grid {
 		max-width: 200px;
 	}
+	
+	.card, .front, .back {
+		width: 33px;
+		height: 47px;
+	}
+	
+	footer {
+		padding: 5px;
+		font-size: 0.5em;
+	}
 }
