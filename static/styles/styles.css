@@ -8,7 +8,6 @@ body {
 	font-weight: 900;
 	letter-spacing: 0.2em;
 	margin: 0;
-	/*height: 90vh;*/
 	width: 100%;
 	padding-bottom: 109px;
 }
@@ -89,7 +88,7 @@ button:hover, nav a:hover {
     margin: 15% auto; /* 15% from the top and centered */
     padding: 0px;
     border: 1px solid #888;
-    width: 60%; /* Could be more or less, depending on screen size */
+    width: 60%;
 	text-align: center;
 }
 
@@ -242,6 +241,7 @@ main {
 .back, .front {
     position: absolute;
     backface-visibility: hidden;
+	-webkit-backface-visibility: hidden;
 }
 
 .front {
