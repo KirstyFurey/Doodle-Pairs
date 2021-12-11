@@ -368,12 +368,18 @@ footer a {
 		padding: 15px;
 	}
 	.grid {
-		max-width: 250px;
+		max-width: 240px;
 		padding: 5px;
 	}
 	
 	.card, .front, .back {
 		width: 40px;
 		height: 56px;
+	}
+}
+
+@media only screen and (max-width: 350px) {
+	.grid {
+		max-width: 200px;
 	}
 }
