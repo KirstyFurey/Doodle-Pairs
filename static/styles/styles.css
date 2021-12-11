@@ -194,6 +194,11 @@ ol li:before {
 	border: 2px solid #30bb34;
 }
 
+#fulltime {
+	color: #30bb34;
+	font-size: 1.5em;
+}
+
 /*Site background*/
 #placeholder {
 	background-image: url("../images/Doodle-Tile-Opacity.jpg");
