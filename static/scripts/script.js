@@ -262,23 +262,10 @@ const stopTime = () => {
 		fulltime.style.display = 'block'; 
 		let time = gethours + mins + secs; 
 		fulltime.innerHTML = time; 
-		//let pauseTime = document.getElementById('timer');
-		//pauseTime.style.display = 'block';
-		//pauseTime.innerHTML = 'GAME PAUSED ' + time;
-		// reset the stop watch 
-		//seconds = 0; minutes = 0; hours = 0; 
-		//secs = '0' + seconds; 
-		//mins = '0' + minutes + ': '; 
-		//gethours = '0' + hours + ': '; 
 		/* display the stopwatch after it's been stopped */ 
 		let x = document.getElementById ("timer"); 
 		let stopTime = gethours + mins + secs; 
 		x.innerHTML = 'GAME PAUSED ' + stopTime; 
-		///* display all stop watch control buttons */ 
-		//let showStart = document.getElementById ('start'); 
-		//showStart.style.display = 'inline-block'; 
-		//let showStop = document.getElementById ('stop'); 
-		//showStop.style.display = 'inline-block'; 
 		/* clear the stop watch using the setTimeout( ) return value 'clearTime' as ID */ 
 		clearTimeout(clearTime); 
 	} 
@@ -337,7 +324,6 @@ startGame.onclick = function () {
       startTime();
       pauseTime();
       pauseTimer();
-      //restartTimer();
       //hide the div holding the full height blank background
       hidePH.style.display = 'none';
       //show the game board
@@ -410,13 +396,6 @@ const noMatch = () => {
   card.style.borderColor = 'red';
   });
 };
-/*
-//const noBorder = () => {
-  let borderReset = document.querySelectorAll('.selected');
-  borderReset.forEach((card) => {
-  card.style.borderColor = 'black';
-  });
-};*/
 
 //game play - assign guesses and check for matches, and hide matched cards
 //add 'selected' class on click
@@ -432,34 +411,34 @@ grid.addEventListener('click', function (event) {
       if (count === 1) {
         // Assign first guess
         firstGuess = clicked.parentNode.dataset.name;
-        console.log(firstGuess);
         clicked.parentNode.classList.add('selected');
       } else {
         // Assign second guess
         secondGuess = clicked.parentNode.dataset.name;
-        console.log(secondGuess);
         clicked.parentNode.classList.add('selected');
       }
       // If both guesses are not empty...
       if (firstGuess !== '' && secondGuess !== '') {
         // and the first guess matches the second match...
         if (firstGuess === secondGuess) {
+          //add green border
           matchCard();
           // run the match function, with 1200ms delay
           setTimeout(match, delay);
-          //setTimeout(matchCard, delay);
+          //run reset guesses with delay
           setTimeout(resetGuesses, delay);
         }
         else {
+          //add red border
           noMatch();
-          //noBorder();
+          //run reset guesses with delay
           setTimeout(resetGuesses, delay);
         }
       }
     }
 });
 
-// reset guesses to allow continued matches
+// reset guesses to allow continued matches and reset borders back to black
 const resetGuesses = () => {
     firstGuess = '';
     secondGuess = '';
@@ -481,7 +460,7 @@ let matchCount = document.getElementsByClassName('match');
 //check every second for completion of game
 setInterval(winCheck, 1000);
 
-//function checks that number of instances of match class matches number of instances of card class and once found displays the congrats modal, removes the match class from all cards, hides the gameboard, hides the timer and displays the doodle placeholder image.
+//function checks that number of instances of match class matches number of instances of card class - after there is one instance of card, otherwise winCheck will runnimmediately as there will be an equal number of each - 0, and once found displays the congrats modal, and pauses and hides the timer.
 function winCheck() {
     if (cardCount.length === matchCount.length && cardCount.length > 1) {
       congrats.style.display = 'block';
@@ -490,6 +469,8 @@ function winCheck() {
     } 
 }
 
+
+//function to pause the timer on opening modals during game play
 function pauseTime() {
 	let getModal = document.getElementById('reset');
 	getModal.onclick = function() {
