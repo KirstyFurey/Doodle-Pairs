@@ -3,60 +3,60 @@
 //Modal writing code amended from https://www.w3schools.com/howto/howto_css_modals.asp
 // Making Javascript work on multiple modals - code amended from : https://stackoverflow.com/questions/40645032/creating-multiple-modals-on-a-single-page 
 // Get the button that opens the modal
-let btn = document.querySelectorAll('a.modal-button');
+const btn = document.querySelectorAll('a.modal-button');
 
 // All page modals
-let modals = document.querySelectorAll('.modal');
+const modals = document.querySelectorAll('.modal');
 
 // Get the <span> element that closes the modal
-let spans = document.getElementsByClassName('close');
+const spans = document.getElementsByClassName('close');
 
 // When the user clicks the button, open the modal
 for (let i = 0; i < btn.length; i++) {
-    btn[i].onclick = function(e) {
-      e.preventDefault();
-      let modal = document.querySelector(e.target.getAttribute('href'));
-      modal.style.display = 'block';
-    }
+	btn[i].onclick = function(e) {
+		e.preventDefault();
+		const modal = document.querySelector(e.target.getAttribute('href'));
+		modal.style.display = 'block';
+	}
 }
 
 // When the user clicks on <span> (x), close the modal, restart timer if it was paused
 for (let j = 0; j < spans.length; j++) {
-    spans[j].onclick = function() {
-      for (let index in modals) {
-      if (typeof modals[index].style !== 'undefined') modals[index].style.display = 'none';    
-    }
-    if (seconds !== 0 || minutes !== 0 || hours !== 0) {
-		startWatch();
-	} else {
-		return;
-	}
+	spans[j].onclick = function() {
+		for (let index in modals) {
+			if (typeof modals[index].style !== 'undefined') modals[index].style.display = 'none';    
+		}
+		if (seconds !== 0 || minutes !== 0 || hours !== 0) {
+			startWatch();
+		} else {
+			return;
+		}
 	}
 }
 
 // When the user clicks anywhere outside of the modal, close it, restart timer if it was paused
 window.onclick = function(event) {
-    if (event.target.classList.contains('modal')) {
-      for (let index in modals) {
-        if (typeof modals[index].style !== 'undefined') modals[index].style.display = 'none';    
-      }
-      if (seconds !== 0 || minutes !== 0 || hours !== 0) {
-        startWatch();
-      } else {
-      return;
-      }
-    }
+	if (event.target.classList.contains('modal')) {
+		for (let index in modals) {
+			if (modals[index].style) modals[index].style.display = 'none';    
+		}
+		if (seconds || minutes  || hours) {
+			startWatch();
+		} else {
+			return;
+		}
+	}
 }
 
 // Get the button to cancel reset and return to game
-let resetModal = document.getElementById('myModal3');
-let cancel = document.getElementById('cancel');
-let reset = document.getElementById('hard-reset');
+const resetModal = document.getElementById('myModal3');
+const cancel = document.getElementById('cancel');
+const reset = document.getElementById('hard-reset');
 
 //Cancel button to close modal
 cancel.onclick = function() {
 	resetModal.style.display = 'none';
-    if (seconds !== 0 || minutes !== 0 || hours !== 0) {
+	if (seconds || minutes || hours) {
 		startWatch();
 	} else {
 		return;
@@ -69,18 +69,18 @@ reset.onclick  = function() {
 };
 
 //Reset button clicked in congrats modal reloads window
-let congratsReset = document.getElementById('congrats-reset');
+const congratsReset = document.getElementById('congrats-reset');
 
 congratsReset.onclick = function() {
 	window.location.reload();
 };
 
 //hide the reset nav button by default
-let resetButton = document.getElementById('reset');
+const resetButton = document.getElementById('reset');
 resetButton.style.display = 'none';
 
 //declare startButton to allow it to be hidden once game started
-let startButton = document.getElementById('start');
+const startButton = document.getElementById('start');
 
 //The deck
 //array to hold all 32 cards for 64 card game
@@ -246,8 +246,8 @@ const startWatch = () => {
 }; 
  
 const startTime = () => { 
-/* check if seconds, minutes, and hours are equal to zero and start the stop watch */ 
-    if ( seconds === 0 && minutes === 0 && hours === 0 ) { 
+	/* check if seconds, minutes, and hours are equal to zero and start the stop watch */ 
+	if ( seconds === 0 && minutes === 0 && hours === 0 ) { 
 		/* call the startWatch( ) function to execute the stop watch whenever the startTime( ) is triggered */ 
 		startWatch( ); 
 	}
@@ -255,9 +255,9 @@ const startTime = () => {
 //create a function to stop the time 
 const stopTime = () => { 
 	/* check if seconds, minutes and hours are not equal to 0 */ 
-	if ( seconds !== 0 || minutes !== 0 || hours !== 0 ); { 
+	if ( seconds || minutes || hours); { 
 		/* display the full time before reseting the stop watch */ 
-		let fulltime = document.getElementById( 'fulltime' ); 
+		const fulltime = document.getElementById( 'fulltime' ); 
 		//display the full time 
 		fulltime.style.display = 'block'; 
 		let time = gethours + mins + secs; 
@@ -274,12 +274,12 @@ const stopTime = () => {
 
 //load the deck and close start modal on hitting start button
 const startGame = document.getElementById('start-button');
-let start16 = document.getElementById('16-deck');
-let start32 = document.getElementById('32-deck');
-let start64 = document.getElementById('64-deck');
-let hidePH = document.getElementById('placeholder');
-let timer = document.getElementById('timer');
-let startNewGame = document.getElementById('myModal2');
+const start16 = document.getElementById('16-deck');
+const start32 = document.getElementById('32-deck');
+const start64 = document.getElementById('64-deck');
+const hidePH = document.getElementById('placeholder');
+const timer = document.getElementById('timer');
+const startNewGame = document.getElementById('myModal2');
 
 let cards;
 
@@ -300,65 +300,65 @@ game.appendChild(grid);
 startGame.onclick = function () {
 	//if statement to create 16 card game
 	if (start16.checked) {
-      cards = cardsArray.slice(0, 8).concat(cardsArray.slice(0, 8));
+		cards = cardsArray.slice(0, 8).concat(cardsArray.slice(0, 8));
 	}
-	
+
 	//if statement to create 32 card game
 	else if (start32.checked) {
-      cards = cardsArray.slice(0, 16).concat(cardsArray.slice(0, 16));
+		cards = cardsArray.slice(0, 16).concat(cardsArray.slice(0, 16));
 	}
-	
+
 	//if statement to create 64 card game
 	else if (start64.checked) {
-      cards = cardsArray.concat(cardsArray);
+		cards = cardsArray.concat(cardsArray);
 	}
 	else {
 		let makeSelection = document.getElementById('make-selection');
 		makeSelection.innerHTML = 'Please select a deck size';
 		return;
 	}
-	
+
 	if (start16.checked || start32.checked || start64.checked) {
-      timer.style.display = 'block';
-      //call start stopwatch function
-      startTime();
-      pauseTime();
-      pauseTimer();
-      //hide the div holding the full height blank background
-      hidePH.style.display = 'none';
-      //show the game board
-      game.parentNode.style.display = 'block';
-      //hide start button
-      startButton.style.display = 'none';
-      //show reset button
-      resetButton.style.display = 'block';
-		
-      // Randomize game grid on each load
-      cards.sort(() => 0.5 - Math.random());
-      // For each item in the cardsArray...
-      cards.forEach(item => {
-        // Create a parent div to hold front and back of cards
-        const card = document.createElement('div');
-        // Apply a card class to that div
-        card.classList.add('card');
-        // Set the data-name attribute of the div to the cardsArray name
-        card.dataset.name = item.name;
+		timer.style.display = 'block';
+		//call start stopwatch function
+		startTime();
+		pauseTime();
+		pauseTimer();
+		//hide the div holding the full height blank background
+		hidePH.style.display = 'none';
+		//show the game board
+		game.parentNode.style.display = 'block';
+		//hide start button
+		startButton.style.display = 'none';
+		//show reset button
+		resetButton.style.display = 'block';
 
-        //front of the card
-        const front = document.createElement('div');
-        front.classList.add('front');
+		// Randomize game grid on each load
+		cards.sort(() => 0.5 - Math.random());
+		// For each item in the cardsArray...
+		cards.forEach(item => {
+			// Create a parent div to hold front and back of cards
+			const card = document.createElement('div');
+			// Apply a card class to that div
+			card.classList.add('card');
+			// Set the data-name attribute of the div to the cardsArray name
+			card.dataset.name = item.name;
 
-        //back of the card with the individual image
-        const back = document.createElement('div');
-        back.classList.add('back');
-        // Apply the background image of the div to the cardsArray image
-        back.style.backgroundImage = `url(${item.img})`;
+			//front of the card
+			const front = document.createElement('div');
+			front.classList.add('front');
 
-        // Append the div to the grid section
-        grid.appendChild(card);
-        card.appendChild(front);
-        card.appendChild(back);
-        })
+			//back of the card with the individual image
+			const back = document.createElement('div');
+			back.classList.add('back');
+			// Apply the background image of the div to the cardsArray image
+			back.style.backgroundImage = `url(${item.img})`;
+
+			// Append the div to the grid section
+			grid.appendChild(card);
+			card.appendChild(front);
+			card.appendChild(back);
+		})
 	} else {
 		return;
 	}
@@ -370,10 +370,10 @@ startGame.onclick = function () {
 //Matches function
 // Add match CSS
 const match = () => {
-  let selected = document.querySelectorAll('.selected');
-  selected.forEach((card) => {
-  card.classList.add('match');
-  });
+	let selected = document.querySelectorAll('.selected');
+	selected.forEach((card) => {
+		card.classList.add('match');
+	});
 };
 
 let count = 0;
@@ -383,90 +383,93 @@ let delay = 1200;
 
 //add green border to matched pair
 const matchCard = () => {
-  let matchPair = document.querySelectorAll('.selected');
-  matchPair.forEach((card) => {
-  card.style.borderColor = '#30bb34';
-  });
+	let matchPair = document.querySelectorAll('.selected');
+	matchPair.forEach((card) => {
+		card.style.borderColor = '#30bb34';
+	});
 };
 
 //add red border to unmatched pair
 const noMatch = () => {
-  let noMatchPair = document.querySelectorAll('.selected');
-  noMatchPair.forEach((card) => {
-  card.style.borderColor = 'red';
-  });
+	let noMatchPair = document.querySelectorAll('.selected');
+	noMatchPair.forEach((card) => {
+		card.style.borderColor = 'red';
+	});
 };
 
 //game play - assign guesses and check for matches, and hide matched cards
 //add 'selected' class on click
 grid.addEventListener('click', function (event) {
-    let clicked = event.target;
-    //do not allow the game board to be selected, do not allow the same card to be clicked twice in a row, do not allow a matched pair to be clicked again 
-    if (clicked.nodeName === 'SECTION' || clicked.classList.contains('grid') || clicked.parentNode.classList.contains('match') || clicked.parentNode.classList.contains('selected')) { 
-      return; 
-    } 
-    //call match function
-    if (count < 2) {
-      count++;
-      if (count === 1) {
-        // Assign first guess
-        firstGuess = clicked.parentNode.dataset.name;
-        clicked.parentNode.classList.add('selected');
-      } else {
-        // Assign second guess
-        secondGuess = clicked.parentNode.dataset.name;
-        clicked.parentNode.classList.add('selected');
-      }
-      // If both guesses are not empty...
-      if (firstGuess !== '' && secondGuess !== '') {
-        // and the first guess matches the second match...
-        if (firstGuess === secondGuess) {
-          //add green border
-          matchCard();
-          // run the match function, with 1200ms delay
-          setTimeout(match, delay);
-          //run reset guesses with delay
-          setTimeout(resetGuesses, delay);
-        }
-        else {
-          //add red border
-          noMatch();
-          //run reset guesses with delay
-          setTimeout(resetGuesses, delay);
-        }
-      }
-    }
+	let clicked = event.target;
+	//do not allow the game board to be selected, do not allow the same card to be clicked twice in a row, do not allow a matched pair to be clicked again 
+	if (clicked.nodeName === 'SECTION' ||
+	clicked.classList.contains('grid') ||
+	clicked.parentNode.classList.contains('match') ||
+	clicked.parentNode.classList.contains('selected')) { 
+		return; 
+	} 
+	//call match function
+	if (count < 2) {
+		count++;
+		if (count === 1) {
+			// Assign first guess
+			firstGuess = clicked.parentNode.dataset.name;
+			clicked.parentNode.classList.add('selected');
+		} else {
+			// Assign second guess
+			secondGuess = clicked.parentNode.dataset.name;
+			clicked.parentNode.classList.add('selected');
+		}
+		// If both guesses are not empty...
+		if (firstGuess !== '' && secondGuess !== '') {
+			// and the first guess matches the second match...
+			if (firstGuess === secondGuess) {
+				//add green border
+				matchCard();
+				// run the match function, with 1200ms delay
+				setTimeout(match, delay);
+				//run reset guesses with delay
+				setTimeout(resetGuesses, delay);
+			}
+			else {
+				//add red border
+				noMatch();
+				//run reset guesses with delay
+				setTimeout(resetGuesses, delay);
+			}
+		}
+	}
 });
 
 // reset guesses to allow continued matches and reset borders back to black
 const resetGuesses = () => {
-    firstGuess = '';
-    secondGuess = '';
-    count = 0;
+	firstGuess = '';
+	secondGuess = '';
+	count = 0;
 
-    let selected = document.querySelectorAll('.selected');
-    selected.forEach((card) => {
-    card.classList.remove('selected');
-    card.style.borderColor = 'black';
-    })
+	let selected = document.querySelectorAll('.selected');
+	selected.forEach((card) => {
+		card.classList.remove('selected');
+		card.style.borderColor = 'black';
+	})
 };
 
 //game completion
 //check for game completion and open congrats modal
-let congrats = document.getElementById('myModal4');
-let cardCount = document.getElementsByClassName('card');
-let matchCount = document.getElementsByClassName('match');
+const congrats = document.getElementById('myModal4');
+const cardCount = document.getElementsByClassName('card');
+const matchCount = document.getElementsByClassName('match');
 
 //check every second for completion of game
 setInterval(winCheck, 1000);
 
 //function checks that number of instances of match class matches number of instances of card class - after there is one instance of card, otherwise winCheck will runnimmediately as there will be an equal number of each - 0, and once found displays the congrats modal, and pauses and hides the timer.
 function winCheck() {
-    if (cardCount.length === matchCount.length && cardCount.length > 1) {
-      congrats.style.display = 'block';
-      stopTime();
-      timer.style.display = 'none';
-    } 
+	if (cardCount.length === matchCount.length && cardCount.length > 1) {
+		congrats.style.display = 'block';
+		stopTime();
+		timer.style.display = 'none';
+	} 
 }
 
 
@@ -474,13 +477,13 @@ function winCheck() {
 function pauseTime() {
 	let getModal = document.getElementById('reset');
 	getModal.onclick = function() {
-      stopTime();
+		stopTime();
 	}
 }
 
 function pauseTimer() {
 	let getModal = document.getElementById('htp');
 	getModal.onclick = function() {
-      stopTime();
+		stopTime();
 	}
 }
