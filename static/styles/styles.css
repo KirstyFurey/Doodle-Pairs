@@ -247,6 +247,9 @@ main {
     position: absolute;
     backface-visibility: hidden;
 	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-ms-backface-visibility: hidden;
+	-o-backface-visibility: hidden;
 }
 
 .front {
@@ -265,17 +268,12 @@ main {
 .selected {
 	border: 1px solid black;
 	transform: rotateY(180deg);
-	/*-webkit-transform-style: flat;*/
 }
 
 .match {
 	border: none !important;
     background-image: none !important;
 }
-/*
-.match .back {
-	border: 1px solid #30bb34;
-}*/
 
 .match .front  {
 	background: white !important;

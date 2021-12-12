@@ -263,7 +263,7 @@ const stopTime = () => {
 		let time = gethours + mins + secs; 
 		fulltime.innerHTML = time; 
 		/* display the stopwatch after it's been stopped */ 
-		let x = document.getElementById ("timer"); 
+		let x = document.getElementById ('timer'); 
 		let stopTime = gethours + mins + secs; 
 		x.innerHTML = 'GAME PAUSED ' + stopTime; 
 		/* clear the stop watch using the setTimeout( ) return value 'clearTime' as ID */ 
