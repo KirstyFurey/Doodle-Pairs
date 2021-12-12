@@ -242,7 +242,7 @@ const startWatch = () => {
 	/* call the seconds counter after displaying the stop watch and increment seconds by +1 to keep it counting */ 
 	seconds++; 
 	/* call the setTimeout( ) to keep the stop watch alive ! */ 
-	clearTime = setTimeout('startWatch()', 1000 ); 
+	clearTime = setTimeout(startWatch, 1000 ); 
 }; 
  
 const startTime = () => { 
