@@ -14,83 +14,79 @@
 
 <body>
 	<header>
-      <nav>  
-        <div id="nav-div">
-		<h1 class="nav-title">Doodle Pairs</h1>	
-          <ul class="nav-items">
-            <li class="nav-li" id="htp"><a class="modal-button" href="#myModal1" aria-label="How To Play">HOW TO PLAY</a></li>
-            <li class="nav-li" id="start"><a class="modal-button" href="#myModal2" aria-label="Start">START</a></li>
-            <li class="nav-li" id="reset"><a class="modal-button" href="#myModal3" aria-label="Reset">RESET</a></li>
-            <li class="nav-li" id="congrats"><a class="modal-button" href="#myModal4">CONGRATS</a></li>
-          </ul>
-        </div>
-      </nav>
-     <!--The modals-->
-      <!--How to play-->
-      <div id="myModal1" class="modal">
-        <!-- how to play content -->
-        <div class="modal-content">
-          <span class="close" aria-label="close">&times;</span>
-          <h3 id="htp-title">How to play</h3>
-          <ol id="htp-list">
-			  <li>Select the number of cards to match in 'Play Mode'</li>
-			  <li>Hit start to begin and start timer.</li>
-			  <li>Click/tap on a card to flip it face up.</li>
-			  <li>Match a pair of cards to remove them from the board.</li>
-			  <li>Once all the cards are matched, <strong><em>YOU WIN!</em></strong> and your time is shown. Why not try to beat it?</li>
-          </ol>
-        </div>
-      </div>
-      <!--Start-->
-      <div id="myModal2" class="modal">
-        <!-- start content -->
-        <div class="modal-content">
-          <span class="close" aria-label="close">&times;</span>
-          <h3 id="start-title">Play mode</h3>
-          <p id="start-content">Select your play mode:</p>
-          <input type="radio" id="16-deck" name="deck-choice" value="16-deck">
-          <label for="16-deck">16 Cards</label>
-          <br>
-          <input type="radio" id="32-deck" name="deck-choice" value="32-deck">
-          <label for="32-deck">32 Cards</label>
-          <br>
-          <input type="radio" id="64-deck" name="deck-choice" value="64-deck">
-          <label for="64-deck">64 Cards</label>
-          <br>
-          <p id="make-selection"></p>
-          <button id="start-button">START GAME</button>
-        </div>
-      </div>
-      <!--Reset-->
-      <div id="myModal3" class="modal">
-        <!-- reset content -->
-        <div class="modal-content">
-          <span id="x-close" class="close" aria-label="close">&times;</span>
-          <h3 id="reset-title">Are you sure you want to reset?</h3>
-          <p id="reset-content">All progress will be lost and the board will be cleared</p>
-          <button id="hard-reset">Reset</button>
-          <br>
-          <button id="cancel">Cancel</button>
-        </div>
-      </div>
-      <!--Congratulations modal-->
-      <div id="myModal4" class="modal congrats-modal">
-        <!-- congratulations content -->
-        <div class="modal-content">
-          <h3 id="congrats-title">CONGRATULATIONS!</h3>
-          <p id="congrats-content">you completed the game in:</p>
-          <div id="fulltime"></div>
-          <p>HRS : MINS : SECS</p>
-          <br>
-          <button id="congrats-reset">Reset</button>
-        </div>
-      </div>
-      <!--The Timer-->
-      <div id="timer"></div>
-      <div id="pause-timer">
-		<div id="pause-time"></div>
-      </div>
-      <br>
+		<nav>  
+			<div id="nav-div">
+				<h1 class="nav-title">Doodle Pairs</h1>	
+				<ul class="nav-items">
+					<li class="nav-li" id="htp"><a class="modal-button" href="#myModal1" aria-label="How To Play">HOW TO PLAY</a></li>
+					<li class="nav-li" id="start"><a class="modal-button" href="#myModal2" aria-label="Start">START</a></li>
+					<li class="nav-li" id="reset"><a class="modal-button" href="#myModal3" aria-label="Reset">RESET</a></li>
+					<li class="nav-li" id="congrats"><a class="modal-button" href="#myModal4">CONGRATS</a></li>
+				</ul>
+			</div>
+		</nav>
+		<!--The modals-->
+		<!--How to play-->
+		<div id="myModal1" class="modal">
+			<!-- how to play content -->
+			<div class="modal-content">
+				<span class="close" aria-label="close">&times;</span>
+				<h3 id="htp-title">How to play</h3>
+				<ol id="htp-list">
+					<li>Select the number of cards to match in 'Play Mode'</li>
+					<li>Hit start to begin and start timer.</li>
+					<li>Click/tap on a card to flip it face up.</li>
+					<li>Match a pair of cards to remove them from the board.</li>
+					<li>Once all the cards are matched, <strong><em>YOU WIN!</em></strong> and your time is shown. Why not try to beat it?</li>
+				</ol>
+			</div>
+		</div>
+		<!--Start-->
+		<div id="myModal2" class="modal">
+			<!-- start content -->
+			<div class="modal-content">
+				<span class="close" aria-label="close">&times;</span>
+				<h3 id="start-title">Play mode</h3>
+				<p id="start-content">Select your play mode:</p>
+				<input type="radio" id="16-deck" name="deck-choice" value="16-deck">
+				<label for="16-deck">16 Cards</label>
+				<br>
+				<input type="radio" id="32-deck" name="deck-choice" value="32-deck">
+				<label for="32-deck">32 Cards</label>
+				<br>
+				<input type="radio" id="64-deck" name="deck-choice" value="64-deck">
+				<label for="64-deck">64 Cards</label>
+				<br>
+				<p id="make-selection"></p>
+				<button id="start-button">START GAME</button>
+			</div>
+		</div>
+		<!--Reset-->
+		<div id="myModal3" class="modal">
+			<!-- reset content -->
+			<div class="modal-content">
+				<span id="x-close" class="close" aria-label="close">&times;</span>
+				<h3 id="reset-title">Are you sure you want to reset?</h3>
+				<p id="reset-content">All progress will be lost and the board will be cleared</p>
+				<button id="hard-reset">Reset</button>
+				<br>
+				<button id="cancel">Cancel</button>
+			</div>
+		</div>
+		<!--Congratulations modal-->
+		<div id="myModal4" class="modal congrats-modal">
+			<!-- congratulations content -->
+			<div class="modal-content">
+				<h3 id="congrats-title">CONGRATULATIONS!</h3>
+				<p id="congrats-content">you completed the game in:</p>
+				<div id="fulltime"></div>
+				<p>HRS : MINS : SECS</p>
+				<br>
+				<button id="congrats-reset">Reset</button>
+			</div>
+		</div>
+		<!--The Timer-->
+		<div id="timer"></div>
 	</header>	
 	<section><div id="placeholder"></div></section>
 	<!--The game board-->
@@ -98,18 +94,18 @@
 		<div id="game-board"></div>
 	</main>
 	<footer>
-        <div id="footer-socials">
-          <a href="https://www.linkedin.com/in/kirsty-furey-071991105" target="_blank" aria-label="Linkedin">
-              <img class="social-logos" id="linkedin" src="static/images/linked-in-logo.png" alt="Linkedin"></a>
-          <a href="https://github.com/KirstyFurey" target="_blank" aria-label="GitHub">
-              <img class="social-logos" id="github" src="static/images/github-logo.png" alt="Github"></a>
-          <a href="https://www.instagram.com/kirstyfureyphotographer/" target="_blank" aria-label="Instagram">
-              <img class="social-logos" id="instagram" src="static/images/instagram-logo.png" alt="Instagram" ></a>
-          <a href="https://www.facebook.com/kirstyfureyphotographer" target="_blank" aria-label="Facebook">	
-              <img class="social-logos" id="facebook" src="static/images/facebook-logo.png" alt="Facebook"></a>	
-        </div>
-        <p>&copy; KIRSTY FUREY 2021. ALL RIGHTS RESERVED</p>
-        <p id="doodle-attr"><a href="https://www.freepik.com/" target="_blank">Icons vector created by rawpixel.com - www.freepik.com</a></p>
+		<div id="footer-socials">
+			<a href="https://www.linkedin.com/in/kirsty-furey-071991105" target="_blank" aria-label="Linkedin">
+				<img class="social-logos" id="linkedin" src="static/images/linked-in-logo.png" alt="Linkedin"></a>
+			<a href="https://github.com/KirstyFurey" target="_blank" aria-label="GitHub">
+				<img class="social-logos" id="github" src="static/images/github-logo.png" alt="Github"></a>
+			<a href="https://www.instagram.com/kirstyfureyphotographer/" target="_blank" aria-label="Instagram">
+				<img class="social-logos" id="instagram" src="static/images/instagram-logo.png" alt="Instagram" ></a>
+			<a href="https://www.facebook.com/kirstyfureyphotographer" target="_blank" aria-label="Facebook">	
+				<img class="social-logos" id="facebook" src="static/images/facebook-logo.png" alt="Facebook"></a>	
+		</div>
+		<p>&copy; KIRSTY FUREY 2021. ALL RIGHTS RESERVED</p>
+		<p id="doodle-attr"><a href="https://www.freepik.com/" target="_blank">Icons vector created by rawpixel.com - www.freepik.com</a></p>
 	</footer>
 <!--External JavaScript-->	
 <script type="text/javascript" src="static/scripts/script.js"></script>	
